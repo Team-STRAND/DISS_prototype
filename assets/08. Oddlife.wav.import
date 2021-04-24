@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/08. Oddlife.wav-7f530f81b4d84332f5cefaf739938540.sample"
+
+[deps]
+
+source_file="res://assets/08. Oddlife.wav"
+dest_files=[ "res://.import/08. Oddlife.wav-7f530f81b4d84332f5cefaf739938540.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
