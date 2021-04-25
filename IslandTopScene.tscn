@@ -1,8 +1,69 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/island.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/parrot.png" type="Texture" id=2]
 [ext_resource path="res://assets/arrow.png" type="Texture" id=3]
+[ext_resource path="res://assets/x.png" type="Texture" id=4]
+[ext_resource path="res://LeftButton.gd" type="Script" id=5]
+[ext_resource path="res://RightButton.gd" type="Script" id=6]
+[ext_resource path="res://assets/ship.png" type="Texture" id=7]
+[ext_resource path="res://AnimationPlayerParrot.gd" type="Script" id=8]
+
+[sub_resource type="Animation" id=2]
+resource_name = "ShipMoving"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.35464, 0.301162 ), Vector2( 0.0695341, 0.0635513 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8, 1.1, 1.7, 2.4, 2.9, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -652.955, -27.2964 ), Vector2( -356.89, -134.575 ), Vector2( -238.374, -157.574 ), Vector2( -166.305, -204.546 ), Vector2( -85.2965, -219.379 ), Vector2( -37.9999, -255.938 ), Vector2( 6.62471, -269.723 ), Vector2( 27.2764, -280.51 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "FlyingParrot"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7, 0.9, 1.1, 1.3, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -34.4698, 88.0676 ), Vector2( 11.5109, 97.8146 ), Vector2( 52.4297, 112.859 ), Vector2( 108.843, 130.155 ), Vector2( 148.759, 133.98 ), Vector2( 181.436, 112.908 ), Vector2( 217.502, 116.84 ), Vector2( 248.802, 102.76 ), Vector2( 287.164, 102.807 ), Vector2( 323.407, 94.3777 ), Vector2( 351.175, 90.1865 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.442189, 0.465328 ), Vector2( -0.0697856, 0.0805416 ) ]
+}
 
 [node name="IslandTopScene" type="Node2D"]
 
@@ -15,40 +76,73 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Ship" type="TextureRect" parent="."]
+margin_left = -652.955
+margin_top = -27.2964
+margin_right = 347.046
+margin_bottom = 1045.7
+rect_scale = Vector2( 0.35464, 0.301162 )
+rect_pivot_offset = Vector2( 486.558, 609.365 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayerShip" type="AnimationPlayer" parent="Ship"]
+anims/ShipMoving = SubResource( 2 )
+
 [node name="Parrot" type="TextureRect" parent="."]
-margin_left = -28.1131
-margin_top = 213.084
-margin_right = 402.887
-margin_bottom = 611.084
-rect_scale = Vector2( -0.560789, 0.559215 )
+margin_left = -34.4698
+margin_top = 88.0676
+margin_right = 396.531
+margin_bottom = 486.068
+rect_scale = Vector2( -0.442189, 0.465328 )
 rect_pivot_offset = Vector2( 211.793, 193.485 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Left" type="TextureButton" parent="."]
-margin_left = 477.274
-margin_top = 101.367
-margin_right = 973.274
-margin_bottom = 754.367
+[node name="AnimationPlayerParrot" type="AnimationPlayer" parent="Parrot"]
+anims/FlyingParrot = SubResource( 1 )
+script = ExtResource( 8 )
+
+[node name="LeftButton" type="TextureButton" parent="."]
+margin_left = 195.456
+margin_top = 144.805
+margin_right = 691.456
+margin_bottom = 797.805
 rect_rotation = -90.3237
 rect_scale = Vector2( 0.192522, 0.188548 )
 rect_pivot_offset = Vector2( 237.714, 344.159 )
 texture_normal = ExtResource( 3 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Right" type="TextureButton" parent="."]
-margin_left = 642.936
-margin_top = 105.853
-margin_right = 1138.94
-margin_bottom = 758.853
+[node name="TextureRect" type="TextureRect" parent="LeftButton"]
+margin_left = -126.861
+margin_top = -206.796
+margin_right = 533.139
+margin_bottom = 483.204
+rect_scale = Vector2( 0.434654, 0.461361 )
+rect_pivot_offset = Vector2( 342.92, 393.261 )
+texture = ExtResource( 4 )
+
+[node name="RightButton" type="TextureButton" parent="."]
+margin_left = 360.06
+margin_top = 150.351
+margin_right = 856.06
+margin_bottom = 803.351
 rect_rotation = 89.8148
 rect_scale = Vector2( -0.191988, 0.195961 )
 rect_pivot_offset = Vector2( 233.369, 338.209 )
 texture_normal = ExtResource( 3 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="animation_finished" from="Parrot/AnimationPlayerParrot" to="Parrot/AnimationPlayerParrot" method="_on_AnimationPlayerParrot_animation_finished"]
+[connection signal="pressed" from="LeftButton" to="LeftButton" method="_on_LeftButton_pressed"]
+[connection signal="pressed" from="RightButton" to="RightButton" method="_on_RightButton_pressed"]
