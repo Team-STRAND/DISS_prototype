@@ -18,3 +18,4 @@ func _ready():
 
 func _on_RightButton_pressed():
 	get_parent().get_node("Parrot/AnimationPlayerParrot").play("FlyingParrot")
+	get_node("DingSound").play()

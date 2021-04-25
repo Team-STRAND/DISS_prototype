@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_NoButton_pressed():
+	get_parent().get_node("DingSound").play()
 	get_tree().change_scene("res://RiverScene.tscn")

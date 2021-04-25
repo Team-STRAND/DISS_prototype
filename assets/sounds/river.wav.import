@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/river.wav-d7240e237028d5dab14f63cd0253b62a.sample"
+
+[deps]
+
+source_file="res://assets/sounds/river.wav"
+dest_files=[ "res://.import/river.wav-d7240e237028d5dab14f63cd0253b62a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

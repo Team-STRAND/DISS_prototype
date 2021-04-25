@@ -18,4 +18,4 @@ func _ready():
 
 func _on_UpButton_pressed():
 	get_parent().get_node("Parrot/AnimationPlayerParrotShip").play("ParrotUp")
-	
+	get_parent().get_node("DingSound").play()

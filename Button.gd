@@ -14,3 +14,4 @@ func _on_Button_pressed():
 	move=true
 	owner.add_point()
 	disabled=true
+	get_parent().get_parent().get_parent().get_parent().get_parent().get_node("DingSound").play()
