@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/woods.jpeg" type="Texture" id=1]
+[ext_resource path="res://assets/dog.png" type="Texture" id=2]
+[ext_resource path="res://assets/lion.png" type="Texture" id=3]
+[ext_resource path="res://assets/pirate_girl.png" type="Texture" id=4]
+[ext_resource path="res://assets/pirate_blue.png" type="Texture" id=5]
+[ext_resource path="res://assets/giraffe.png" type="Texture" id=6]
+[ext_resource path="res://assets/cat.png" type="Texture" id=7]
+[ext_resource path="res://assets/pirate_red.png" type="Texture" id=8]
+
+[node name="WoodsScene" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.422258, 0.418418 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateRed" type="TextureRect" parent="."]
+margin_left = -308.836
+margin_top = -12.0723
+margin_right = 477.166
+margin_bottom = 1017.93
+rect_scale = Vector2( 0.18884, 0.168363 )
+rect_pivot_offset = Vector2( 373.811, 517.926 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateBlue" type="TextureRect" parent="."]
+margin_left = -189.401
+margin_top = -98.048
+margin_right = 767.599
+margin_bottom = 961.952
+rect_scale = Vector2( 0.17864, 0.171665 )
+rect_pivot_offset = Vector2( 483.133, 617.374 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateGirl" type="TextureRect" parent="."]
+margin_left = -297.353
+margin_top = -45.961
+margin_right = 659.647
+margin_bottom = 1014.04
+rect_scale = Vector2( 0.146446, 0.149545 )
+rect_pivot_offset = Vector2( 477.248, 561.536 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dog" type="TextureButton" parent="."]
+margin_left = 166.31
+margin_top = 239.385
+margin_right = 766.31
+margin_bottom = 839.385
+rect_scale = Vector2( 0.164103, 0.14864 )
+rect_pivot_offset = Vector2( 314.184, 309.432 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Giraffe" type="TextureButton" parent="."]
+margin_left = 293.562
+margin_top = 154.97
+margin_right = 893.562
+margin_bottom = 754.97
+rect_scale = Vector2( 0.358079, 0.47807 )
+rect_pivot_offset = Vector2( 296.545, 291.793 )
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="TextureButton" parent="."]
+margin_left = -561.94
+margin_top = -773.064
+margin_right = 1938.06
+margin_bottom = 1726.94
+rect_scale = Vector2( 0.0422575, 0.0393574 )
+rect_pivot_offset = Vector2( 1252.41, 1327.51 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lion" type="TextureButton" parent="."]
+margin_left = 766.504
+margin_top = 431.335
+margin_right = 1856.5
+margin_bottom = 1521.34
+rect_scale = Vector2( 0.152163, 0.1421 )
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

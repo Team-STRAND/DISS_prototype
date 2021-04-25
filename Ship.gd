@@ -12,3 +12,6 @@ func start():
 func _process(delta):
 	if(start):
 		parent.set_offset(parent.get_offset() + 100 * delta)
+		
+		if(parent.unit_offset==1):
+			get_tree().change_scene("res://ShapesScene.tscn")

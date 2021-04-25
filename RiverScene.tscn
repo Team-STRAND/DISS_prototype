@@ -38,12 +38,12 @@ __meta__ = {
 }
 
 [node name="FishYellow" type="TextureRect" parent="."]
-margin_left = -189.084
-margin_top = -2.95639e-05
-margin_right = 1011.92
-margin_bottom = 980.0
+margin_left = -220.513
+margin_top = -16.8369
+margin_right = 980.487
+margin_bottom = 963.163
 rect_rotation = 32.9076
-rect_scale = Vector2( -0.0882641, 0.0666443 )
+rect_scale = Vector2( -0.0489013, 0.0522934 )
 rect_pivot_offset = Vector2( 584.359, 429.96 )
 texture = ExtResource( 6 )
 __meta__ = {
@@ -51,10 +51,10 @@ __meta__ = {
 }
 
 [node name="FishOrange" type="TextureRect" parent="."]
-margin_left = 305.626
-margin_top = 287.788
-margin_right = 905.626
-margin_bottom = 887.788
+margin_left = 143.992
+margin_top = 200.236
+margin_right = 743.992
+margin_bottom = 800.236
 rect_rotation = 31.4883
 rect_scale = Vector2( 0.174672, 0.132743 )
 rect_pivot_offset = Vector2( 317.977, 274.174 )
