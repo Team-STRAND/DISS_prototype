@@ -1,0 +1,108 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/ship.png" type="Texture" id=1]
+[ext_resource path="res://assets/trees.jpeg" type="Texture" id=2]
+[ext_resource path="res://assets/pirate_red.png" type="Texture" id=3]
+[ext_resource path="res://assets/pirate_girl.png" type="Texture" id=4]
+[ext_resource path="res://assets/pirate_blue.png" type="Texture" id=5]
+[ext_resource path="res://text1198.png" type="Texture" id=6]
+[ext_resource path="res://text1190.png" type="Texture" id=7]
+[ext_resource path="res://assets/x.png" type="Texture" id=8]
+[ext_resource path="res://YesButton.gd" type="Script" id=9]
+
+[node name="JungleScene" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.419396, 0.417791 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ship" type="TextureRect" parent="."]
+margin_left = -480.993
+margin_top = -188.361
+margin_right = 519.007
+margin_bottom = 884.639
+rect_scale = Vector2( 0.706316, 0.657555 )
+rect_pivot_offset = Vector2( 463.701, 581.855 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateRed" type="TextureRect" parent="."]
+margin_left = 371.728
+margin_top = -98.2724
+margin_right = 1157.73
+margin_bottom = 931.728
+rect_scale = Vector2( 0.18884, 0.168363 )
+rect_pivot_offset = Vector2( 373.811, 517.926 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateBlue" type="TextureRect" parent="."]
+margin_left = 426.964
+margin_top = -199.179
+margin_right = 1383.96
+margin_bottom = 860.821
+rect_scale = Vector2( 0.17864, 0.171665 )
+rect_pivot_offset = Vector2( 483.133, 617.374 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateGirl" type="TextureRect" parent="."]
+margin_left = 144.0
+margin_top = -74.0
+margin_right = 1101.0
+margin_bottom = 986.0
+rect_scale = Vector2( 0.198835, 0.20453 )
+rect_pivot_offset = Vector2( 477.248, 561.536 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YesButton" type="TextureButton" parent="."]
+margin_left = 448.877
+margin_top = 88.2758
+margin_right = 762.877
+margin_bottom = 263.276
+rect_scale = Vector2( 0.440476, 0.428572 )
+rect_pivot_offset = Vector2( 162.961, 90.4633 )
+texture_normal = ExtResource( 7 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongAnswer" type="TextureRect" parent="YesButton"]
+margin_left = -169.38
+margin_top = -344.466
+margin_right = 490.62
+margin_bottom = 345.534
+rect_scale = Vector2( 0.266667, 0.258621 )
+rect_pivot_offset = Vector2( 346.51, 369.291 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoButton" type="TextureButton" parent="."]
+margin_left = 666.402
+margin_top = 92.1733
+margin_right = 996.402
+margin_bottom = 267.173
+rect_scale = Vector2( 0.382279, 0.385715 )
+rect_pivot_offset = Vector2( 161.134, 82.6809 )
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="YesButton" to="YesButton" method="_on_YesButton_pressed"]
