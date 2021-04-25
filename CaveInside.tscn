@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/pirate_girl.png" type="Texture" id=1]
+[ext_resource path="res://assets/fish_orange.png" type="Texture" id=2]
+[ext_resource path="res://assets/fish_yellow.png" type="Texture" id=3]
+[ext_resource path="res://assets/fish_blue.png" type="Texture" id=4]
+[ext_resource path="res://assets/pirate_blue.png" type="Texture" id=5]
+[ext_resource path="res://assets/pirate_red.png" type="Texture" id=6]
+[ext_resource path="res://assets/black_ship.png" type="Texture" id=7]
+[ext_resource path="res://assets/cave_inside.jpeg" type="Texture" id=8]
+
+[node name="CaveInside" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.421868, 0.44362 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackShip" type="TextureRect" parent="."]
+margin_left = 369.758
+margin_top = -137.982
+margin_right = 1151.76
+margin_bottom = 662.018
+rect_scale = Vector2( 0.289655, 0.260836 )
+rect_pivot_offset = Vector2( 461.159, 467.17 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FishBlue" type="TextureRect" parent="."]
+margin_left = 606.84
+margin_top = 260.703
+margin_right = 1206.84
+margin_bottom = 672.703
+rect_rotation = 20.8545
+rect_scale = Vector2( 0.161209, 0.166977 )
+rect_pivot_offset = Vector2( 307.274, 201.632 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FishYellow" type="TextureRect" parent="."]
+margin_left = 62.6493
+margin_top = 69.9995
+margin_right = 1263.65
+margin_bottom = 1050.0
+rect_rotation = -24.3546
+rect_scale = Vector2( 0.0513475, 0.0520508 )
+rect_pivot_offset = Vector2( 584.359, 429.96 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FishOrange" type="TextureRect" parent="."]
+margin_left = 397.894
+margin_top = 154.93
+margin_right = 997.894
+margin_bottom = 754.93
+rect_rotation = -6.14089
+rect_scale = Vector2( -0.179004, 0.130758 )
+rect_pivot_offset = Vector2( 317.977, 274.174 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateRed" type="TextureRect" parent="."]
+margin_left = -309.818
+margin_top = -84.4809
+margin_right = 476.184
+margin_bottom = 945.519
+rect_scale = Vector2( 0.18884, 0.168363 )
+rect_pivot_offset = Vector2( 373.811, 517.926 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateBlue" type="TextureRect" parent="."]
+margin_left = -128.049
+margin_top = -141.466
+margin_right = 828.951
+margin_bottom = 918.534
+rect_scale = Vector2( 0.17864, 0.171665 )
+rect_pivot_offset = Vector2( 483.133, 617.374 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateGirl" type="TextureRect" parent="."]
+margin_left = -272.999
+margin_top = -69.35
+margin_right = 684.001
+margin_bottom = 990.65
+rect_scale = Vector2( 0.146446, 0.149545 )
+rect_pivot_offset = Vector2( 477.248, 561.536 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
