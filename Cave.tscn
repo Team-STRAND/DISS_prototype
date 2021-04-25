@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/cave.jpeg" type="Texture" id=1]
+[ext_resource path="res://assets/pirate_girl.png" type="Texture" id=2]
+[ext_resource path="res://assets/pirate_blue.png" type="Texture" id=3]
+[ext_resource path="res://assets/pirate_red.png" type="Texture" id=4]
+[ext_resource path="res://assets/groot.png" type="Texture" id=5]
+
+[node name="Cave" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.422204, 0.418476 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Groot" type="TextureRect" parent="."]
+margin_left = 94.5641
+margin_top = -137.327
+margin_right = 574.564
+margin_bottom = 854.673
+rect_scale = Vector2( -0.366268, 0.334956 )
+rect_pivot_offset = Vector2( 245.315, 573.331 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateRed" type="TextureButton" parent="."]
+margin_left = 385.982
+margin_top = -12.7461
+margin_right = 1171.98
+margin_bottom = 1017.25
+rect_scale = Vector2( 0.18884, 0.168363 )
+rect_pivot_offset = Vector2( 373.811, 517.926 )
+texture_normal = ExtResource( 4 )
+
+[node name="PirateBlue" type="TextureButton" parent="."]
+margin_left = 419.837
+margin_top = -117.216
+margin_right = 1376.84
+margin_bottom = 942.784
+rect_scale = Vector2( 0.218227, 0.20337 )
+rect_pivot_offset = Vector2( 483.133, 617.374 )
+texture_normal = ExtResource( 3 )
+
+[node name="PirateGirl" type="TextureButton" parent="."]
+margin_left = 144.891
+margin_top = -39.255
+margin_right = 1101.89
+margin_bottom = 1020.75
+rect_scale = Vector2( 0.14968, 0.137996 )
+rect_pivot_offset = Vector2( 477.248, 561.536 )
+texture_normal = ExtResource( 2 )
