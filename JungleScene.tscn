@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/ship.png" type="Texture" id=1]
 [ext_resource path="res://assets/trees.jpeg" type="Texture" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://NoButton.gd" type="Script" id=10]
 [ext_resource path="res://assets/sounds/wrong.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/sounds/ding.wav" type="AudioStream" id=12]
-[ext_resource path="res://assets/sounds/woods.wav" type="AudioStream" id=13]
 
 [node name="JungleScene" type="Node2D"]
 
@@ -116,9 +115,5 @@ stream = ExtResource( 12 )
 
 [node name="WrongSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-
-[node name="WoodsSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
-autoplay = true
 [connection signal="pressed" from="YesButton" to="YesButton" method="_on_YesButton_pressed"]
 [connection signal="pressed" from="NoButton" to="NoButton" method="_on_NoButton_pressed"]
