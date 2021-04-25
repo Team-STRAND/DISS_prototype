@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/island.jpeg" type="Texture" id=1]
+[ext_resource path="res://assets/parrot.png" type="Texture" id=2]
+[ext_resource path="res://assets/arrow.png" type="Texture" id=3]
 
 [node name="IslandTopScene" type="Node2D"]
 
@@ -9,6 +11,44 @@ margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 0.428996, 0.439834 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parrot" type="TextureRect" parent="."]
+margin_left = -28.1131
+margin_top = 213.084
+margin_right = 402.887
+margin_bottom = 611.084
+rect_scale = Vector2( -0.560789, 0.559215 )
+rect_pivot_offset = Vector2( 211.793, 193.485 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="TextureButton" parent="."]
+margin_left = 477.274
+margin_top = 101.367
+margin_right = 973.274
+margin_bottom = 754.367
+rect_rotation = -90.3237
+rect_scale = Vector2( 0.192522, 0.188548 )
+rect_pivot_offset = Vector2( 237.714, 344.159 )
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="TextureButton" parent="."]
+margin_left = 642.936
+margin_top = 105.853
+margin_right = 1138.94
+margin_bottom = 758.853
+rect_rotation = 89.8148
+rect_scale = Vector2( -0.191988, 0.195961 )
+rect_pivot_offset = Vector2( 233.369, 338.209 )
+texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

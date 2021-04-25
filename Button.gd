@@ -12,3 +12,5 @@ func _process(delta):
 
 func _on_Button_pressed():
 	move=true
+	owner.add_point()
+	disabled=true
