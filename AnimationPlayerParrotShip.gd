@@ -1,4 +1,4 @@
-extends TextureButton
+extends AnimationPlayer
 
 
 # Declare member variables here. Examples:
@@ -16,6 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_UpButton_pressed():
-	get_parent().get_node("Parrot/AnimationPlayerParrotShip").play("ParrotUp")
-	
+func _on_AnimationPlayerParrotShip_animation_finished(anim_name):
+	get_tree().change_scene("res://IslandTopScene.tscn")

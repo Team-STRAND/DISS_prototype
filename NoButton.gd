@@ -16,6 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_UpButton_pressed():
-	get_parent().get_node("Parrot/AnimationPlayerParrotShip").play("ParrotUp")
-	
+func _on_NoButton_pressed():
+	get_tree().change_scene("res://RiverScene.tscn")

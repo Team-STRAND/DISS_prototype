@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/deck_empty.png" type="Texture" id=1]
 [ext_resource path="res://assets/parrot.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/arrow.png" type="Texture" id=14]
 [ext_resource path="res://UpButton.gd" type="Script" id=15]
 [ext_resource path="res://DownButton.gd" type="Script" id=16]
+[ext_resource path="res://AnimationPlayerParrotShip.gd" type="Script" id=17]
 
 [sub_resource type="Animation" id=5]
 resource_name = "ParrotUp"
@@ -78,8 +79,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Parrot"]
+[node name="AnimationPlayerParrotShip" type="AnimationPlayer" parent="Parrot"]
 anims/ParrotUp = SubResource( 5 )
+script = ExtResource( 17 )
 
 [node name="UpButton" type="TextureButton" parent="."]
 margin_left = 380.546
@@ -277,6 +279,7 @@ texture = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="animation_finished" from="Parrot/AnimationPlayerParrotShip" to="Parrot/AnimationPlayerParrotShip" method="_on_AnimationPlayerParrotShip_animation_finished"]
 [connection signal="pressed" from="UpButton" to="UpButton" method="_on_UpButton_pressed"]
 [connection signal="pressed" from="DownButton" to="DownButton" method="_on_DownButton_pressed"]
 [connection signal="pressed" from="Shapes/RightShapes/Path2DRedCircle/PathFollow2D/Button" to="Shapes/RightShapes/Path2DRedCircle/PathFollow2D/Button" method="_on_Button_pressed"]
