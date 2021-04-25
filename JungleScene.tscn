@@ -5,10 +5,13 @@
 [ext_resource path="res://assets/pirate_red.png" type="Texture" id=3]
 [ext_resource path="res://assets/pirate_girl.png" type="Texture" id=4]
 [ext_resource path="res://assets/pirate_blue.png" type="Texture" id=5]
-[ext_resource path="res://text1198.png" type="Texture" id=6]
-[ext_resource path="res://text1190.png" type="Texture" id=7]
+[ext_resource path="res://assets/yes.png" type="Texture" id=6]
 [ext_resource path="res://assets/x.png" type="Texture" id=8]
 [ext_resource path="res://YesButton.gd" type="Script" id=9]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/text1198.png-f203f9eaeaf321513aefd443364c6b89.stex"
 
 [node name="JungleScene" type="Node2D"]
 
@@ -76,7 +79,7 @@ margin_right = 762.877
 margin_bottom = 263.276
 rect_scale = Vector2( 0.440476, 0.428572 )
 rect_pivot_offset = Vector2( 162.961, 90.4633 )
-texture_normal = ExtResource( 7 )
+texture_normal = ExtResource( 6 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -101,7 +104,7 @@ margin_right = 996.402
 margin_bottom = 267.173
 rect_scale = Vector2( 0.382279, 0.385715 )
 rect_pivot_offset = Vector2( 161.134, 82.6809 )
-texture_normal = ExtResource( 6 )
+texture_normal = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
