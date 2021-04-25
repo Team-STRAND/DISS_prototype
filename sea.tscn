@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/ship.png" type="Texture" id=7]
 [ext_resource path="res://Ship.gd" type="Script" id=8]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "TitleFade"
 length = 0.5
 step = 0.5
@@ -26,8 +26,7 @@ tracks/0/keys = {
 "values": [ Vector2( 111.124, 81.9397 ), Vector2( 111.124, -300 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "FadeButton"
+[sub_resource type="Animation" id=2]
 length = 0.5
 step = 0.5
 tracks/0/type = "value"
@@ -74,7 +73,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
-anims/TitleFade = SubResource( 2 )
+anims/TitleFade = SubResource( 1 )
 
 [node name="PlayButton" type="Button" parent="."]
 margin_left = 411.182
@@ -101,7 +100,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayButton/TextureRect"]
-anims/FadeButton = SubResource( 1 )
+anims/FadeButton = SubResource( 2 )
 
 [node name="TitleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

@@ -1,0 +1,221 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/deck_empty.png" type="Texture" id=1]
+[ext_resource path="res://assets/parrot.png" type="Texture" id=2]
+[ext_resource path="res://assets/shapes/circle_red.png" type="Texture" id=3]
+[ext_resource path="res://assets/shapes/circle_cyan.png" type="Texture" id=4]
+[ext_resource path="res://Button.gd" type="Script" id=5]
+[ext_resource path="res://assets/shapes/circle_green.png" type="Texture" id=6]
+[ext_resource path="res://assets/shapes/circle_blue.png" type="Texture" id=7]
+[ext_resource path="res://assets/shapes/square_yellow.png" type="Texture" id=8]
+[ext_resource path="res://assets/shapes/tri_orange.png" type="Texture" id=9]
+[ext_resource path="res://assets/shapes/square_green.png" type="Texture" id=10]
+[ext_resource path="res://assets/x.png" type="Texture" id=11]
+[ext_resource path="res://WrongShape.gd" type="Script" id=12]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 499.512, 458.202, 0, 0, 0, 0, 508.431, 397.553, 0, 0, 0, 0, 522.107, 358.903, 0, 0, 0, 0, 536.972, 340.471, 0, 0, 0, 0, 563.729, 324.416, 0, 0, 0, 0, 591.081, 322.038, 0, 0, 0, 0, 610.108, 328.579, 0, 0, 0, 0, 622, 348.201, 0, 0, 0, 0, 628.355, 366.423 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 557.576, 529.471, 0, 0, 0, 0, 570.257, 476.745, 0, 0, 0, 0, 580.269, 432.695, 0, 0, 0, 0, 587.61, 393.985, 0, 0, 0, 0, 603.628, 365.953, 0, 0, 0, 0, 614.307, 357.276, 0, 0, 0, 0, 625.653, 369.29 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 734.837, 552.065, 0, 0, 0, 0, 728.48, 502.27, 0, 0, 0, 0, 718.945, 457.773, 0, 0, 0, 0, 714.707, 413.276, 0, 0, 0, 0, 703.053, 373.016, 0, 0, 0, 0, 680.804, 327.459, 0, 0, 0, 0, 660.674, 330.637, 0, 0, 0, 0, 654.318, 355.005 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 862.339, 383.907, 0, 0, 0, 0, 843.44, 320.911, 0, 0, 0, 0, 804.383, 266.734, 0, 0, 0, 0, 755.246, 223.897, 0, 0, 0, 0, 690.99, 211.298, 0, 0, 0, 0, 630.514, 249.096, 0, 0, 0, 0, 622.954, 303.272, 0, 0, 0, 0, 635.553, 341.07 )
+}
+
+[node name="ShapeScene" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -11.3137
+margin_top = -1.41422
+margin_right = 2503.69
+margin_bottom = 1557.59
+rect_scale = Vector2( 0.428919, 0.409595 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parrot" type="TextureRect" parent="."]
+margin_left = 291.328
+margin_top = 67.8823
+margin_right = 722.328
+margin_bottom = 465.882
+rect_scale = Vector2( -0.540534, 0.505391 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shapes" type="Node2D" parent="."]
+
+[node name="RightShapes" type="Node2D" parent="Shapes"]
+
+[node name="Path2DRedCircle" type="Path2D" parent="Shapes/RightShapes"]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Shapes/RightShapes/Path2DRedCircle"]
+position = Vector2( 499.512, 458.202 )
+rotation = -1.42479
+loop = false
+
+[node name="Button" type="TextureButton" parent="Shapes/RightShapes/Path2DRedCircle/PathFollow2D"]
+margin_left = -217.17
+margin_top = -225.353
+margin_right = 226.83
+margin_bottom = 229.647
+rect_scale = Vector2( 0.159908, 0.15661 )
+rect_pivot_offset = Vector2( 216.153, 222.49 )
+texture_normal = ExtResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Path2DCyanCircle" type="Path2D" parent="Shapes/RightShapes"]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Shapes/RightShapes/Path2DCyanCircle"]
+position = Vector2( 557.576, 529.471 )
+rotation = -1.33476
+loop = false
+
+[node name="Button" type="TextureButton" parent="Shapes/RightShapes/Path2DCyanCircle/PathFollow2D"]
+margin_left = -224.889
+margin_top = -211.717
+margin_right = 213.111
+margin_bottom = 226.283
+rect_scale = Vector2( 0.173504, 0.173801 )
+rect_pivot_offset = Vector2( 222.373, 210.377 )
+texture_normal = ExtResource( 4 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Path2DYellowCircle" type="Path2D" parent="Shapes/RightShapes"]
+curve = SubResource( 3 )
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Shapes/RightShapes/Path2DYellowCircle"]
+position = Vector2( 728.437, 544.967 )
+rotation = -1.42479
+loop = false
+
+[node name="Button" type="TextureButton" parent="Shapes/RightShapes/Path2DYellowCircle/PathFollow2D2"]
+margin_left = -200.617
+margin_top = -217.792
+margin_right = 223.383
+margin_bottom = 199.208
+rect_scale = Vector2( 0.158495, 0.176661 )
+rect_pivot_offset = Vector2( 202.053, 219.849 )
+texture_normal = ExtResource( 6 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Path2DBlueCircle" type="Path2D" parent="Shapes/RightShapes"]
+curve = SubResource( 4 )
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="Shapes/RightShapes/Path2DBlueCircle"]
+position = Vector2( 862.369, 390.166 )
+rotation = -1.42479
+loop = false
+
+[node name="Button" type="TextureButton" parent="Shapes/RightShapes/Path2DBlueCircle/PathFollow2D3"]
+margin_left = -209.474
+margin_top = -210.709
+margin_right = 251.526
+margin_bottom = 240.291
+rect_scale = Vector2( 0.165908, 0.174937 )
+rect_pivot_offset = Vector2( 203.406, 213.122 )
+texture_normal = ExtResource( 7 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongShapes" type="Node2D" parent="Shapes"]
+
+[node name="SquareYellow" type="TextureButton" parent="Shapes/WrongShapes"]
+margin_left = 107.093
+margin_top = 313.72
+margin_right = 524.093
+margin_bottom = 713.72
+rect_scale = Vector2( 0.181319, 0.196429 )
+rect_pivot_offset = Vector2( 197.101, 194.919 )
+texture_normal = ExtResource( 8 )
+script = ExtResource( 12 )
+
+[node name="WrongSymbol" type="TextureRect" parent="Shapes/WrongShapes/SquareYellow"]
+margin_left = -26.2643
+margin_top = -299.009
+margin_right = 633.736
+margin_bottom = 390.991
+rect_scale = Vector2( 0.470968, 0.388509 )
+rect_pivot_offset = Vector2( 363.869, 361.687 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SquareGreen" type="TextureButton" parent="Shapes/WrongShapes"]
+margin_left = 674.058
+margin_top = 301.121
+margin_right = 1091.06
+margin_bottom = 711.121
+rect_scale = Vector2( 0.20625, 0.191358 )
+rect_pivot_offset = Vector2( 205.92, 210.038 )
+texture_normal = ExtResource( 10 )
+script = ExtResource( 12 )
+
+[node name="WrongSymbol" type="TextureRect" parent="Shapes/WrongShapes/SquareGreen"]
+margin_left = -47.8325
+margin_top = -275.894
+margin_right = 612.167
+margin_bottom = 414.106
+rect_scale = Vector2( 0.470968, 0.388509 )
+rect_pivot_offset = Vector2( 363.869, 361.687 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TriangleOrange" type="TextureButton" parent="Shapes/WrongShapes"]
+margin_left = 147.411
+margin_top = 263.324
+margin_right = 715.411
+margin_bottom = 772.323
+rect_scale = Vector2( 0.143547, 0.141326 )
+rect_pivot_offset = Vector2( 281.516, 285.633 )
+texture_normal = ExtResource( 9 )
+script = ExtResource( 12 )
+
+[node name="WrongSymbol" type="TextureRect" parent="Shapes/WrongShapes/TriangleOrange"]
+margin_left = -112.766
+margin_top = -168.389
+margin_right = 547.234
+margin_bottom = 521.611
+rect_scale = Vector2( 0.470968, 0.388509 )
+rect_pivot_offset = Vector2( 363.869, 361.687 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Shapes/RightShapes/Path2DRedCircle/PathFollow2D/Button" to="Shapes/RightShapes/Path2DRedCircle/PathFollow2D/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Shapes/RightShapes/Path2DCyanCircle/PathFollow2D/Button" to="Shapes/RightShapes/Path2DCyanCircle/PathFollow2D/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Shapes/RightShapes/Path2DYellowCircle/PathFollow2D2/Button" to="Shapes/RightShapes/Path2DYellowCircle/PathFollow2D2/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Shapes/RightShapes/Path2DBlueCircle/PathFollow2D3/Button" to="Shapes/RightShapes/Path2DBlueCircle/PathFollow2D3/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Shapes/WrongShapes/SquareYellow" to="Shapes/WrongShapes/SquareYellow" method="_on_Button_pressed"]
+[connection signal="pressed" from="Shapes/WrongShapes/SquareGreen" to="Shapes/WrongShapes/SquareGreen" method="_on_Button_pressed"]
+[connection signal="pressed" from="Shapes/WrongShapes/TriangleOrange" to="Shapes/WrongShapes/TriangleOrange" method="_on_Button_pressed"]
