@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/pirate_girl.png" type="Texture" id=1]
 [ext_resource path="res://assets/fish_orange.png" type="Texture" id=2]
@@ -8,8 +8,118 @@
 [ext_resource path="res://assets/pirate_red.png" type="Texture" id=6]
 [ext_resource path="res://assets/black_ship.png" type="Texture" id=7]
 [ext_resource path="res://assets/cave_inside.jpeg" type="Texture" id=8]
+[ext_resource path="res://CaveInside.gd" type="Script" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Move"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("PirateRed:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -783.776, -43.4996 ), Vector2( -309.818, -84.4809 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PirateBlue:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -602.007, -100.485 ), Vector2( -128.049, -141.466 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PirateGirl:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -746.958, -28.3687 ), Vector2( -272.999, -69.35 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Move"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("FishBlue:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1034.95, 452.165 ), Vector2( 606.84, 260.703 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FishYellow:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 490.764, 261.462 ), Vector2( 62.6493, 69.9995 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FishOrange:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 826.009, 346.392 ), Vector2( 397.894, 154.93 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Move"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlackShip:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 337.587, -160.391 ), Vector2( 244.353, -142.752 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlackShip:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.289655, 0.260836 ), Vector2( 0.810821, 0.795884 ) ]
+}
 
 [node name="CaveInside" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -20,23 +130,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BlackShip" type="TextureRect" parent="."]
-margin_left = 369.758
-margin_top = -137.982
-margin_right = 1151.76
-margin_bottom = 662.018
-rect_scale = Vector2( 0.289655, 0.260836 )
-rect_pivot_offset = Vector2( 461.159, 467.17 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="FishBlue" type="TextureRect" parent="."]
-margin_left = 606.84
-margin_top = 260.703
-margin_right = 1206.84
-margin_bottom = 672.703
+margin_left = 1034.95
+margin_top = 452.165
+margin_right = 1634.95
+margin_bottom = 864.166
 rect_rotation = 20.8545
 rect_scale = Vector2( 0.161209, 0.166977 )
 rect_pivot_offset = Vector2( 307.274, 201.632 )
@@ -46,10 +144,10 @@ __meta__ = {
 }
 
 [node name="FishYellow" type="TextureRect" parent="."]
-margin_left = 62.6493
-margin_top = 69.9995
-margin_right = 1263.65
-margin_bottom = 1050.0
+margin_left = 490.764
+margin_top = 261.462
+margin_right = 1691.76
+margin_bottom = 1241.46
 rect_rotation = -24.3546
 rect_scale = Vector2( 0.0513475, 0.0520508 )
 rect_pivot_offset = Vector2( 584.359, 429.96 )
@@ -59,10 +157,10 @@ __meta__ = {
 }
 
 [node name="FishOrange" type="TextureRect" parent="."]
-margin_left = 397.894
-margin_top = 154.93
-margin_right = 997.894
-margin_bottom = 754.93
+margin_left = 826.009
+margin_top = 346.392
+margin_right = 1426.01
+margin_bottom = 946.392
 rect_rotation = -6.14089
 rect_scale = Vector2( -0.179004, 0.130758 )
 rect_pivot_offset = Vector2( 317.977, 274.174 )
@@ -72,10 +170,10 @@ __meta__ = {
 }
 
 [node name="PirateRed" type="TextureRect" parent="."]
-margin_left = -309.818
-margin_top = -84.4809
-margin_right = 476.184
-margin_bottom = 945.519
+margin_left = -783.776
+margin_top = -43.4996
+margin_right = 2.22632
+margin_bottom = 986.501
 rect_scale = Vector2( 0.18884, 0.168363 )
 rect_pivot_offset = Vector2( 373.811, 517.926 )
 texture = ExtResource( 6 )
@@ -84,10 +182,10 @@ __meta__ = {
 }
 
 [node name="PirateBlue" type="TextureRect" parent="."]
-margin_left = -128.049
-margin_top = -141.466
-margin_right = 828.951
-margin_bottom = 918.534
+margin_left = -602.007
+margin_top = -100.485
+margin_right = 354.993
+margin_bottom = 959.515
 rect_scale = Vector2( 0.17864, 0.171665 )
 rect_pivot_offset = Vector2( 483.133, 617.374 )
 texture = ExtResource( 5 )
@@ -96,13 +194,37 @@ __meta__ = {
 }
 
 [node name="PirateGirl" type="TextureRect" parent="."]
-margin_left = -272.999
-margin_top = -69.35
-margin_right = 684.001
-margin_bottom = 990.65
+margin_left = -746.958
+margin_top = -28.3687
+margin_right = 210.042
+margin_bottom = 1031.63
 rect_scale = Vector2( 0.146446, 0.149545 )
 rect_pivot_offset = Vector2( 477.248, 561.536 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BlackShip" type="TextureRect" parent="."]
+margin_left = 337.587
+margin_top = -160.391
+margin_right = 1119.59
+margin_bottom = 639.609
+rect_scale = Vector2( 0.289655, 0.260836 )
+rect_pivot_offset = Vector2( 461.159, 467.17 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayerPirates" type="AnimationPlayer" parent="."]
+anims/Move = SubResource( 1 )
+
+[node name="AnimationPlayerFish" type="AnimationPlayer" parent="."]
+anims/Move = SubResource( 2 )
+
+[node name="AnimationPlayerShip" type="AnimationPlayer" parent="."]
+anims/Move = SubResource( 3 )
+[connection signal="animation_finished" from="AnimationPlayerPirates" to="." method="_on_AnimationPlayerPirates_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayerFish" to="." method="_on_AnimationPlayerFish_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayerShip" to="." method="_on_AnimationPlayerShip_animation_finished"]

@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Drawing-6.sketchpad.jpeg" type="Texture" id=1]
+[ext_resource path="res://EndSeaScene.gd" type="Script" id=2]
+[ext_resource path="res://assets/mixkit-wooden-ship-on-the-sea-1187.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/black_ship.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "ShipSailing"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlackShip:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.1, 0, 1.8, 4.2, 6.3, 8.2, 9.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -630.032, -78.4962 ), Vector2( 778.559, -62.1172 ), Vector2( 412.08, 21.1951 ), Vector2( 153.156, -42.8475 ), Vector2( -168.54, 11.959 ), Vector2( -487.552, -91.9756 ), Vector2( -626.253, -55.8176 ) ]
+}
+
+[node name="EndSeaScene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -25.5457
+margin_top = -16.2275
+margin_right = 3441.45
+margin_bottom = 1998.77
+rect_scale = Vector2( 0.321566, 0.328203 )
+texture = ExtResource( 1 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaveSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="BlackShip" type="TextureRect" parent="."]
+margin_left = 778.559
+margin_top = -62.1172
+margin_right = 1560.56
+margin_bottom = 737.883
+rect_scale = Vector2( 0.289655, 0.260836 )
+rect_pivot_offset = Vector2( 461.159, 467.17 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ShipSailing = SubResource( 1 )

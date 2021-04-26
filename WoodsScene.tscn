@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/woods.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/dog.png" type="Texture" id=2]
@@ -8,8 +8,126 @@
 [ext_resource path="res://assets/giraffe.png" type="Texture" id=6]
 [ext_resource path="res://assets/cat.png" type="Texture" id=7]
 [ext_resource path="res://assets/pirate_red.png" type="Texture" id=8]
+[ext_resource path="res://WoodsScene.gd" type="Script" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Move"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("PirateRed:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -690.674, -3.58698 ), Vector2( -308.836, -12.0723 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PirateBlue:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -571.239, -89.5627 ), Vector2( -189.401, -98.048 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PirateGirl:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -679.19, -37.4757 ), Vector2( -297.353, -45.961 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Move2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("PirateRed:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -308.836, -12.0723 ), Vector2( 81.4867, -125.209 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PirateBlue:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -189.401, -98.048 ), Vector2( 34.0447, -214.014 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PirateGirl:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -297.353, -45.961 ), Vector2( 15.1884, -163.341 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PirateRed:rect_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.18884, 0.168363 ), Vector2( 0.076247, 0.0593126 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("PirateBlue:rect_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.17864, 0.171665 ), Vector2( 0.0884696, 0.079638 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("PirateGirl:rect_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.146446, 0.149545 ), Vector2( 0.0732616, 0.0570718 ) ]
+}
 
 [node name="WoodsScene" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -21,10 +139,10 @@ __meta__ = {
 }
 
 [node name="PirateRed" type="TextureRect" parent="."]
-margin_left = -308.836
-margin_top = -12.0723
-margin_right = 477.166
-margin_bottom = 1017.93
+margin_left = -690.674
+margin_top = -3.58698
+margin_right = 95.3281
+margin_bottom = 1026.41
 rect_scale = Vector2( 0.18884, 0.168363 )
 rect_pivot_offset = Vector2( 373.811, 517.926 )
 texture = ExtResource( 8 )
@@ -33,10 +151,10 @@ __meta__ = {
 }
 
 [node name="PirateBlue" type="TextureRect" parent="."]
-margin_left = -189.401
-margin_top = -98.048
-margin_right = 767.599
-margin_bottom = 961.952
+margin_left = -571.239
+margin_top = -89.5627
+margin_right = 385.761
+margin_bottom = 970.437
 rect_scale = Vector2( 0.17864, 0.171665 )
 rect_pivot_offset = Vector2( 483.133, 617.374 )
 texture = ExtResource( 5 )
@@ -45,10 +163,10 @@ __meta__ = {
 }
 
 [node name="PirateGirl" type="TextureRect" parent="."]
-margin_left = -297.353
-margin_top = -45.961
-margin_right = 659.647
-margin_bottom = 1014.04
+margin_left = -679.19
+margin_top = -37.4757
+margin_right = 277.81
+margin_bottom = 1022.52
 rect_scale = Vector2( 0.146446, 0.149545 )
 rect_pivot_offset = Vector2( 477.248, 561.536 )
 texture = ExtResource( 4 )
@@ -102,3 +220,9 @@ texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayerCharacterMoving" type="AnimationPlayer" parent="."]
+anims/Move = SubResource( 1 )
+anims/Move2 = SubResource( 2 )
+[connection signal="pressed" from="Giraffe" to="." method="_on_Giraffe_pressed"]
+[connection signal="animation_finished" from="AnimationPlayerCharacterMoving" to="." method="_on_AnimationPlayerCharacterMoving_animation_finished"]
