@@ -1,21 +1,13 @@
 extends TextureButton
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	get_parent().get_node("Voices/Luigi/LuigiVoice4").connect("finished",self,"go_next")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func go_next():
+	get_tree().change_scene("res://RiverScene.tscn")
 
 func _on_NoButton_pressed():
 	get_parent().get_node("DingSound").play()
-	get_tree().change_scene("res://RiverScene.tscn")
+	get_parent().get_node("Voices/Luigi/LuigiVoice4").play()
+	

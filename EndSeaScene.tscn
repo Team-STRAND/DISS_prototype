@@ -1,13 +1,50 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://assets/Drawing-6.sketchpad.jpeg" type="Texture" id=1]
 [ext_resource path="res://EndSeaScene.gd" type="Script" id=2]
 [ext_resource path="res://assets/mixkit-wooden-ship-on-the-sea-1187.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/black_ship.png" type="Texture" id=4]
+[ext_resource path="res://assets/sounds/francesca/Francesca3.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/luigi/6.minunat-ai-putea-sa-repari.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/francesca/Francesca6.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/luigi/4.excelent-raspuns-se-vede-ca.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/richard/Richard-9.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/richard/Richard-8.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/richard/Richard-10.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/francesca/Francesca9.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/richard/Richard-13.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/francesca/Francesca8.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/luigi/3.Arrr-nu-sunt-de-aceeasi-parere.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/luigi/10.ura-multumim-pentru.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sounds/richard/Richard-17.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/sounds/richard/Richard-16.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/sounds/luigi/1.Capitane-stii-bine-ca.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/sounds/francesca/Francesca5.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/sounds/richard/Richard-12.wav" type="AudioStream" id=21]
+[ext_resource path="res://assets/sounds/francesca/Francesca1.wav" type="AudioStream" id=22]
+[ext_resource path="res://assets/sounds/luigi/2.Un-papagal-vine.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/sounds/richard/Richard-6.wav" type="AudioStream" id=24]
+[ext_resource path="res://assets/sounds/francesca/Francesca4.wav" type="AudioStream" id=25]
+[ext_resource path="res://assets/sounds/luigi/8.sa-mergem-drumul-este.wav" type="AudioStream" id=26]
+[ext_resource path="res://assets/sounds/richard/Richard-7.wav" type="AudioStream" id=27]
+[ext_resource path="res://assets/sounds/richard/Richard-15.wav" type="AudioStream" id=28]
+[ext_resource path="res://assets/sounds/luigi/5.mi-se-pare-mie-sau.wav" type="AudioStream" id=29]
+[ext_resource path="res://assets/sounds/richard/Richard-14.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/sounds/richard/Richard-11.wav" type="AudioStream" id=31]
+[ext_resource path="res://assets/sounds/richard/Richard-2.wav" type="AudioStream" id=32]
+[ext_resource path="res://assets/sounds/richard/Richard-1.wav" type="AudioStream" id=33]
+[ext_resource path="res://assets/sounds/francesca/Francesca2.wav" type="AudioStream" id=34]
+[ext_resource path="res://assets/sounds/luigi/7.vai-ce-carare-lunga.wav" type="AudioStream" id=35]
+[ext_resource path="res://assets/sounds/luigi/9.acela-este-cumva.wav" type="AudioStream" id=36]
+[ext_resource path="res://assets/sounds/richard/Richard-3.wav" type="AudioStream" id=37]
+[ext_resource path="res://assets/sounds/francesca/Francesca7.wav" type="AudioStream" id=38]
+[ext_resource path="res://assets/sounds/richard/Richard-5.wav" type="AudioStream" id=39]
+[ext_resource path="res://assets/sounds/richard/Richard-4.wav" type="AudioStream" id=40]
+[ext_resource path="res://VoicesEndSeaScene.gd" type="Script" id=41]
 
 [sub_resource type="Animation" id=1]
 resource_name = "ShipSailing"
-length = 10.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("BlackShip:rect_position")
 tracks/0/interp = 1
@@ -15,7 +52,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -0.1, 0, 1.8, 4.2, 6.3, 8.2, 9.7 ),
+"times": PoolRealArray( -0.1, 0, 3.7, 7.6, 9.8, 12.9, 15 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -630.032, -78.4962 ), Vector2( 778.559, -62.1172 ), Vector2( 412.08, 21.1951 ), Vector2( 153.156, -42.8475 ), Vector2( -168.54, 11.959 ), Vector2( -487.552, -91.9756 ), Vector2( -626.253, -55.8176 ) ]
@@ -38,6 +75,7 @@ __meta__ = {
 
 [node name="WaveSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -10.0
 
 [node name="BlackShip" type="TextureRect" parent="."]
 margin_left = 778.559
@@ -53,3 +91,157 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ShipSailing = SubResource( 1 )
+
+[node name="Voices" type="Node2D" parent="."]
+script = ExtResource( 41 )
+
+[node name="Richard" type="Node2D" parent="Voices"]
+
+[node name="RichardVoice1" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 33 )
+volume_db = 14.913
+
+[node name="RichardVoice2" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 32 )
+volume_db = 8.0
+
+[node name="RichardVoice3" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 37 )
+volume_db = 8.0
+
+[node name="RichardVoice4" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 40 )
+volume_db = 8.0
+
+[node name="RichardVoice5" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 39 )
+volume_db = 8.0
+
+[node name="RichardVoice6" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 24 )
+volume_db = 8.0
+
+[node name="RichardVoice7" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 27 )
+volume_db = 8.0
+
+[node name="RichardVoice8" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 10 )
+volume_db = 8.0
+
+[node name="RichardVoice9" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 9 )
+volume_db = 8.0
+
+[node name="RichardVoice10" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 11 )
+volume_db = 8.0
+
+[node name="RichardVoice11" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 31 )
+volume_db = 8.0
+
+[node name="RichardVoice12" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 21 )
+volume_db = 8.0
+
+[node name="RichardVoice13" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 13 )
+volume_db = 8.0
+
+[node name="RichardVoice14" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 30 )
+volume_db = 8.0
+
+[node name="RichardVoice15" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 28 )
+volume_db = 8.0
+
+[node name="RichardVoice16" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 18 )
+volume_db = 8.0
+
+[node name="RichardVoice17" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 17 )
+volume_db = 8.0
+
+[node name="Luigi" type="Node2D" parent="Voices"]
+
+[node name="LuigiVoice1" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 19 )
+volume_db = 5.0
+
+[node name="LuigiVoice2" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 23 )
+volume_db = 5.0
+
+[node name="LuigiVoice3" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 15 )
+volume_db = 5.0
+
+[node name="LuigiVoice4" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+
+[node name="LuigiVoice5" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 29 )
+volume_db = 5.0
+
+[node name="LuigiVoice6" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 6 )
+volume_db = 5.0
+
+[node name="LuigiVoice7" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 35 )
+volume_db = 5.0
+
+[node name="LuigiVoice8" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 26 )
+volume_db = 5.0
+
+[node name="LuigiVoice9" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 36 )
+volume_db = 5.0
+
+[node name="LuigiVoice10" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 16 )
+volume_db = 5.0
+
+[node name="Francesca" type="Node2D" parent="Voices"]
+
+[node name="FrancescaVoice1" type="AudioStreamPlayer" parent="Voices/Francesca"]
+stream = ExtResource( 22 )
+volume_db = -4.0
+
+[node name="FrancescaVoice2" type="AudioStreamPlayer" parent="Voices/Francesca"]
+stream = ExtResource( 34 )
+volume_db = -4.0
+
+[node name="FrancescaVoice3" type="AudioStreamPlayer" parent="Voices/Francesca"]
+stream = ExtResource( 5 )
+volume_db = -4.0
+
+[node name="FrancescaVoice4" type="AudioStreamPlayer" parent="Voices/Francesca"]
+stream = ExtResource( 25 )
+volume_db = -4.0
+
+[node name="FrancescaVoice5" type="AudioStreamPlayer" parent="Voices/Francesca"]
+stream = ExtResource( 20 )
+volume_db = -4.0
+
+[node name="FrancescaVoice6" type="AudioStreamPlayer" parent="Voices/Francesca"]
+stream = ExtResource( 7 )
+volume_db = -4.0
+
+[node name="FrancescaVoice7" type="AudioStreamPlayer" parent="Voices/Francesca"]
+stream = ExtResource( 38 )
+volume_db = -4.0
+
+[node name="FrancescaVoice8" type="AudioStreamPlayer" parent="Voices/Francesca"]
+stream = ExtResource( 14 )
+volume_db = -4.0
+
+[node name="FrancescaVoice9" type="AudioStreamPlayer" parent="Voices/Francesca"]
+stream = ExtResource( 12 )
+volume_db = -4.0
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Richard-8.wav-2655c28069e7083927e8cb3213ac3e7b.sample"
+
+[deps]
+
+source_file="res://assets/sounds/richard/Richard-8.wav"
+dest_files=[ "res://.import/Richard-8.wav-2655c28069e7083927e8cb3213ac3e7b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/7.vai-ce-carare-lunga.wav-34cf69d3bf7a1dded69773753b48b153.sample"
+
+[deps]
+
+source_file="res://assets/sounds/luigi/7.vai-ce-carare-lunga.wav"
+dest_files=[ "res://.import/7.vai-ce-carare-lunga.wav-34cf69d3bf7a1dded69773753b48b153.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

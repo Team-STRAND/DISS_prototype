@@ -8,6 +8,7 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_parent().get_node("WaveSound").connect("finished",get_parent().get_node("WaveSound"),"play")
 	pass # Replace with function body.
 
 
@@ -24,7 +25,10 @@ func _on_PlayButton_pressed():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	get_parent().get_node("TitleMusic").stop()
+	
 	get_parent().get_node("WaveSound").play()
 	get_parent().get_node("Path2D/PathFollow2D/Ship").start()
+
+	get_parent().get_node("Voices").play()
 
 	get_parent().remove_child(self)

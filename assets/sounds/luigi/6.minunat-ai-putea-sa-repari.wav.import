@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/6.minunat-ai-putea-sa-repari.wav-46529b5bf552533b04e439b1cc255368.sample"
+
+[deps]
+
+source_file="res://assets/sounds/luigi/6.minunat-ai-putea-sa-repari.wav"
+dest_files=[ "res://.import/6.minunat-ai-putea-sa-repari.wav-46529b5bf552533b04e439b1cc255368.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

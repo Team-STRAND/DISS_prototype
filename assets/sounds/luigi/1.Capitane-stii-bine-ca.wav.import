@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/1.Capitane-stii-bine-ca.wav-2e76bd3da61e0c4c70a814548dd27738.sample"
+
+[deps]
+
+source_file="res://assets/sounds/luigi/1.Capitane-stii-bine-ca.wav"
+dest_files=[ "res://.import/1.Capitane-stii-bine-ca.wav-2e76bd3da61e0c4c70a814548dd27738.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Francesca5.wav-df52b866646d2d878e39cb5d42385f0c.sample"
+
+[deps]
+
+source_file="res://assets/sounds/francesca/Francesca5.wav"
+dest_files=[ "res://.import/Francesca5.wav-df52b866646d2d878e39cb5d42385f0c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

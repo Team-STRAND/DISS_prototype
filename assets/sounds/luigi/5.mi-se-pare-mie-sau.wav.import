@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/5.mi-se-pare-mie-sau.wav-261cd7333d64d33743a2e184aacddd8b.sample"
+
+[deps]
+
+source_file="res://assets/sounds/luigi/5.mi-se-pare-mie-sau.wav"
+dest_files=[ "res://.import/5.mi-se-pare-mie-sau.wav-261cd7333d64d33743a2e184aacddd8b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

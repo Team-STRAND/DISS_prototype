@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Richard-9.wav-836e0d4914ec5630f63886dd5c949814.sample"
+
+[deps]
+
+source_file="res://assets/sounds/richard/Richard-9.wav"
+dest_files=[ "res://.import/Richard-9.wav-836e0d4914ec5630f63886dd5c949814.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
