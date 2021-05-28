@@ -9,7 +9,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("AnimationPlayerPirates").play("Move")
-	get_node("Voices").play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,3 +27,5 @@ func _on_AnimationPlayerGroot_animation_finished(anim_name):
 func _on_AnimationPlayerPirates_animation_finished(anim_name):
 	if(anim_name=="GoInsideCave"):
 		get_tree().change_scene("res://CaveInside.tscn")
+	elif(anim_name=="Move"):
+		get_node("Voices").play()

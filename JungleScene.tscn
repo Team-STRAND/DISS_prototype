@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/ship.png" type="Texture" id=1]
 [ext_resource path="res://assets/trees.jpeg" type="Texture" id=2]
@@ -13,41 +13,9 @@
 [ext_resource path="res://assets/sounds/wrong.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/sounds/ding.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/sounds/francesca/Francesca3.wav" type="AudioStream" id=13]
-[ext_resource path="res://assets/sounds/luigi/6.minunat-ai-putea-sa-repari.wav" type="AudioStream" id=14]
-[ext_resource path="res://assets/sounds/francesca/Francesca6.wav" type="AudioStream" id=15]
-[ext_resource path="res://assets/sounds/luigi/4.excelent-raspuns-se-vede-ca.wav" type="AudioStream" id=16]
 [ext_resource path="res://assets/sounds/richard/Richard-9.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/sounds/richard/Richard-8.wav" type="AudioStream" id=18]
-[ext_resource path="res://assets/sounds/richard/Richard-10.wav" type="AudioStream" id=19]
-[ext_resource path="res://assets/sounds/francesca/Francesca9.wav" type="AudioStream" id=20]
-[ext_resource path="res://assets/sounds/richard/Richard-13.wav" type="AudioStream" id=21]
-[ext_resource path="res://assets/sounds/francesca/Francesca8.wav" type="AudioStream" id=22]
-[ext_resource path="res://assets/sounds/luigi/3.Arrr-nu-sunt-de-aceeasi-parere.wav" type="AudioStream" id=23]
-[ext_resource path="res://assets/sounds/luigi/10.ura-multumim-pentru.wav" type="AudioStream" id=24]
-[ext_resource path="res://assets/sounds/richard/Richard-17.wav" type="AudioStream" id=25]
-[ext_resource path="res://assets/sounds/richard/Richard-16.wav" type="AudioStream" id=26]
-[ext_resource path="res://assets/sounds/luigi/1.Capitane-stii-bine-ca.wav" type="AudioStream" id=27]
-[ext_resource path="res://assets/sounds/francesca/Francesca5.wav" type="AudioStream" id=28]
-[ext_resource path="res://assets/sounds/richard/Richard-12.wav" type="AudioStream" id=29]
-[ext_resource path="res://assets/sounds/francesca/Francesca1.wav" type="AudioStream" id=30]
-[ext_resource path="res://assets/sounds/luigi/2.Un-papagal-vine.wav" type="AudioStream" id=31]
-[ext_resource path="res://assets/sounds/richard/Richard-6.wav" type="AudioStream" id=32]
-[ext_resource path="res://assets/sounds/francesca/Francesca4.wav" type="AudioStream" id=33]
-[ext_resource path="res://assets/sounds/luigi/8.sa-mergem-drumul-este.wav" type="AudioStream" id=34]
 [ext_resource path="res://assets/sounds/richard/Richard-7.wav" type="AudioStream" id=35]
-[ext_resource path="res://assets/sounds/richard/Richard-15.wav" type="AudioStream" id=36]
-[ext_resource path="res://assets/sounds/luigi/5.mi-se-pare-mie-sau.wav" type="AudioStream" id=37]
-[ext_resource path="res://assets/sounds/richard/Richard-14.wav" type="AudioStream" id=38]
-[ext_resource path="res://assets/sounds/richard/Richard-11.wav" type="AudioStream" id=39]
-[ext_resource path="res://assets/sounds/richard/Richard-2.wav" type="AudioStream" id=40]
-[ext_resource path="res://assets/sounds/richard/Richard-1.wav" type="AudioStream" id=41]
-[ext_resource path="res://assets/sounds/francesca/Francesca2.wav" type="AudioStream" id=42]
-[ext_resource path="res://assets/sounds/luigi/7.vai-ce-carare-lunga.wav" type="AudioStream" id=43]
-[ext_resource path="res://assets/sounds/luigi/9.acela-este-cumva.wav" type="AudioStream" id=44]
-[ext_resource path="res://assets/sounds/richard/Richard-3.wav" type="AudioStream" id=45]
-[ext_resource path="res://assets/sounds/francesca/Francesca7.wav" type="AudioStream" id=46]
-[ext_resource path="res://assets/sounds/richard/Richard-5.wav" type="AudioStream" id=47]
-[ext_resource path="res://assets/sounds/richard/Richard-4.wav" type="AudioStream" id=48]
 [ext_resource path="res://VoicesJungleScene.gd" type="Script" id=49]
 [ext_resource path="res://JungleScene.gd" type="Script" id=50]
 
@@ -160,30 +128,6 @@ script = ExtResource( 49 )
 
 [node name="Richard" type="Node2D" parent="Voices"]
 
-[node name="RichardVoice1" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 41 )
-volume_db = 14.913
-
-[node name="RichardVoice2" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 40 )
-volume_db = 8.0
-
-[node name="RichardVoice3" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 45 )
-volume_db = 8.0
-
-[node name="RichardVoice4" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 48 )
-volume_db = 8.0
-
-[node name="RichardVoice5" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 47 )
-volume_db = 8.0
-
-[node name="RichardVoice6" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 32 )
-volume_db = 8.0
-
 [node name="RichardVoice7" type="AudioStreamPlayer" parent="Voices/Richard"]
 stream = ExtResource( 35 )
 volume_db = 8.0
@@ -196,116 +140,10 @@ volume_db = 8.0
 stream = ExtResource( 17 )
 volume_db = 8.0
 
-[node name="RichardVoice10" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 19 )
-volume_db = 8.0
-
-[node name="RichardVoice11" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 39 )
-volume_db = 8.0
-
-[node name="RichardVoice12" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 29 )
-volume_db = 8.0
-
-[node name="RichardVoice13" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 21 )
-volume_db = 8.0
-
-[node name="RichardVoice14" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 38 )
-volume_db = 8.0
-
-[node name="RichardVoice15" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 36 )
-volume_db = 8.0
-
-[node name="RichardVoice16" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 26 )
-volume_db = 8.0
-
-[node name="RichardVoice17" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 25 )
-volume_db = 8.0
-
-[node name="Luigi" type="Node2D" parent="Voices"]
-
-[node name="LuigiVoice1" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 27 )
-volume_db = 5.0
-
-[node name="LuigiVoice2" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 31 )
-volume_db = 5.0
-
-[node name="LuigiVoice3" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 23 )
-volume_db = 5.0
-
-[node name="LuigiVoice4" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 16 )
-volume_db = 5.0
-
-[node name="LuigiVoice5" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 37 )
-volume_db = 5.0
-
-[node name="LuigiVoice6" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 14 )
-volume_db = 5.0
-
-[node name="LuigiVoice7" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 43 )
-volume_db = 5.0
-
-[node name="LuigiVoice8" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 34 )
-volume_db = 5.0
-
-[node name="LuigiVoice9" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 44 )
-volume_db = 5.0
-
-[node name="LuigiVoice10" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 24 )
-volume_db = 5.0
-
 [node name="Francesca" type="Node2D" parent="Voices"]
-
-[node name="FrancescaVoice1" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 30 )
-volume_db = -4.0
-
-[node name="FrancescaVoice2" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 42 )
-volume_db = -4.0
 
 [node name="FrancescaVoice3" type="AudioStreamPlayer" parent="Voices/Francesca"]
 stream = ExtResource( 13 )
-volume_db = -4.0
-
-[node name="FrancescaVoice4" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 33 )
-volume_db = -4.0
-
-[node name="FrancescaVoice5" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 28 )
-volume_db = -4.0
-
-[node name="FrancescaVoice6" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 15 )
-volume_db = -4.0
-
-[node name="FrancescaVoice7" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 46 )
-volume_db = -4.0
-
-[node name="FrancescaVoice8" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 22 )
-volume_db = -4.0
-
-[node name="FrancescaVoice9" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 20 )
 volume_db = -4.0
 [connection signal="pressed" from="YesButton" to="YesButton" method="_on_YesButton_pressed"]
 [connection signal="pressed" from="NoButton" to="NoButton" method="_on_NoButton_pressed"]
