@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/river.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/pirate_girl.png" type="Texture" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://AnimationPlayerPirateBlue.gd" type="Script" id=19]
 [ext_resource path="res://Pirate.gd" type="Script" id=20]
 [ext_resource path="res://assets/sounds/luigi/6.minunat-ai-putea-sa-repari.wav" type="AudioStream" id=21]
+[ext_resource path="res://assets/parrot.png" type="Texture" id=22]
+[ext_resource path="res://assets/check.png" type="Texture" id=23]
 [ext_resource path="res://assets/sounds/richard/Richard-10.wav" type="AudioStream" id=26]
 [ext_resource path="res://assets/sounds/francesca/Francesca4.wav" type="AudioStream" id=40]
 [ext_resource path="res://assets/sounds/luigi/5.mi-se-pare-mie-sau.wav" type="AudioStream" id=44]
@@ -158,6 +160,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Parrot" type="TextureButton" parent="."]
+margin_left = 113.514
+margin_top = 228.811
+margin_right = 607.514
+margin_bottom = 626.811
+rect_scale = Vector2( -0.239492, 0.253915 )
+texture_normal = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PirateRed" type="TextureButton" parent="."]
 margin_left = -313.593
 margin_top = -97.6952
@@ -259,6 +272,17 @@ rect_scale = Vector2( 0.482729, 0.515602 )
 rect_pivot_offset = Vector2( 72.515, 116.6 )
 texture_normal = ExtResource( 11 )
 script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightSymbol" type="TextureRect" parent="TextureButton3"]
+margin_left = 21.9641
+margin_top = 69.3888
+margin_right = 933.964
+margin_bottom = 646.389
+rect_scale = Vector2( 0.213152, 0.259892 )
+texture = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

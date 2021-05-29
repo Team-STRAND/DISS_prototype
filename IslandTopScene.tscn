@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/island.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/parrot.png" type="Texture" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://assets/sounds/ding.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/sounds/wrong.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/mixkit-wooden-ship-on-the-sea-1187.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/check.png" type="Texture" id=13]
+[ext_resource path="res://assets/sounds/luigi/4.excelent-raspuns-se-vede-ca.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sounds/luigi/3.Arrr-nu-sunt-de-aceeasi-parere.wav" type="AudioStream" id=23]
 [ext_resource path="res://assets/sounds/richard/Richard-6.wav" type="AudioStream" id=32]
 [ext_resource path="res://assets/sounds/richard/Richard-5.wav" type="AudioStream" id=47]
 [ext_resource path="res://VoicesIslandTopScene.gd" type="Script" id=49]
@@ -159,6 +162,18 @@ __meta__ = {
 [node name="DingSound" type="AudioStreamPlayer" parent="RightButton"]
 stream = ExtResource( 10 )
 
+[node name="RightSymbol" type="TextureRect" parent="RightButton"]
+margin_left = 328.156
+margin_top = 381.865
+margin_right = 1300.16
+margin_bottom = 958.865
+rect_rotation = 89.6664
+rect_scale = Vector2( -0.414519, 0.378629 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="WaveSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = -25.243
@@ -176,6 +191,14 @@ volume_db = 8.0
 [node name="RichardVoice6" type="AudioStreamPlayer" parent="Voices/Richard"]
 stream = ExtResource( 32 )
 volume_db = 8.0
+
+[node name="Luigi" type="Node2D" parent="Voices"]
+
+[node name="LuigiVoice4" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 16 )
+
+[node name="LuigiVoice3" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 23 )
 [connection signal="animation_finished" from="Ship/AnimationPlayerShip" to="Ship/AnimationPlayerShip" method="_on_AnimationPlayerShip_animation_finished"]
 [connection signal="animation_finished" from="Parrot/AnimationPlayerParrot" to="Parrot/AnimationPlayerParrot" method="_on_AnimationPlayerParrot_animation_finished"]
 [connection signal="pressed" from="LeftButton" to="LeftButton" method="_on_LeftButton_pressed"]

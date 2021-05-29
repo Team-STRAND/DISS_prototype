@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/ship.png" type="Texture" id=1]
 [ext_resource path="res://assets/trees.jpeg" type="Texture" id=2]
@@ -13,8 +13,12 @@
 [ext_resource path="res://assets/sounds/wrong.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/sounds/ding.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/sounds/francesca/Francesca3.wav" type="AudioStream" id=13]
+[ext_resource path="res://Pirate.gd" type="Script" id=14]
+[ext_resource path="res://assets/parrot.png" type="Texture" id=15]
+[ext_resource path="res://assets/sounds/luigi/4.excelent-raspuns-se-vede-ca.wav" type="AudioStream" id=16]
 [ext_resource path="res://assets/sounds/richard/Richard-9.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/sounds/richard/Richard-8.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/sounds/luigi/3.Arrr-nu-sunt-de-aceeasi-parere.wav" type="AudioStream" id=23]
 [ext_resource path="res://assets/sounds/richard/Richard-7.wav" type="AudioStream" id=35]
 [ext_resource path="res://VoicesJungleScene.gd" type="Script" id=49]
 [ext_resource path="res://JungleScene.gd" type="Script" id=50]
@@ -43,41 +47,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PirateRed" type="TextureRect" parent="."]
+[node name="Parrot" type="TextureButton" parent="."]
+margin_left = 423.897
+margin_top = 224.054
+margin_right = 917.897
+margin_bottom = 622.054
+rect_scale = Vector2( -0.239492, 0.253915 )
+texture_normal = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateRed" type="TextureButton" parent="."]
 margin_left = 371.728
 margin_top = -98.2724
 margin_right = 1157.73
 margin_bottom = 931.728
 rect_scale = Vector2( 0.18884, 0.168363 )
 rect_pivot_offset = Vector2( 373.811, 517.926 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 3 )
+script = ExtResource( 14 )
 
-[node name="PirateBlue" type="TextureRect" parent="."]
+[node name="PirateBlue" type="TextureButton" parent="."]
 margin_left = 426.964
 margin_top = -199.179
 margin_right = 1383.96
 margin_bottom = 860.821
 rect_scale = Vector2( 0.17864, 0.171665 )
 rect_pivot_offset = Vector2( 483.133, 617.374 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 5 )
+script = ExtResource( 14 )
 
-[node name="PirateGirl" type="TextureRect" parent="."]
+[node name="PirateGirl" type="TextureButton" parent="."]
 margin_left = 144.0
 margin_top = -74.0
 margin_right = 1101.0
 margin_bottom = 986.0
 rect_scale = Vector2( 0.198835, 0.20453 )
 rect_pivot_offset = Vector2( 477.248, 561.536 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 4 )
+script = ExtResource( 14 )
 
 [node name="YesButton" type="TextureButton" parent="."]
 margin_left = 448.877
@@ -145,5 +154,13 @@ volume_db = 8.0
 [node name="FrancescaVoice3" type="AudioStreamPlayer" parent="Voices/Francesca"]
 stream = ExtResource( 13 )
 volume_db = -4.0
+
+[node name="Luigi" type="Node2D" parent="Voices"]
+
+[node name="LuigiVoice4" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 16 )
+
+[node name="LuigiVoice3" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 23 )
 [connection signal="pressed" from="YesButton" to="YesButton" method="_on_YesButton_pressed"]
 [connection signal="pressed" from="NoButton" to="NoButton" method="_on_NoButton_pressed"]

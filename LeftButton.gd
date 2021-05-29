@@ -8,3 +8,4 @@ func _ready():
 func _on_LeftButton_pressed():
 	get_child(0).visible=true
 	get_node("WrongSound").play()
+	Score.island_top_score-=5

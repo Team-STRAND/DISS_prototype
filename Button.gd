@@ -15,3 +15,4 @@ func _on_Button_pressed():
 	owner.add_point()
 	disabled=true
 	get_parent().get_parent().get_parent().get_parent().get_parent().get_node("DingSound").play()
+	Score.boat_score+=10
