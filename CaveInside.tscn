@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/pirate_girl.png" type="Texture" id=1]
 [ext_resource path="res://assets/fish_orange.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://assets/cave_inside.jpeg" type="Texture" id=8]
 [ext_resource path="res://CaveInside.gd" type="Script" id=9]
 [ext_resource path="res://assets/sounds/francesca/Francesca8.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/sounds/richard/Richard-16.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/sounds/luigi/9.acela-este-cumva.wav" type="AudioStream" id=41]
 [ext_resource path="res://VoicesInsideCave.gd" type="Script" id=46]
 
 [sub_resource type="Animation" id=1]
@@ -236,6 +238,18 @@ script = ExtResource( 46 )
 [node name="FrancescaVoice8" type="AudioStreamPlayer" parent="Voices/Francesca"]
 stream = ExtResource( 19 )
 volume_db = -4.0
+
+[node name="Luigi" type="Node2D" parent="Voices"]
+
+[node name="LuigiVoice9" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 41 )
+volume_db = 5.0
+
+[node name="Richard" type="Node2D" parent="Voices"]
+
+[node name="RichardVoice16" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 23 )
+volume_db = 8.0
 [connection signal="animation_finished" from="AnimationPlayerPirates" to="." method="_on_AnimationPlayerPirates_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayerFish" to="." method="_on_AnimationPlayerFish_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayerShip" to="." method="_on_AnimationPlayerShip_animation_finished"]

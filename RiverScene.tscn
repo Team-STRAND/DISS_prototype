@@ -194,6 +194,9 @@ rect_scale = Vector2( 0.146446, 0.149545 )
 rect_pivot_offset = Vector2( 477.248, 561.536 )
 texture_normal = ExtResource( 2 )
 script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayerPirateGirl" type="AnimationPlayer" parent="PirateGirl"]
 anims/Move = SubResource( 4 )

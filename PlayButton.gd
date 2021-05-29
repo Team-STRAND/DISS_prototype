@@ -1,14 +1,9 @@
 extends Button
 
+onready var parent=get_parent()
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	get_parent().get_node("WaveSound").connect("finished",get_parent().get_node("WaveSound"),"play")
+	parent.get_node("WaveSound").connect("finished",parent.get_node("WaveSound"),"play")
 	pass # Replace with function body.
 
 
@@ -19,16 +14,16 @@ func _ready():
 
 func _on_PlayButton_pressed():
 	get_node("TextureRect/AnimationPlayer").play("FadeButton");
-	get_parent().get_node("Title/AnimationPlayer").play("TitleFade")
+	parent.get_node("Title/AnimationPlayer").play("TitleFade")
+	Score.child_name=parent.get_node("TextEdit").text
+	parent.get_node("TextEdit").visible=false
 	
-
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	get_parent().get_node("TitleMusic").stop()
 	
-	get_parent().get_node("WaveSound").play()
-	get_parent().get_node("Path2D/PathFollow2D/Ship").start()
+	parent.get_node("WaveSound").play()
+	parent.get_node("Path2D/PathFollow2D/Ship").start()
 
-	get_parent().get_node("Voices").play()
+	parent.get_node("Voices").play()
 
-	get_parent().remove_child(self)
+	parent.remove_child(self)

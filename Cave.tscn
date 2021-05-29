@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/cave.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/pirate_girl.png" type="Texture" id=2]
@@ -7,6 +7,21 @@
 [ext_resource path="res://assets/groot.png" type="Texture" id=5]
 [ext_resource path="res://Cave.gd" type="Script" id=6]
 [ext_resource path="res://Pirate.gd" type="Script" id=7]
+[ext_resource path="res://assets/sounds/cave_guard/3-neg.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/cave_guard/2-neg.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/cave_guard/1-neg.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/cave_guard/2-poz.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/cave_guard/1-poz.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/cave_guard/7-pazitor.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/cave_guard/6-pazitor.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/cave_guard/4-pazitor.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/cave_guard/2-pazitor.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sounds/cave_guard/1-pazitor.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/sounds/cave_guard/3-poz.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/sounds/cave_guard/5-pazitor.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/sounds/cave_guard/3-pazitor.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/x.png" type="Texture" id=21]
+[ext_resource path="res://assets/check.png" type="Texture" id=22]
 [ext_resource path="res://assets/sounds/richard/Richard-15.wav" type="AudioStream" id=30]
 [ext_resource path="res://assets/sounds/richard/Richard-14.wav" type="AudioStream" id=32]
 [ext_resource path="res://VoicesCave.gd" type="Script" id=43]
@@ -118,17 +133,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Groot" type="TextureRect" parent="."]
+[node name="Groot" type="TextureButton" parent="."]
 margin_left = 94.5641
 margin_top = -137.327
 margin_right = 574.564
 margin_bottom = 854.673
 rect_scale = Vector2( -0.366268, 0.334956 )
 rect_pivot_offset = Vector2( 245.315, 573.331 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 5 )
+script = ExtResource( 7 )
 
 [node name="AnimationPlayerGroot" type="AnimationPlayer" parent="Groot"]
 anims/GrootMove = SubResource( 1 )
@@ -146,6 +159,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="RightSymbol" type="TextureRect" parent="PirateRed"]
+margin_left = 340.267
+margin_top = 449.001
+margin_right = 1252.27
+margin_bottom = 1026.0
+rect_scale = Vector2( 0.398907, 0.637255 )
+texture = ExtResource( 22 )
+
+[node name="WrongSymbol" type="TextureRect" parent="PirateRed"]
+margin_left = 186.813
+margin_top = 209.534
+margin_right = 846.813
+margin_bottom = 899.534
+rect_scale = Vector2( 0.570561, 0.64806 )
+texture = ExtResource( 21 )
+
 [node name="PirateBlue" type="TextureButton" parent="."]
 margin_left = 419.837
 margin_top = -117.216
@@ -158,6 +187,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="RightSymbol" type="TextureRect" parent="PirateBlue"]
+margin_left = 404.225
+margin_top = 535.446
+margin_right = 1316.23
+margin_bottom = 1112.45
+rect_scale = Vector2( 0.398907, 0.637255 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongSymbol" type="TextureRect" parent="PirateBlue"]
+margin_left = 294.53
+margin_top = 331.003
+margin_right = 954.53
+margin_bottom = 1021.0
+rect_scale = Vector2( 0.570561, 0.64806 )
+texture = ExtResource( 21 )
+
 [node name="PirateGirl" type="TextureButton" parent="."]
 margin_left = 144.891
 margin_top = -39.255
@@ -169,6 +217,25 @@ texture_normal = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RightSymbol" type="TextureRect" parent="PirateGirl"]
+margin_left = 361.328
+margin_top = 426.561
+margin_right = 1273.33
+margin_bottom = 1003.56
+rect_scale = Vector2( 0.538078, 0.773448 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongSymbol" type="TextureRect" parent="PirateGirl"]
+margin_left = 184.563
+margin_top = 61.355
+margin_right = 844.563
+margin_bottom = 751.355
+rect_scale = Vector2( 0.71355, 0.747934 )
+texture = ExtResource( 21 )
 
 [node name="AnimationPlayerPirates" type="AnimationPlayer" parent="."]
 anims/GoInsideCave = SubResource( 2 )
@@ -186,6 +253,62 @@ volume_db = 8.0
 [node name="RichardVoice15" type="AudioStreamPlayer" parent="Voices/Richard"]
 stream = ExtResource( 30 )
 volume_db = 8.0
+
+[node name="CaveGuard" type="Node2D" parent="Voices"]
+
+[node name="GuardVoice1" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 17 )
+volume_db = 5.0
+
+[node name="GuardVoice2" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 16 )
+volume_db = 5.0
+
+[node name="GuardVoice3" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 20 )
+volume_db = 5.0
+
+[node name="GuardVoice4" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 15 )
+volume_db = 5.0
+
+[node name="GuardVoice5" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 19 )
+volume_db = 5.0
+
+[node name="GuardVoice6" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 14 )
+volume_db = 5.0
+
+[node name="GuardVoice7" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 13 )
+volume_db = 5.0
+
+[node name="GuardPoz1" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 12 )
+volume_db = 5.0
+
+[node name="GuardPoz2" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 11 )
+volume_db = 5.0
+
+[node name="GuardPoz3" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 18 )
+volume_db = 5.0
+
+[node name="GuardNeg1" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 10 )
+volume_db = 5.0
+
+[node name="GuardNeg2" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 9 )
+volume_db = 5.0
+
+[node name="GuardNeg3" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
+stream = ExtResource( 8 )
+volume_db = 5.0
 [connection signal="animation_finished" from="Groot/AnimationPlayerGroot" to="." method="_on_AnimationPlayerGroot_animation_finished"]
+[connection signal="pressed" from="PirateRed" to="." method="_on_PirateRed_pressed"]
 [connection signal="pressed" from="PirateBlue" to="." method="_on_PirateBlue_pressed"]
+[connection signal="pressed" from="PirateGirl" to="." method="_on_PirateGirl_pressed"]
 [connection signal="animation_finished" from="AnimationPlayerPirates" to="." method="_on_AnimationPlayerPirates_animation_finished"]

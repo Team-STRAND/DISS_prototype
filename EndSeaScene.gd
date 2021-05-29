@@ -6,7 +6,7 @@ func _ready():
 	get_node("AnimationPlayer").play("ShipSailing")
 	get_node("WaveSound").play()
 	get_node("Voices").play()
-
+	Score.write_to_file()
 
 
 
