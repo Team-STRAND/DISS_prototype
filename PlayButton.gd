@@ -16,7 +16,7 @@ func _on_PlayButton_pressed():
 	get_node("TextureRect/AnimationPlayer").play("FadeButton");
 	parent.get_node("Title/AnimationPlayer").play("TitleFade")
 	Score.child_name=parent.get_node("TextEdit").text
-	parent.get_node("TextEdit").visible=false
+	Score.write_to_file()
 	
 
 func _on_AnimationPlayer_animation_finished(anim_name):

@@ -1,20 +1,35 @@
 extends Node2D
 
+onready var ding_sound=get_node("DingSound")
+onready var wrong_sound=get_node("WrongSound")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	ding_sound.connect("finished",self,"next_scene")
 
+	get_node("ButtonAutumn/RightSymbol").visible=false
+	get_node("ButtonSpring/WrongSymbol").visible=false
+	get_node("ButtonSummer/WrongSymbol").visible=false
+	get_node("ButtonWinter/WrongSymbol").visible=false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_TextureButton_pressed():
+func next_scene():
 	get_tree().change_scene("res://Map.tscn")
+
+func _on_ButtonAutumn_pressed():
+	get_node("ButtonAutumn/RightSymbol").visible=true
+	ding_sound.play()
+	Score.season_score+=10
+
+func _on_ButtonSpring_pressed():
+	get_node("ButtonSpring/WrongSymbol").visible=true
+	wrong_sound.play()
+	Score.season_score-=2
+
+func _on_ButtonSummer_pressed():
+	get_node("ButtonSummer/WrongSymbol").visible=true
+	wrong_sound.play()
+	Score.season_score-=2
+
+func _on_ButtonWinter_pressed():
+	get_node("ButtonWinter/WrongSymbol").visible=true
+	wrong_sound.play()
+	Score.season_score-=2

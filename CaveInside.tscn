@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/pirate_girl.png" type="Texture" id=1]
 [ext_resource path="res://assets/fish_orange.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/black_ship.png" type="Texture" id=7]
 [ext_resource path="res://assets/cave_inside.jpeg" type="Texture" id=8]
 [ext_resource path="res://CaveInside.gd" type="Script" id=9]
+[ext_resource path="res://assets/parrot.png" type="Texture" id=10]
+[ext_resource path="res://Pirate.gd" type="Script" id=11]
 [ext_resource path="res://assets/sounds/francesca/Francesca8.wav" type="AudioStream" id=19]
 [ext_resource path="res://assets/sounds/richard/Richard-16.wav" type="AudioStream" id=23]
 [ext_resource path="res://assets/sounds/luigi/9.acela-este-cumva.wav" type="AudioStream" id=41]
@@ -52,6 +54,18 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -746.958, -28.3687 ), Vector2( -272.999, -69.35 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Parrot:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -208.927, 242.953 ), Vector2( 295.948, 234.468 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -173,38 +187,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PirateRed" type="TextureRect" parent="."]
+[node name="PirateRed" type="TextureButton" parent="."]
 margin_left = -783.776
 margin_top = -43.4996
 margin_right = 2.22632
 margin_bottom = 986.501
 rect_scale = Vector2( 0.18884, 0.168363 )
 rect_pivot_offset = Vector2( 373.811, 517.926 )
-texture = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 6 )
+script = ExtResource( 11 )
 
-[node name="PirateBlue" type="TextureRect" parent="."]
+[node name="PirateBlue" type="TextureButton" parent="."]
 margin_left = -602.007
 margin_top = -100.485
 margin_right = 354.993
 margin_bottom = 959.515
 rect_scale = Vector2( 0.17864, 0.171665 )
 rect_pivot_offset = Vector2( 483.133, 617.374 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 5 )
+script = ExtResource( 11 )
 
-[node name="PirateGirl" type="TextureRect" parent="."]
+[node name="PirateGirl" type="TextureButton" parent="."]
 margin_left = -746.958
 margin_top = -28.3687
 margin_right = 210.042
 margin_bottom = 1031.63
 rect_scale = Vector2( 0.146446, 0.149545 )
 rect_pivot_offset = Vector2( 477.248, 561.536 )
-texture = ExtResource( 1 )
+texture_normal = ExtResource( 1 )
+script = ExtResource( 11 )
+
+[node name="Parrot" type="TextureButton" parent="."]
+margin_left = -208.927
+margin_top = 242.953
+margin_right = 285.073
+margin_bottom = 640.953
+rect_scale = Vector2( -0.239492, 0.253915 )
+texture_normal = ExtResource( 10 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

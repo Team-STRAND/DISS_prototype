@@ -1,0 +1,133 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/boat_begin.jpeg" type="Texture" id=1]
+[ext_resource path="res://Pirate.gd" type="Script" id=2]
+[ext_resource path="res://assets/pirate_girl.png" type="Texture" id=3]
+[ext_resource path="res://assets/pirate_red.png" type="Texture" id=4]
+[ext_resource path="res://assets/pirate_blue.png" type="Texture" id=5]
+[ext_resource path="res://assets/parrot.png" type="Texture" id=6]
+[ext_resource path="res://BoatBegin.gd" type="Script" id=7]
+[ext_resource path="res://assets/sounds/richard/Richard-3.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/richard/Richard-2.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/richard/Richard-1.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/luigi/2.Un-papagal-vine.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/francesca/Francesca2.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/richard/Richard-4.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/luigi/1.Capitane-stii-bine-ca.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/francesca/Francesca1.wav" type="AudioStream" id=15]
+[ext_resource path="res://Voices.gd" type="Script" id=16]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fly"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Parrot:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1052.48, 62.4195 ), Vector2( 453.081, 101.706 ) ]
+}
+
+[node name="BoatBegin" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.65649, 0.654384 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parrot" type="TextureButton" parent="."]
+margin_left = 1052.48
+margin_top = 62.4195
+margin_right = 1546.48
+margin_bottom = 460.419
+rect_scale = Vector2( 0.288558, 0.298968 )
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateRed" type="TextureButton" parent="."]
+margin_left = -257.973
+margin_top = -96.0275
+margin_right = 528.029
+margin_bottom = 933.973
+rect_scale = Vector2( 0.297511, 0.271263 )
+rect_pivot_offset = Vector2( 373.811, 517.926 )
+texture_normal = ExtResource( 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateBlue" type="TextureButton" parent="."]
+margin_left = 265.329
+margin_top = -159.893
+margin_right = 1222.33
+margin_bottom = 900.107
+rect_scale = Vector2( 0.354107, 0.34281 )
+rect_pivot_offset = Vector2( 483.133, 617.374 )
+texture_normal = ExtResource( 5 )
+script = ExtResource( 2 )
+
+[node name="PirateGirl" type="TextureButton" parent="."]
+margin_left = -68.1452
+margin_top = -103.184
+margin_right = 888.855
+margin_bottom = 956.816
+rect_scale = Vector2( 0.285359, 0.278058 )
+rect_pivot_offset = Vector2( 477.248, 561.536 )
+texture_normal = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="AnimationPlayerParrot" type="AnimationPlayer" parent="."]
+anims/Fly = SubResource( 1 )
+
+[node name="Voices" type="Node2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="Richard" type="Node2D" parent="Voices"]
+
+[node name="RichardVoice1" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 10 )
+volume_db = 10.0
+
+[node name="RichardVoice2" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 9 )
+volume_db = 8.0
+
+[node name="RichardVoice3" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 8 )
+volume_db = 8.0
+
+[node name="RichardVoice4" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 13 )
+volume_db = 8.0
+
+[node name="Luigi" type="Node2D" parent="Voices"]
+
+[node name="LuigiVoice1" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 14 )
+volume_db = 5.0
+
+[node name="LuigiVoice2" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 11 )
+volume_db = 5.0
+
+[node name="Francesca" type="Node2D" parent="Voices"]
+
+[node name="FrancescaVoice1" type="AudioStreamPlayer" parent="Voices/Francesca"]
+stream = ExtResource( 15 )
+volume_db = -4.0
+
+[node name="FrancescaVoice2" type="AudioStreamPlayer" parent="Voices/Francesca"]
+stream = ExtResource( 12 )
+volume_db = -4.0

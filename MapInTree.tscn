@@ -1,24 +1,13 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/woods.jpeg" type="Texture" id=1]
-[ext_resource path="res://assets/dog.png" type="Texture" id=2]
-[ext_resource path="res://assets/lion.png" type="Texture" id=3]
-[ext_resource path="res://assets/pirate_girl.png" type="Texture" id=4]
-[ext_resource path="res://assets/pirate_blue.png" type="Texture" id=5]
-[ext_resource path="res://assets/giraffe.png" type="Texture" id=6]
-[ext_resource path="res://assets/cat.png" type="Texture" id=7]
-[ext_resource path="res://assets/pirate_red.png" type="Texture" id=8]
-[ext_resource path="res://WoodsScene.gd" type="Script" id=9]
-[ext_resource path="res://Question.gd" type="Script" id=10]
-[ext_resource path="res://assets/question.png" type="Texture" id=11]
-[ext_resource path="res://assets/sounds/francesca/Francesca6.wav" type="AudioStream" id=12]
-[ext_resource path="res://assets/parrot.png" type="Texture" id=13]
-[ext_resource path="res://Pirate.gd" type="Script" id=14]
-[ext_resource path="res://assets/sounds/francesca/Francesca5.wav" type="AudioStream" id=25]
-[ext_resource path="res://assets/sounds/richard/Richard-12.wav" type="AudioStream" id=26]
-[ext_resource path="res://assets/sounds/richard/Richard-11.wav" type="AudioStream" id=36]
-[ext_resource path="res://assets/sounds/luigi/7.vai-ce-carare-lunga.wav" type="AudioStream" id=40]
-[ext_resource path="res://VoicesWoodsScene.gd" type="Script" id=46]
+[ext_resource path="res://assets/map_in_tree.jpeg" type="Texture" id=1]
+[ext_resource path="res://assets/pirate_girl.png" type="Texture" id=2]
+[ext_resource path="res://assets/pirate_red.png" type="Texture" id=3]
+[ext_resource path="res://assets/pirate_blue.png" type="Texture" id=4]
+[ext_resource path="res://MapInTree.gd" type="Script" id=5]
+[ext_resource path="res://assets/parrot.png" type="Texture" id=6]
+[ext_resource path="res://VoicesMapInTree.gd" type="Script" id=7]
+[ext_resource path="res://assets/sounds/richard/Richard-12.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Move"
@@ -172,13 +161,29 @@ tracks/7/keys = {
 "values": [ Vector2( -0.239492, 0.253915 ), Vector2( -0.0969708, 0.110963 ) ]
 }
 
-[node name="WoodsScene" type="Node2D"]
-script = ExtResource( 9 )
+[sub_resource type="Animation" id=3]
+resource_name = "MoveToMap"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Parrot:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 275.808, 259.203 ), Vector2( 709.972, 59.7993 ) ]
+}
+
+[node name="MapInTree" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Background" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_scale = Vector2( 0.422258, 0.418418 )
+margin_right = 2496.0
+margin_bottom = 1451.0
+rect_scale = Vector2( 0.411453, 0.416472 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -191,11 +196,7 @@ margin_right = 477.166
 margin_bottom = 1017.93
 rect_scale = Vector2( 0.18884, 0.168363 )
 rect_pivot_offset = Vector2( 373.811, 517.926 )
-texture_normal = ExtResource( 8 )
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 3 )
 
 [node name="PirateBlue" type="TextureButton" parent="."]
 margin_left = -189.401
@@ -204,8 +205,7 @@ margin_right = 767.599
 margin_bottom = 961.952
 rect_scale = Vector2( 0.17864, 0.171665 )
 rect_pivot_offset = Vector2( 483.133, 617.374 )
-texture_normal = ExtResource( 5 )
-script = ExtResource( 14 )
+texture_normal = ExtResource( 4 )
 
 [node name="PirateGirl" type="TextureButton" parent="."]
 margin_left = -297.353
@@ -214,8 +214,7 @@ margin_right = 659.647
 margin_bottom = 1014.04
 rect_scale = Vector2( 0.146446, 0.149545 )
 rect_pivot_offset = Vector2( 477.248, 561.536 )
-texture_normal = ExtResource( 4 )
-script = ExtResource( 14 )
+texture_normal = ExtResource( 2 )
 
 [node name="Parrot" type="TextureButton" parent="."]
 margin_left = 275.808
@@ -223,67 +222,7 @@ margin_top = 259.203
 margin_right = 769.808
 margin_bottom = 657.204
 rect_scale = Vector2( -0.239492, 0.253915 )
-texture_normal = ExtResource( 13 )
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Dog" type="TextureButton" parent="."]
-margin_left = 166.31
-margin_top = 239.385
-margin_right = 766.31
-margin_bottom = 839.385
-rect_scale = Vector2( 0.164103, 0.14864 )
-rect_pivot_offset = Vector2( 314.184, 309.432 )
-texture_normal = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Giraffe" type="TextureButton" parent="."]
-margin_left = 293.562
-margin_top = 154.97
-margin_right = 893.562
-margin_bottom = 754.97
-rect_scale = Vector2( 0.358079, 0.47807 )
-rect_pivot_offset = Vector2( 296.545, 291.793 )
 texture_normal = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Cat" type="TextureButton" parent="."]
-margin_left = -561.94
-margin_top = -773.064
-margin_right = 1938.06
-margin_bottom = 1726.94
-rect_scale = Vector2( 0.0422575, 0.0393574 )
-rect_pivot_offset = Vector2( 1252.41, 1327.51 )
-texture_normal = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Lion" type="TextureButton" parent="."]
-margin_left = 766.504
-margin_top = 431.335
-margin_right = 1856.5
-margin_bottom = 1521.34
-rect_scale = Vector2( 0.152163, 0.1421 )
-texture_normal = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Question" type="TextureButton" parent="."]
-margin_left = 923.786
-margin_top = 1.52588e-05
-margin_right = 1075.79
-margin_bottom = 145.0
-rect_scale = Vector2( 0.648164, 0.63789 )
-texture_normal = ExtResource( 11 )
-script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -292,34 +231,16 @@ __meta__ = {
 anims/Move = SubResource( 1 )
 anims/Move2 = SubResource( 2 )
 
+[node name="AnimationPlayerParrot" type="AnimationPlayer" parent="."]
+anims/MoveToMap = SubResource( 3 )
+
 [node name="Voices" type="Node2D" parent="."]
-script = ExtResource( 46 )
+script = ExtResource( 7 )
 
 [node name="Richard" type="Node2D" parent="Voices"]
 
-[node name="RichardVoice11" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 36 )
-volume_db = 8.0
-
 [node name="RichardVoice12" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 26 )
+stream = ExtResource( 8 )
 volume_db = 8.0
-
-[node name="Luigi" type="Node2D" parent="Voices"]
-
-[node name="LuigiVoice7" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 40 )
-volume_db = 5.0
-
-[node name="Francesca" type="Node2D" parent="Voices"]
-
-[node name="FrancescaVoice5" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 25 )
-volume_db = -4.0
-
-[node name="FrancescaVoice6" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 12 )
-volume_db = -4.0
-[connection signal="pressed" from="Giraffe" to="." method="_on_Giraffe_pressed"]
-[connection signal="pressed" from="Question" to="Question" method="_on_Question_pressed"]
 [connection signal="animation_finished" from="AnimationPlayerCharacterMoving" to="." method="_on_AnimationPlayerCharacterMoving_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayerParrot" to="." method="_on_AnimationPlayerParrot_animation_finished"]

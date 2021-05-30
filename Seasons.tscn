@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/seasons.jpeg" type="Texture" id=1]
 [ext_resource path="res://Seasons.gd" type="Script" id=2]
+[ext_resource path="res://assets/x.png" type="Texture" id=3]
+[ext_resource path="res://assets/sounds/wrong.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/ding.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/check.png" type="Texture" id=6]
+[ext_resource path="res://Question.gd" type="Script" id=7]
+[ext_resource path="res://assets/question.png" type="Texture" id=8]
 
 [sub_resource type="ImageTexture" id=1]
 
@@ -17,7 +23,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="ButtonAutumn" type="TextureButton" parent="."]
 margin_left = 625.083
 margin_top = 242.617
 margin_right = 665.083
@@ -28,4 +34,100 @@ texture_normal = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+
+[node name="RightSymbol" type="TextureRect" parent="ButtonAutumn"]
+margin_left = -2.04797
+margin_top = 6.42075
+margin_right = 909.954
+margin_bottom = 583.421
+rect_scale = Vector2( 0.0406954, 0.0261858 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSpring" type="TextureButton" parent="."]
+margin_left = 36.8654
+margin_top = 49.9467
+margin_right = 76.8654
+margin_bottom = 89.9467
+rect_scale = Vector2( 5.25219, 11.7244 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongSymbol" type="TextureRect" parent="ButtonSpring"]
+margin_left = -3.11974
+margin_top = 2.19313
+margin_right = 656.88
+margin_bottom = 692.193
+rect_scale = Vector2( 0.0632269, 0.0225793 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSummer" type="TextureButton" parent="."]
+margin_left = 267.572
+margin_top = 32.1086
+margin_right = 307.572
+margin_bottom = 72.1086
+rect_scale = Vector2( 5.77675, 10.9635 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongSymbol" type="TextureRect" parent="ButtonSummer"]
+margin_left = 0.663177
+margin_top = 2.4538
+margin_right = 660.663
+margin_bottom = 692.454
+rect_scale = Vector2( 0.0556075, 0.0248983 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonWinter" type="TextureButton" parent="."]
+margin_left = 777.741
+margin_top = 109.407
+margin_right = 817.741
+margin_bottom = 149.407
+rect_scale = Vector2( 5.38671, 11.8849 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongSymbol" type="TextureRect" parent="ButtonWinter"]
+margin_left = -0.392578
+margin_top = 2.16348
+margin_right = 659.607
+margin_bottom = 692.163
+rect_scale = Vector2( 0.058515, 0.0227435 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="DingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Question" type="TextureButton" parent="."]
+margin_left = 923.786
+margin_top = 1.52588e-05
+margin_right = 1075.79
+margin_bottom = 145.0
+rect_scale = Vector2( 0.648164, 0.63789 )
+texture_normal = ExtResource( 8 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ButtonAutumn" to="." method="_on_ButtonAutumn_pressed"]
+[connection signal="pressed" from="ButtonSpring" to="." method="_on_ButtonSpring_pressed"]
+[connection signal="pressed" from="ButtonSummer" to="." method="_on_ButtonSummer_pressed"]
+[connection signal="pressed" from="ButtonWinter" to="." method="_on_ButtonWinter_pressed"]
+[connection signal="pressed" from="Question" to="Question" method="_on_Question_pressed"]
