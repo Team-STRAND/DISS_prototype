@@ -8,4 +8,5 @@ func _on_RightButton_pressed():
 	get_parent().get_node("Parrot/AnimationPlayerParrot").play("FlyingParrot")
 	get_node("DingSound").play()
 	get_node("RightSymbol").visible=true
+	get_parent().get_node("LeftButton").disabled=true
 	Score.island_top_score+=10

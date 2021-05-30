@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://assets/Drawing-6.sketchpad.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/play.png" type="Texture" id=2]
@@ -8,17 +8,35 @@
 [ext_resource path="res://assets/mixkit-wooden-ship-on-the-sea-1187.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/ship.png" type="Texture" id=7]
 [ext_resource path="res://Ship.gd" type="Script" id=8]
-[ext_resource path="res://Voices.gd" type="Script" id=9]
-[ext_resource path="res://assets/sounds/richard/Richard-2.wav" type="AudioStream" id=10]
-[ext_resource path="res://assets/sounds/richard/Richard-1.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/symbols/4.png" type="Texture" id=9]
+[ext_resource path="res://assets/scroll_symbols.png" type="Texture" id=10]
+[ext_resource path="res://assets/symbols/19.png" type="Texture" id=11]
 [ext_resource path="res://StartScreen.gd" type="Script" id=12]
 [ext_resource path="res://assets/name_scroll.png" type="Texture" id=13]
-[ext_resource path="res://assets/sounds/luigi/1.Capitane-stii-bine-ca.wav" type="AudioStream" id=18]
-[ext_resource path="res://assets/sounds/richard/Richard-3.wav" type="AudioStream" id=25]
-[ext_resource path="res://assets/sounds/richard/Richard-4.wav" type="AudioStream" id=27]
-[ext_resource path="res://assets/sounds/francesca/Francesca1.wav" type="AudioStream" id=28]
-[ext_resource path="res://assets/sounds/luigi/2.Un-papagal-vine.wav" type="AudioStream" id=33]
-[ext_resource path="res://assets/sounds/francesca/Francesca2.wav" type="AudioStream" id=44]
+[ext_resource path="res://assets/symbols/13.png" type="Texture" id=14]
+[ext_resource path="res://assets/symbols/3.png" type="Texture" id=15]
+[ext_resource path="res://assets/symbols/5.png" type="Texture" id=16]
+[ext_resource path="res://assets/symbols/12.png" type="Texture" id=17]
+[ext_resource path="res://assets/symbols/17.png" type="Texture" id=18]
+[ext_resource path="res://assets/symbols/1.png" type="Texture" id=19]
+[ext_resource path="res://assets/symbols/6.png" type="Texture" id=20]
+[ext_resource path="res://assets/symbols/24.png" type="Texture" id=21]
+[ext_resource path="res://assets/symbols/2.png" type="Texture" id=22]
+[ext_resource path="res://assets/symbols/9.png" type="Texture" id=23]
+[ext_resource path="res://assets/symbols/20.png" type="Texture" id=24]
+[ext_resource path="res://assets/symbols/22.png" type="Texture" id=25]
+[ext_resource path="res://assets/symbols/16.png" type="Texture" id=26]
+[ext_resource path="res://assets/symbols/8.png" type="Texture" id=27]
+[ext_resource path="res://assets/symbols/21.png" type="Texture" id=28]
+[ext_resource path="res://assets/symbols/23.png" type="Texture" id=29]
+[ext_resource path="res://assets/symbols/7.png" type="Texture" id=30]
+[ext_resource path="res://assets/symbols/14.png" type="Texture" id=31]
+[ext_resource path="res://assets/symbols/15.png" type="Texture" id=32]
+[ext_resource path="res://assets/symbols/18.png" type="Texture" id=33]
+[ext_resource path="res://assets/symbols/10.png" type="Texture" id=34]
+[ext_resource path="res://assets/symbols/25.png" type="Texture" id=35]
+[ext_resource path="res://assets/symbols/11.png" type="Texture" id=36]
+[ext_resource path="res://SymbolButton.gd" type="Script" id=37]
 
 [sub_resource type="DynamicFont" id=4]
 size = 57
@@ -64,6 +82,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 277, 222 ), Vector2( 274.172, -173.98 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("../ScrollSymbols:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 104.321, 689.575 ), Vector2( 118.839, 21.2434 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.5
@@ -78,12 +108,27 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1e-05, 1e-05 ) ]
+"values": [ Vector2( 0.460672, 0.511248 ), Vector2( 1e-05, 1e-05 ) ]
 }
 
 [sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -154.322, 446.917, 0, 0, 0, 0, 19.2077, 486.962, 0, 0, 0, 0, 136.674, 486.962, 0, 0, 0, 0, 214.094, 446.917, 0, 0, 0, 0, 299.873, 437.309, 0, 0, 0, 0, 361.304, 434.312, 0, 0, 0, 0, 423.664, 454.926, 0, 0, 0, 0, 507.759, 523.003, 0, 0, 0, 0, 617.514, 536.197, 0, 0, 0, 0, 719.399, 512.224, 0, 0, 0, 0, 809.433, 486.962, 0, 0, 0, 0, 905.541, 432.234, 0, 0, 0, 0, 988.301, 408.207, 0, 0, 0, 0, 1049.7, 410.876, 0, 0, 0, 0, 1097.76, 417.55, 0, 0, 0, 0, 1168.5, 433.568, 0, 0, 0, 0, 1236.58, 458.93, 0, 0, 0, 0, 1296.65, 477.618 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "SymbolScrollRemove"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 118.839, 21.2434 ), Vector2( 125.975, 694.335 ) ]
 }
 
 [node name="Node2D" type="Node2D"]
@@ -158,7 +203,7 @@ margin_left = -40.0
 margin_top = 136.0
 margin_right = 460.0
 margin_bottom = 659.0
-rect_scale = Vector2( 0.685259, 0.717931 )
+rect_scale = Vector2( 0.506265, 0.511248 )
 rect_pivot_offset = Vector2( 251.111, 261.024 )
 texture = ExtResource( 2 )
 __meta__ = {
@@ -190,46 +235,250 @@ scale = Vector2( 0.280237, 0.232873 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
 
-[node name="Voices" type="Node2D" parent="."]
-script = ExtResource( 9 )
+[node name="ScrollSymbols" type="TextureRect" parent="."]
+margin_left = 104.321
+margin_top = 689.575
+margin_right = 718.321
+margin_bottom = 1453.58
+rect_rotation = -0.00674599
+rect_scale = Vector2( 1.33341, 0.750454 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Richard" type="Node2D" parent="Voices"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollSymbols"]
+anims/SymbolScrollRemove = SubResource( 5 )
 
-[node name="RichardVoice1" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 11 )
-volume_db = 14.913
+[node name="Symbol1" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 83.8269
+margin_top = 106.19
+margin_right = 209.827
+margin_bottom = 171.19
+rect_scale = Vector2( 0.389322, 0.972788 )
+texture_normal = ExtResource( 19 )
+script = ExtResource( 37 )
 
-[node name="RichardVoice2" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 10 )
-volume_db = 8.0
+[node name="Symbol2" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 152.499
+margin_top = 103.036
+margin_right = 279.499
+margin_bottom = 168.036
+rect_scale = Vector2( 0.440865, 1.10524 )
+texture_normal = ExtResource( 22 )
+script = ExtResource( 37 )
 
-[node name="RichardVoice3" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 25 )
-volume_db = 8.0
+[node name="Symbol3" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 230.092
+margin_top = 87.2101
+margin_right = 326.092
+margin_bottom = 181.21
+rect_scale = Vector2( 0.607085, 0.977129 )
+texture_normal = ExtResource( 15 )
+script = ExtResource( 37 )
 
-[node name="RichardVoice4" type="AudioStreamPlayer" parent="Voices/Richard"]
-stream = ExtResource( 27 )
-volume_db = 8.0
+[node name="Symbol4" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 310.359
+margin_top = 95.1566
+margin_right = 438.359
+margin_bottom = 160.157
+rect_scale = Vector2( 0.469921, 1.10523 )
+texture_normal = ExtResource( 9 )
+script = ExtResource( 37 )
 
-[node name="Luigi" type="Node2D" parent="Voices"]
+[node name="Symbol5" type="TextureButton" parent="ScrollSymbols"]
+modulate = Color( 1, 0.803922, 0, 1 )
+margin_left = 395.085
+margin_top = 93.577
+margin_right = 523.085
+margin_bottom = 158.577
+rect_scale = Vector2( 0.468056, 1.15637 )
+texture_normal = ExtResource( 16 )
+script = ExtResource( 37 )
 
-[node name="LuigiVoice1" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 18 )
-volume_db = 5.0
+[node name="Symbol6" type="TextureButton" parent="ScrollSymbols"]
+modulate = Color( 1, 0.803922, 0, 1 )
+margin_left = 88.2817
+margin_top = 177.508
+margin_right = 184.282
+margin_bottom = 273.508
+rect_scale = Vector2( 0.570173, 0.86763 )
+texture_normal = ExtResource( 20 )
+script = ExtResource( 37 )
 
-[node name="LuigiVoice2" type="AudioStreamPlayer" parent="Voices/Luigi"]
-stream = ExtResource( 33 )
-volume_db = 5.0
+[node name="Symbol7" type="TextureButton" parent="ScrollSymbols"]
+modulate = Color( 1, 0.803922, 0, 1 )
+margin_left = 162.306
+margin_top = 182.284
+margin_right = 259.306
+margin_bottom = 278.284
+rect_scale = Vector2( 0.584837, 1.05263 )
+texture_normal = ExtResource( 30 )
+script = ExtResource( 37 )
 
-[node name="Francesca" type="Node2D" parent="Voices"]
+[node name="Symbol8" type="TextureButton" parent="ScrollSymbols"]
+modulate = Color( 1, 0.803922, 0, 1 )
+margin_left = 395.078
+margin_top = 187.074
+margin_right = 506.078
+margin_bottom = 284.074
+rect_scale = Vector2( 0.625142, 1.11546 )
+texture_normal = ExtResource( 27 )
+script = ExtResource( 37 )
 
-[node name="FrancescaVoice1" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 28 )
-volume_db = -4.0
+[node name="Symbol9" type="TextureButton" parent="ScrollSymbols"]
+modulate = Color( 1, 0.803922, 0, 1 )
+margin_left = 77.5731
+margin_top = 274.161
+margin_right = 173.573
+margin_bottom = 369.161
+rect_scale = Vector2( 0.662521, 1.09622 )
+texture_normal = ExtResource( 23 )
+script = ExtResource( 37 )
 
-[node name="FrancescaVoice2" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 44 )
-volume_db = -4.0
+[node name="Symbol10" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 237.22
+margin_top = 194.962
+margin_right = 335.22
+margin_bottom = 290.962
+rect_scale = Vector2( 0.57294, 0.838902 )
+texture_normal = ExtResource( 34 )
+script = ExtResource( 37 )
+
+[node name="Symbol11" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 305.893
+margin_top = 188.638
+margin_right = 401.893
+margin_bottom = 284.638
+rect_scale = Vector2( 0.655884, 1.09441 )
+texture_normal = ExtResource( 36 )
+script = ExtResource( 37 )
+
+[node name="Symbol12" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 460.195
+margin_top = 145.881
+margin_right = 571.195
+margin_bottom = 240.881
+rect_scale = Vector2( 0.590682, 1.03698 )
+texture_normal = ExtResource( 17 )
+script = ExtResource( 37 )
+
+[node name="Symbol13" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 75.7809
+margin_top = 402.517
+margin_right = 171.781
+margin_bottom = 498.517
+rect_scale = Vector2( 0.649992, 0.965395 )
+texture_normal = ExtResource( 14 )
+script = ExtResource( 37 )
+
+[node name="Symbol14" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 159.614
+margin_top = 412.045
+margin_right = 256.614
+margin_bottom = 508.045
+rect_scale = Vector2( 0.65945, 0.982661 )
+texture_normal = ExtResource( 31 )
+script = ExtResource( 37 )
+
+[node name="Symbol15" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 296.959
+margin_top = 429.503
+margin_right = 422.959
+margin_bottom = 494.503
+rect_scale = Vector2( 0.491697, 1.05252 )
+texture_normal = ExtResource( 32 )
+script = ExtResource( 37 )
+
+[node name="Symbol16" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 449.478
+margin_top = 299.593
+margin_right = 559.478
+margin_bottom = 395.593
+rect_scale = Vector2( 0.685672, 0.999923 )
+texture_normal = ExtResource( 26 )
+script = ExtResource( 37 )
+
+[node name="Symbol17" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 80.2331
+margin_top = 508.69
+margin_right = 176.233
+margin_bottom = 605.69
+rect_scale = Vector2( 0.590129, 0.999911 )
+texture_normal = ExtResource( 18 )
+script = ExtResource( 37 )
+
+[node name="Symbol18" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 187.255
+margin_top = 510.297
+margin_right = 284.255
+margin_bottom = 607.297
+rect_scale = Vector2( 0.652475, 0.999917 )
+texture_normal = ExtResource( 33 )
+script = ExtResource( 37 )
+
+[node name="Symbol19" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 275.548
+margin_top = 516.656
+margin_right = 371.548
+margin_bottom = 612.656
+rect_scale = Vector2( 0.642546, 0.980279 )
+texture_normal = ExtResource( 11 )
+script = ExtResource( 37 )
+
+[node name="Symbol20" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 385.257
+margin_top = 408.922
+margin_right = 496.257
+margin_bottom = 504.922
+rect_scale = Vector2( 0.692834, 0.999917 )
+texture_normal = ExtResource( 24 )
+script = ExtResource( 37 )
+
+[node name="Symbol21" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 249.708
+margin_top = 310.635
+margin_right = 347.708
+margin_bottom = 406.635
+rect_scale = Vector2( 0.675555, 0.999921 )
+texture_normal = ExtResource( 28 )
+script = ExtResource( 37 )
+
+[node name="Symbol22" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 345.136
+margin_top = 320.164
+margin_right = 441.136
+margin_bottom = 415.164
+rect_scale = Vector2( 0.672694, 0.99992 )
+texture_normal = ExtResource( 25 )
+script = ExtResource( 37 )
+
+[node name="Symbol23" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 344.228
+margin_top = 508.746
+margin_right = 439.228
+margin_bottom = 603.746
+rect_scale = Vector2( 0.557771, 0.999899 )
+texture_normal = ExtResource( 29 )
+script = ExtResource( 37 )
+
+[node name="Symbol24" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 460.171
+margin_top = 494.506
+margin_right = 571.171
+margin_bottom = 590.506
+rect_scale = Vector2( 0.581558, 1.08513 )
+texture_normal = ExtResource( 21 )
+script = ExtResource( 37 )
+
+[node name="Symbol25" type="TextureButton" parent="ScrollSymbols"]
+margin_left = 167.661
+margin_top = 304.316
+margin_right = 262.661
+margin_bottom = 401.316
+rect_scale = Vector2( 0.621337, 0.999911 )
+texture_normal = ExtResource( 35 )
+script = ExtResource( 37 )
 [connection signal="focus_entered" from="TextEdit" to="." method="_on_TextEdit_focus_entered"]
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
 [connection signal="animation_finished" from="PlayButton/TextureRect/AnimationPlayer" to="PlayButton" method="_on_AnimationPlayer_animation_finished"]

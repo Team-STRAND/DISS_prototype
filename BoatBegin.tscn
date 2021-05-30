@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/boat_begin.jpeg" type="Texture" id=1]
 [ext_resource path="res://Pirate.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/sounds/luigi/1.Capitane-stii-bine-ca.wav" type="AudioStream" id=14]
 [ext_resource path="res://assets/sounds/francesca/Francesca1.wav" type="AudioStream" id=15]
 [ext_resource path="res://Voices.gd" type="Script" id=16]
+[ext_resource path="res://assets/mixkit-wooden-ship-on-the-sea-1187.wav" type="AudioStream" id=17]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fly"
@@ -90,6 +91,11 @@ script = ExtResource( 2 )
 
 [node name="AnimationPlayerParrot" type="AnimationPlayer" parent="."]
 anims/Fly = SubResource( 1 )
+
+[node name="WaveSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -15.0
+autoplay = true
 
 [node name="Voices" type="Node2D" parent="."]
 script = ExtResource( 16 )

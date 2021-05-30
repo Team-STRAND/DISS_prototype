@@ -10,6 +10,8 @@ var jungle_score=0
 var cave_entrace_score=0
 var season_score=0
 
+var symbol_name=""
+
 func _ready():
 	pass # Replace with function body.
 
