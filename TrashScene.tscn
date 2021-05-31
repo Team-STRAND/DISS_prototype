@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/pirate_hat.png" type="Texture" id=1]
+[ext_resource path="res://assets/animals_misplaced.jpeg" type="Texture" id=2]
+[ext_resource path="res://assets/parrot.png" type="Texture" id=3]
+
+[node name="TrashScene" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.411876, 0.414822 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parrot" type="TextureRect" parent="."]
+margin_left = 291.328
+margin_top = 67.8823
+margin_right = 722.328
+margin_bottom = 465.882
+rect_scale = Vector2( -0.540534, 0.505391 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PirateHat" type="TextureButton" parent="."]
+margin_left = 167.395
+margin_top = 386.704
+margin_right = 2079.4
+margin_bottom = 1273.7
+rect_scale = Vector2( 0.050395, 0.0645841 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

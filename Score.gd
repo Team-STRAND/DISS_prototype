@@ -79,12 +79,51 @@ func add_html_header(text):
 	<html>
 	<head>
 		<style>
-		body {
-		  background-color: linen;
+		*{
+		  margin: 0;
+		  padding: 0;
+		  border: 0;
 		}
-		table, th, td {
-			border: 1px solid black;
+
+		td,th{
+		  padding: 5px;
 		}
+
+		th{
+		  position: relative;
+		}
+
+		th:not(:first-of-type) {
+		  border-left: 2px solid #333;
+		}
+
+		td:not(:first-of-type) {
+		  border-left: 2px solid #333;
+		}
+
+		th::after {
+		  content: "";
+		  height: 2px;
+		  border: none;
+		  background-color: #333;
+		  width: 110%;
+		  position: absolute;
+		  top: 100%;
+		  left: 0;
+		}
+
+		th:first-of-type {
+		  background-color:#6ab04c;
+		}
+
+		tr>td:first-of-type{
+		  background-color: #6ab04c;
+		}
+
+		tr:hover{
+		  background-color: #f1f2f6;
+		}
+
 		</style>
 	</head>
 	"""

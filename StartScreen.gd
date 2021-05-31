@@ -3,17 +3,73 @@ extends Node2D
 
 func _ready():
 	read_symbols_from_json()
+	
 
 func start_ship():
 	get_node("Path2D/PathFollow2D/Ship").start()
 
+func display_buttons():
+	get_node("CreateAccountButton/AnimationPlayer").play_backwards("FadeButton")
+	get_node("LogInButton/AnimationPlayer").play_backwards("FadeButton")
+	get_node("PlayButton/AnimationPlayer").play_backwards("FadeButton")
+
+func remove_buttons():
+	get_node("CreateAccountButton/AnimationPlayer").play("FadeButton")
+	get_node("LogInButton/AnimationPlayer").play("FadeButton")
+	get_node("PlayButton/AnimationPlayer").play("FadeButton")
+
 func _on_TextEdit_focus_entered():
 	get_node("TextEdit").text=""
+
+func show_main_screen(origin):
+	if origin=="login":
+		get_node("ScrollSymbolsAuth/AnimationPlayer").play("SymbolScrollRemove")
+	elif origin=="create_account":
+		get_node("ScrollSymbols/AnimationPlayer").play("SymbolScrollRemove")
+		
+	get_node("Title/AnimationPlayer").play_backwards("TitleFade")	
+	
+	display_buttons()
+
+func show_create_account_scroll():
+	remove_buttons()
+	
+	get_node("Title/AnimationPlayer").play("TitleFade")
+	get_node("ScrollSymbols/AnimationPlayer").play_backwards("SymbolScrollRemove")
+	
+	Score.child_name=get_node("TextEdit").text
+
+	
+func show_login_scroll():
+	remove_buttons()
+	read_symbols_from_json()
+	get_node("Title/AnimationPlayer").play("TitleFade")
+	get_node("ScrollSymbolsAuth/AnimationPlayer").play_backwards("SymbolScrollRemove")
+	
+func play_pressed():
+	remove_buttons()
+	get_node("Title/AnimationPlayer").play("TitleFade")
+	write_symbols_to_json()
+	start_ship()
 	
 func symbol_pressed():
 	write_symbols_to_json()
 	get_node("ScrollSymbols/AnimationPlayer").play("SymbolScrollRemove")
 	start_ship()
+
+func set_text_edit(symbol_name):
+	var file_name="symbols.json"
+	var file = File.new()
+	file.open(file_name,File.READ)
+	
+	var symbol_name_pair={}
+	if file.is_open():
+		symbol_name_pair=JSON.parse(file.get_as_text()).result
+	
+	var child_name=symbol_name_pair[symbol_name]
+	get_node("TextEdit").text=child_name
+	
+	file.close()
 
 func read_symbols_from_json():
 	var file_name="symbols.json"
@@ -25,7 +81,11 @@ func read_symbols_from_json():
 		symbol_name_pair=JSON.parse(file.get_as_text()).result
 	
 	for symbol in symbol_name_pair.keys():
-		get_node("ScrollSymbols/"+str(symbol)).visible=false
+		if symbol!="":
+			get_node("ScrollSymbols/"+str(symbol)).visible=false
+			get_node("ScrollSymbolsAuth/"+str(symbol)).visible=true
+		
+	file.close()
 	
 	
 func write_symbols_to_json():

@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/Drawing-6.sketchpad.jpeg" type="Texture" id=1]
 [ext_resource path="res://EndSeaScene.gd" type="Script" id=2]
 [ext_resource path="res://assets/mixkit-wooden-ship-on-the-sea-1187.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/black_ship.png" type="Texture" id=4]
+[ext_resource path="res://assets/pirate_diploma.png" type="Texture" id=5]
+[ext_resource path="res://assets/font/BlackRose-2Onld.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/sounds/francesca/Francesca9.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/sounds/luigi/10.ura-multumim-pentru.wav" type="AudioStream" id=16]
 [ext_resource path="res://assets/sounds/richard/Richard-17.wav" type="AudioStream" id=17]
@@ -23,6 +25,29 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -630.032, -78.4962 ), Vector2( 778.559, -62.1172 ), Vector2( 412.08, 21.1951 ), Vector2( 153.156, -42.8475 ), Vector2( -168.54, 11.959 ), Vector2( -487.552, -91.9756 ), Vector2( -626.253, -55.8176 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="DynamicFont" id=4]
+size = 57
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "DiplomaAppear"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 13.1084, 670.547 ), Vector2( -25.2129, -11.5786 ) ]
 }
 
 [node name="EndSeaScene" type="Node2D"]
@@ -79,4 +104,37 @@ volume_db = 5.0
 [node name="FrancescaVoice9" type="AudioStreamPlayer" parent="Voices/Francesca"]
 stream = ExtResource( 12 )
 volume_db = -4.0
+
+[node name="Diploma" type="TextureRect" parent="."]
+margin_left = 13.1084
+margin_top = 670.547
+margin_right = 2102.11
+margin_bottom = 2062.55
+rect_scale = Vector2( 0.514733, 0.471522 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Diploma"]
+margin_left = 564.271
+margin_top = 769.315
+margin_right = 1101.27
+margin_bottom = 854.315
+rect_scale = Vector2( 2.14771, 2.99354 )
+custom_styles/read_only = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.0588235, 0.0588235, 0.0392157, 1 )
+custom_colors/completion_font_color = Color( 0, 0, 0, 1 )
+custom_colors/completion_existing_color = Color( 0, 0, 0, 1 )
+text = "Numele Piratului"
+readonly = true
+syntax_highlighting = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Diploma"]
+anims/DiplomaAppear = SubResource( 7 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

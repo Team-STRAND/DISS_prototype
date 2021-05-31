@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://assets/Drawing-6.sketchpad.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/play.png" type="Texture" id=2]
@@ -37,6 +37,10 @@
 [ext_resource path="res://assets/symbols/25.png" type="Texture" id=35]
 [ext_resource path="res://assets/symbols/11.png" type="Texture" id=36]
 [ext_resource path="res://SymbolButton.gd" type="Script" id=37]
+[ext_resource path="res://assets/account_button.png" type="Texture" id=38]
+[ext_resource path="res://assets/login_button.png" type="Texture" id=39]
+[ext_resource path="res://LogInButton.gd" type="Script" id=40]
+[ext_resource path="res://CreateAccountButton.gd" type="Script" id=41]
 
 [sub_resource type="DynamicFont" id=4]
 size = 57
@@ -82,17 +86,37 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 277, 222 ), Vector2( 274.172, -173.98 ) ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("../ScrollSymbols:rect_position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+
+[sub_resource type="Animation" id=7]
+resource_name = "FadeButton"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 104.321, 689.575 ), Vector2( 118.839, 21.2434 ) ]
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "FadeButton"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1e-05, 1e-05 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -108,7 +132,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.460672, 0.511248 ), Vector2( 1e-05, 1e-05 ) ]
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1e-05, 1e-05 ) ]
 }
 
 [sub_resource type="Curve2D" id=3]
@@ -117,6 +141,21 @@ _data = {
 }
 
 [sub_resource type="Animation" id=5]
+resource_name = "SymbolScrollRemove"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 118.839, 21.2434 ), Vector2( 125.975, 694.335 ) ]
+}
+
+[sub_resource type="Animation" id=6]
 resource_name = "SymbolScrollRemove"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -186,31 +225,52 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
 anims/TitleFade = SubResource( 1 )
 
-[node name="PlayButton" type="Button" parent="."]
-margin_left = 411.182
-margin_top = 233.185
-margin_right = 423.182
-margin_bottom = 253.185
-rect_scale = Vector2( 0.5558, 0.51186 )
-flat = true
+[node name="LogInButton" type="TextureButton" parent="."]
+margin_left = 397.261
+margin_top = 329.576
+margin_right = 650.261
+margin_bottom = 582.576
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 124.87, 128.174 )
+texture_normal = ExtResource( 39 )
+script = ExtResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LogInButton"]
+anims/FadeButton = SubResource( 7 )
+
+[node name="CreateAccountButton" type="TextureButton" parent="."]
+margin_left = 212.868
+margin_top = 332.978
+margin_right = 465.868
+margin_bottom = 585.978
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 128.434, 121.299 )
+texture_normal = ExtResource( 38 )
+script = ExtResource( 41 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CreateAccountButton"]
+anims/FadeButton = SubResource( 8 )
+
+[node name="PlayButton" type="TextureButton" parent="."]
+margin_left = 578.069
+margin_top = 342.245
+margin_right = 831.069
+margin_bottom = 595.245
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 132.908, 125.12 )
+texture_normal = ExtResource( 2 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="PlayButton"]
-margin_left = -40.0
-margin_top = 136.0
-margin_right = 460.0
-margin_bottom = 659.0
-rect_scale = Vector2( 0.506265, 0.511248 )
-rect_pivot_offset = Vector2( 251.111, 261.024 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayButton/TextureRect"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayButton"]
 anims/FadeButton = SubResource( 2 )
 
 [node name="WaveSound" type="AudioStreamPlayer" parent="."]
@@ -236,10 +296,10 @@ texture = ExtResource( 7 )
 script = ExtResource( 8 )
 
 [node name="ScrollSymbols" type="TextureRect" parent="."]
-margin_left = 104.321
-margin_top = 689.575
-margin_right = 718.321
-margin_bottom = 1453.58
+margin_left = 125.975
+margin_top = 694.335
+margin_right = 739.975
+margin_bottom = 1458.33
 rect_rotation = -0.00674599
 rect_scale = Vector2( 1.33341, 0.750454 )
 texture = ExtResource( 10 )
@@ -251,234 +311,482 @@ __meta__ = {
 anims/SymbolScrollRemove = SubResource( 5 )
 
 [node name="Symbol1" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 83.8269
-margin_top = 106.19
-margin_right = 209.827
-margin_bottom = 171.19
+margin_left = 89.1436
+margin_top = 313.779
+margin_right = 215.144
+margin_bottom = 378.779
 rect_scale = Vector2( 0.389322, 0.972788 )
 texture_normal = ExtResource( 19 )
 script = ExtResource( 37 )
 
 [node name="Symbol2" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 152.499
-margin_top = 103.036
-margin_right = 279.499
-margin_bottom = 168.036
+margin_left = 88.2872
+margin_top = 91.9385
+margin_right = 215.287
+margin_bottom = 156.939
 rect_scale = Vector2( 0.440865, 1.10524 )
 texture_normal = ExtResource( 22 )
 script = ExtResource( 37 )
 
 [node name="Symbol3" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 230.092
-margin_top = 87.2101
-margin_right = 326.092
-margin_bottom = 181.21
+margin_left = 265.731
+margin_top = 418.407
+margin_right = 361.731
+margin_bottom = 512.407
 rect_scale = Vector2( 0.607085, 0.977129 )
 texture_normal = ExtResource( 15 )
 script = ExtResource( 37 )
 
 [node name="Symbol4" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 310.359
-margin_top = 95.1566
-margin_right = 438.359
-margin_bottom = 160.157
+margin_left = 84.7043
+margin_top = 196.554
+margin_right = 212.704
+margin_bottom = 261.554
 rect_scale = Vector2( 0.469921, 1.10523 )
 texture_normal = ExtResource( 9 )
 script = ExtResource( 37 )
 
 [node name="Symbol5" type="TextureButton" parent="ScrollSymbols"]
 modulate = Color( 1, 0.803922, 0, 1 )
-margin_left = 395.085
-margin_top = 93.577
-margin_right = 523.085
-margin_bottom = 158.577
+margin_left = 82.8661
+margin_top = 521.406
+margin_right = 210.866
+margin_bottom = 586.406
 rect_scale = Vector2( 0.468056, 1.15637 )
 texture_normal = ExtResource( 16 )
 script = ExtResource( 37 )
 
 [node name="Symbol6" type="TextureButton" parent="ScrollSymbols"]
 modulate = Color( 1, 0.803922, 0, 1 )
-margin_left = 88.2817
-margin_top = 177.508
-margin_right = 184.282
-margin_bottom = 273.508
+margin_left = 265.725
+margin_top = 530.909
+margin_right = 361.725
+margin_bottom = 626.909
 rect_scale = Vector2( 0.570173, 0.86763 )
 texture_normal = ExtResource( 20 )
 script = ExtResource( 37 )
 
 [node name="Symbol7" type="TextureButton" parent="ScrollSymbols"]
 modulate = Color( 1, 0.803922, 0, 1 )
-margin_left = 162.306
-margin_top = 182.284
-margin_right = 259.306
-margin_bottom = 278.284
+margin_left = 168.508
+margin_top = 526.154
+margin_right = 265.508
+margin_bottom = 622.154
 rect_scale = Vector2( 0.584837, 1.05263 )
 texture_normal = ExtResource( 30 )
 script = ExtResource( 37 )
 
 [node name="Symbol8" type="TextureButton" parent="ScrollSymbols"]
 modulate = Color( 1, 0.803922, 0, 1 )
-margin_left = 395.078
-margin_top = 187.074
-margin_right = 506.078
-margin_bottom = 284.074
+margin_left = 454.795
+margin_top = 505.595
+margin_right = 565.795
+margin_bottom = 602.595
 rect_scale = Vector2( 0.625142, 1.11546 )
 texture_normal = ExtResource( 27 )
 script = ExtResource( 37 )
 
 [node name="Symbol9" type="TextureButton" parent="ScrollSymbols"]
 modulate = Color( 1, 0.803922, 0, 1 )
-margin_left = 77.5731
-margin_top = 274.161
-margin_right = 173.573
-margin_bottom = 369.161
+margin_left = 369.182
+margin_top = 518.234
+margin_right = 465.182
+margin_bottom = 613.234
 rect_scale = Vector2( 0.662521, 1.09622 )
 texture_normal = ExtResource( 23 )
 script = ExtResource( 37 )
 
 [node name="Symbol10" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 237.22
-margin_top = 194.962
-margin_right = 335.22
-margin_bottom = 290.962
+margin_left = 267.543
+margin_top = 193.382
+margin_right = 365.543
+margin_bottom = 289.382
 rect_scale = Vector2( 0.57294, 0.838902 )
 texture_normal = ExtResource( 34 )
 script = ExtResource( 37 )
 
 [node name="Symbol11" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 305.893
-margin_top = 188.638
-margin_right = 401.893
-margin_bottom = 284.638
+margin_left = 173.008
+margin_top = 183.867
+margin_right = 269.008
+margin_bottom = 279.867
 rect_scale = Vector2( 0.655884, 1.09441 )
 texture_normal = ExtResource( 36 )
 script = ExtResource( 37 )
 
 [node name="Symbol12" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 460.195
-margin_top = 145.881
-margin_right = 571.195
-margin_bottom = 240.881
+margin_left = 450.379
+margin_top = 187.081
+margin_right = 561.379
+margin_bottom = 282.081
 rect_scale = Vector2( 0.590682, 1.03698 )
 texture_normal = ExtResource( 17 )
 script = ExtResource( 37 )
 
 [node name="Symbol13" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 75.7809
-margin_top = 402.517
-margin_right = 171.781
-margin_bottom = 498.517
+margin_left = 362.088
+margin_top = 182.291
+margin_right = 458.088
+margin_bottom = 278.291
 rect_scale = Vector2( 0.649992, 0.965395 )
 texture_normal = ExtResource( 14 )
 script = ExtResource( 37 )
 
 [node name="Symbol14" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 159.614
-margin_top = 412.045
-margin_right = 256.614
-margin_bottom = 508.045
+margin_left = 169.425
+margin_top = 412.046
+margin_right = 266.425
+margin_bottom = 508.046
 rect_scale = Vector2( 0.65945, 0.982661 )
 texture_normal = ExtResource( 31 )
 script = ExtResource( 37 )
 
 [node name="Symbol15" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 296.959
-margin_top = 429.503
-margin_right = 422.959
-margin_bottom = 494.503
+margin_left = 81.1327
+margin_top = 412.05
+margin_right = 207.133
+margin_bottom = 477.05
 rect_scale = Vector2( 0.491697, 1.05252 )
 texture_normal = ExtResource( 32 )
 script = ExtResource( 37 )
 
 [node name="Symbol16" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 449.478
-margin_top = 299.593
-margin_right = 559.478
-margin_bottom = 395.593
+margin_left = 448.576
+margin_top = 404.179
+margin_right = 558.576
+margin_bottom = 500.179
 rect_scale = Vector2( 0.685672, 0.999923 )
 texture_normal = ExtResource( 26 )
 script = ExtResource( 37 )
 
 [node name="Symbol17" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 80.2331
-margin_top = 508.69
-margin_right = 176.233
-margin_bottom = 605.69
+margin_left = 366.529
+margin_top = 407.308
+margin_right = 462.529
+margin_bottom = 504.308
 rect_scale = Vector2( 0.590129, 0.999911 )
 texture_normal = ExtResource( 18 )
 script = ExtResource( 37 )
 
 [node name="Symbol18" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 187.255
-margin_top = 510.297
-margin_right = 284.255
-margin_bottom = 607.297
+margin_left = 357.644
+margin_top = 74.5413
+margin_right = 454.644
+margin_bottom = 171.541
 rect_scale = Vector2( 0.652475, 0.999917 )
 texture_normal = ExtResource( 33 )
 script = ExtResource( 37 )
 
 [node name="Symbol19" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 275.548
-margin_top = 516.656
-margin_right = 371.548
-margin_bottom = 612.656
+margin_left = 175.705
+margin_top = 76.1096
+margin_right = 271.705
+margin_bottom = 172.11
 rect_scale = Vector2( 0.642546, 0.980279 )
 texture_normal = ExtResource( 11 )
 script = ExtResource( 37 )
 
 [node name="Symbol20" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 385.257
-margin_top = 408.922
-margin_right = 496.257
-margin_bottom = 504.922
+margin_left = 444.15
+margin_top = 80.9076
+margin_right = 555.15
+margin_bottom = 176.908
 rect_scale = Vector2( 0.692834, 0.999917 )
 texture_normal = ExtResource( 24 )
 script = ExtResource( 37 )
 
 [node name="Symbol21" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 249.708
-margin_top = 310.635
-margin_right = 347.708
-margin_bottom = 406.635
+margin_left = 263.109
+margin_top = 76.1086
+margin_right = 361.109
+margin_bottom = 172.109
 rect_scale = Vector2( 0.675555, 0.999921 )
 texture_normal = ExtResource( 28 )
 script = ExtResource( 37 )
 
 [node name="Symbol22" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 345.136
-margin_top = 320.164
-margin_right = 441.136
-margin_bottom = 415.164
+margin_left = 263.98
+margin_top = 299.552
+margin_right = 359.98
+margin_bottom = 394.552
 rect_scale = Vector2( 0.672694, 0.99992 )
 texture_normal = ExtResource( 25 )
 script = ExtResource( 37 )
 
 [node name="Symbol23" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 344.228
-margin_top = 508.746
-margin_right = 439.228
-margin_bottom = 603.746
+margin_left = 173.909
+margin_top = 296.383
+margin_right = 268.909
+margin_bottom = 391.383
 rect_scale = Vector2( 0.557771, 0.999899 )
 texture_normal = ExtResource( 29 )
 script = ExtResource( 37 )
 
 [node name="Symbol24" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 460.171
-margin_top = 494.506
-margin_right = 571.171
-margin_bottom = 590.506
+margin_left = 452.17
+margin_top = 286.916
+margin_right = 563.17
+margin_bottom = 382.916
 rect_scale = Vector2( 0.581558, 1.08513 )
 texture_normal = ExtResource( 21 )
 script = ExtResource( 37 )
 
 [node name="Symbol25" type="TextureButton" parent="ScrollSymbols"]
-margin_left = 167.661
-margin_top = 304.316
-margin_right = 262.661
-margin_bottom = 401.316
+margin_left = 362.978
+margin_top = 294.834
+margin_right = 457.978
+margin_bottom = 391.834
+rect_scale = Vector2( 0.621337, 0.999911 )
+texture_normal = ExtResource( 35 )
+script = ExtResource( 37 )
+
+[node name="ScrollSymbolsAuth" type="TextureRect" parent="."]
+margin_left = 125.975
+margin_top = 694.335
+margin_right = 739.975
+margin_bottom = 1458.33
+rect_rotation = -0.00674599
+rect_scale = Vector2( 1.33341, 0.750454 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollSymbolsAuth"]
+anims/SymbolScrollRemove = SubResource( 6 )
+
+[node name="Symbol1" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 89.1436
+margin_top = 313.779
+margin_right = 215.144
+margin_bottom = 378.779
+rect_scale = Vector2( 0.389322, 0.972788 )
+texture_normal = ExtResource( 19 )
+script = ExtResource( 37 )
+
+[node name="Symbol2" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 88.2872
+margin_top = 91.9385
+margin_right = 215.287
+margin_bottom = 156.939
+rect_scale = Vector2( 0.440865, 1.10524 )
+texture_normal = ExtResource( 22 )
+script = ExtResource( 37 )
+
+[node name="Symbol3" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 265.731
+margin_top = 418.407
+margin_right = 361.731
+margin_bottom = 512.407
+rect_scale = Vector2( 0.607085, 0.977129 )
+texture_normal = ExtResource( 15 )
+script = ExtResource( 37 )
+
+[node name="Symbol4" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 84.7043
+margin_top = 196.554
+margin_right = 212.704
+margin_bottom = 261.554
+rect_scale = Vector2( 0.469921, 1.10523 )
+texture_normal = ExtResource( 9 )
+script = ExtResource( 37 )
+
+[node name="Symbol5" type="TextureButton" parent="ScrollSymbolsAuth"]
+modulate = Color( 1, 0.803922, 0, 1 )
+margin_left = 82.8661
+margin_top = 521.406
+margin_right = 210.866
+margin_bottom = 586.406
+rect_scale = Vector2( 0.468056, 1.15637 )
+texture_normal = ExtResource( 16 )
+script = ExtResource( 37 )
+
+[node name="Symbol6" type="TextureButton" parent="ScrollSymbolsAuth"]
+modulate = Color( 1, 0.803922, 0, 1 )
+margin_left = 265.725
+margin_top = 530.909
+margin_right = 361.725
+margin_bottom = 626.909
+rect_scale = Vector2( 0.570173, 0.86763 )
+texture_normal = ExtResource( 20 )
+script = ExtResource( 37 )
+
+[node name="Symbol7" type="TextureButton" parent="ScrollSymbolsAuth"]
+modulate = Color( 1, 0.803922, 0, 1 )
+margin_left = 168.508
+margin_top = 526.154
+margin_right = 265.508
+margin_bottom = 622.154
+rect_scale = Vector2( 0.584837, 1.05263 )
+texture_normal = ExtResource( 30 )
+script = ExtResource( 37 )
+
+[node name="Symbol8" type="TextureButton" parent="ScrollSymbolsAuth"]
+modulate = Color( 1, 0.803922, 0, 1 )
+margin_left = 454.795
+margin_top = 505.595
+margin_right = 565.795
+margin_bottom = 602.595
+rect_scale = Vector2( 0.625142, 1.11546 )
+texture_normal = ExtResource( 27 )
+script = ExtResource( 37 )
+
+[node name="Symbol9" type="TextureButton" parent="ScrollSymbolsAuth"]
+modulate = Color( 1, 0.803922, 0, 1 )
+margin_left = 369.182
+margin_top = 518.234
+margin_right = 465.182
+margin_bottom = 613.234
+rect_scale = Vector2( 0.662521, 1.09622 )
+texture_normal = ExtResource( 23 )
+script = ExtResource( 37 )
+
+[node name="Symbol10" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 267.543
+margin_top = 193.382
+margin_right = 365.543
+margin_bottom = 289.382
+rect_scale = Vector2( 0.57294, 0.838902 )
+texture_normal = ExtResource( 34 )
+script = ExtResource( 37 )
+
+[node name="Symbol11" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 173.008
+margin_top = 183.867
+margin_right = 269.008
+margin_bottom = 279.867
+rect_scale = Vector2( 0.655884, 1.09441 )
+texture_normal = ExtResource( 36 )
+script = ExtResource( 37 )
+
+[node name="Symbol12" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 450.379
+margin_top = 187.081
+margin_right = 561.379
+margin_bottom = 282.081
+rect_scale = Vector2( 0.590682, 1.03698 )
+texture_normal = ExtResource( 17 )
+script = ExtResource( 37 )
+
+[node name="Symbol13" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 362.088
+margin_top = 182.291
+margin_right = 458.088
+margin_bottom = 278.291
+rect_scale = Vector2( 0.649992, 0.965395 )
+texture_normal = ExtResource( 14 )
+script = ExtResource( 37 )
+
+[node name="Symbol14" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 169.425
+margin_top = 412.046
+margin_right = 266.425
+margin_bottom = 508.046
+rect_scale = Vector2( 0.65945, 0.982661 )
+texture_normal = ExtResource( 31 )
+script = ExtResource( 37 )
+
+[node name="Symbol15" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 81.1327
+margin_top = 412.05
+margin_right = 207.133
+margin_bottom = 477.05
+rect_scale = Vector2( 0.491697, 1.05252 )
+texture_normal = ExtResource( 32 )
+script = ExtResource( 37 )
+
+[node name="Symbol16" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 448.576
+margin_top = 404.179
+margin_right = 558.576
+margin_bottom = 500.179
+rect_scale = Vector2( 0.685672, 0.999923 )
+texture_normal = ExtResource( 26 )
+script = ExtResource( 37 )
+
+[node name="Symbol17" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 366.529
+margin_top = 407.308
+margin_right = 462.529
+margin_bottom = 504.308
+rect_scale = Vector2( 0.590129, 0.999911 )
+texture_normal = ExtResource( 18 )
+script = ExtResource( 37 )
+
+[node name="Symbol18" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 357.644
+margin_top = 74.5413
+margin_right = 454.644
+margin_bottom = 171.541
+rect_scale = Vector2( 0.652475, 0.999917 )
+texture_normal = ExtResource( 33 )
+script = ExtResource( 37 )
+
+[node name="Symbol19" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 175.705
+margin_top = 76.1096
+margin_right = 271.705
+margin_bottom = 172.11
+rect_scale = Vector2( 0.642546, 0.980279 )
+texture_normal = ExtResource( 11 )
+script = ExtResource( 37 )
+
+[node name="Symbol20" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 444.15
+margin_top = 80.9076
+margin_right = 555.15
+margin_bottom = 176.908
+rect_scale = Vector2( 0.692834, 0.999917 )
+texture_normal = ExtResource( 24 )
+script = ExtResource( 37 )
+
+[node name="Symbol21" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 263.109
+margin_top = 76.1086
+margin_right = 361.109
+margin_bottom = 172.109
+rect_scale = Vector2( 0.675555, 0.999921 )
+texture_normal = ExtResource( 28 )
+script = ExtResource( 37 )
+
+[node name="Symbol22" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 263.98
+margin_top = 299.552
+margin_right = 359.98
+margin_bottom = 394.552
+rect_scale = Vector2( 0.672694, 0.99992 )
+texture_normal = ExtResource( 25 )
+script = ExtResource( 37 )
+
+[node name="Symbol23" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 173.909
+margin_top = 296.383
+margin_right = 268.909
+margin_bottom = 391.383
+rect_scale = Vector2( 0.557771, 0.999899 )
+texture_normal = ExtResource( 29 )
+script = ExtResource( 37 )
+
+[node name="Symbol24" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 452.17
+margin_top = 286.916
+margin_right = 563.17
+margin_bottom = 382.916
+rect_scale = Vector2( 0.581558, 1.08513 )
+texture_normal = ExtResource( 21 )
+script = ExtResource( 37 )
+
+[node name="Symbol25" type="TextureButton" parent="ScrollSymbolsAuth"]
+margin_left = 362.978
+margin_top = 294.834
+margin_right = 457.978
+margin_bottom = 391.834
 rect_scale = Vector2( 0.621337, 0.999911 )
 texture_normal = ExtResource( 35 )
 script = ExtResource( 37 )
 [connection signal="focus_entered" from="TextEdit" to="." method="_on_TextEdit_focus_entered"]
+[connection signal="focus_exited" from="TextEdit" to="." method="_on_TextEdit_focus_exited"]
+[connection signal="pressed" from="LogInButton" to="LogInButton" method="_on_LogInButton_pressed"]
+[connection signal="pressed" from="CreateAccountButton" to="CreateAccountButton" method="_on_CreateAccountButton_pressed"]
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
-[connection signal="animation_finished" from="PlayButton/TextureRect/AnimationPlayer" to="PlayButton" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="PlayButton/AnimationPlayer" to="PlayButton" method="_on_AnimationPlayer_animation_finished"]
