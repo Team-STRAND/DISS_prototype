@@ -1,11 +1,11 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/woods.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/dog.png" type="Texture" id=2]
 [ext_resource path="res://assets/lion.png" type="Texture" id=3]
 [ext_resource path="res://assets/pirate_girl.png" type="Texture" id=4]
 [ext_resource path="res://assets/pirate_blue.png" type="Texture" id=5]
-[ext_resource path="res://assets/giraffe.png" type="Texture" id=6]
+[ext_resource path="res://assets/gorilla.png" type="Texture" id=6]
 [ext_resource path="res://assets/cat.png" type="Texture" id=7]
 [ext_resource path="res://assets/pirate_red.png" type="Texture" id=8]
 [ext_resource path="res://WoodsScene.gd" type="Script" id=9]
@@ -14,11 +14,50 @@
 [ext_resource path="res://assets/sounds/francesca/Francesca6.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/parrot.png" type="Texture" id=13]
 [ext_resource path="res://Pirate.gd" type="Script" id=14]
+[ext_resource path="res://assets/x.png" type="Texture" id=15]
+[ext_resource path="res://assets/sounds/wrong.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sounds/ding.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/check.png" type="Texture" id=18]
+[ext_resource path="res://assets/sounds/narator/Narator-17-AnimalDa.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/sounds/narator/Narator-18-AnimalNu.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/sounds/narator/Narator-16-AnimalAlege.wav" type="AudioStream" id=21]
 [ext_resource path="res://assets/sounds/francesca/Francesca5.wav" type="AudioStream" id=25]
 [ext_resource path="res://assets/sounds/richard/Richard-12.wav" type="AudioStream" id=26]
 [ext_resource path="res://assets/sounds/richard/Richard-11.wav" type="AudioStream" id=36]
 [ext_resource path="res://assets/sounds/luigi/7.vai-ce-carare-lunga.wav" type="AudioStream" id=40]
 [ext_resource path="res://VoicesWoodsScene.gd" type="Script" id=46]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Flip"
+length = 0.18
+tracks/0/type = "value"
+tracks/0/path = NodePath("Giraffe:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.34475, 0.336237 ), Vector2( -0.345, 0.336 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Leave"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Giraffe:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 205.351, 208.452 ), Vector2( 899.523, 222.744 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "Move"
@@ -176,8 +215,8 @@ tracks/7/keys = {
 script = ExtResource( 9 )
 
 [node name="Background" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 2496.0
+margin_bottom = 1451.0
 rect_scale = Vector2( 0.422258, 0.418418 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -230,10 +269,10 @@ __meta__ = {
 }
 
 [node name="Dog" type="TextureButton" parent="."]
-margin_left = 166.31
-margin_top = 239.385
-margin_right = 766.31
-margin_bottom = 839.385
+margin_left = 377.143
+margin_top = 231.969
+margin_right = 977.144
+margin_bottom = 831.969
 rect_scale = Vector2( 0.164103, 0.14864 )
 rect_pivot_offset = Vector2( 314.184, 309.432 )
 texture_normal = ExtResource( 2 )
@@ -241,23 +280,45 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="WrongSymbol" type="TextureRect" parent="Dog"]
+margin_left = -14.7764
+margin_top = 109.353
+margin_right = 645.224
+margin_bottom = 799.353
+rect_scale = Vector2( 0.747346, 0.66174 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Giraffe" type="TextureButton" parent="."]
-margin_left = 293.562
-margin_top = 154.97
-margin_right = 893.562
-margin_bottom = 754.97
-rect_scale = Vector2( 0.358079, 0.47807 )
+margin_left = 205.351
+margin_top = 208.452
+margin_right = 883.351
+margin_bottom = 808.452
+rect_scale = Vector2( 0.34475, 0.336237 )
 rect_pivot_offset = Vector2( 296.545, 291.793 )
 texture_normal = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="RightSymbol" type="TextureRect" parent="Giraffe"]
+margin_left = 134.522
+margin_top = 142.678
+margin_right = 1046.53
+margin_bottom = 719.678
+rect_scale = Vector2( 0.435081, 0.480153 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Cat" type="TextureButton" parent="."]
-margin_left = -561.94
-margin_top = -773.064
-margin_right = 1938.06
-margin_bottom = 1726.94
+margin_left = -125.782
+margin_top = -784.018
+margin_right = 2374.22
+margin_bottom = 1715.99
 rect_scale = Vector2( 0.0422575, 0.0393574 )
 rect_pivot_offset = Vector2( 1252.41, 1327.51 )
 texture_normal = ExtResource( 7 )
@@ -265,11 +326,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="WrongSymbol" type="TextureRect" parent="Cat"]
+margin_left = 192.484
+margin_top = 661.676
+margin_right = 852.484
+margin_bottom = 1351.68
+rect_scale = Vector2( 3.00112, 3.08224 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Lion" type="TextureButton" parent="."]
-margin_left = 766.504
-margin_top = 431.335
-margin_right = 1856.5
-margin_bottom = 1521.34
+margin_left = 1168.29
+margin_top = 471.38
+margin_right = 2258.29
+margin_bottom = 1561.39
 rect_scale = Vector2( 0.152163, 0.1421 )
 texture_normal = ExtResource( 3 )
 __meta__ = {
@@ -287,6 +359,18 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SoundRef" type="AudioStreamPlayer" parent="Question"]
+
+[node name="DingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="WrongSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="AnimationPlayerAnimals" type="AnimationPlayer" parent="."]
+anims/Flip = SubResource( 3 )
+anims/Leave = SubResource( 4 )
 
 [node name="AnimationPlayerCharacterMoving" type="AnimationPlayer" parent="."]
 anims/Move = SubResource( 1 )
@@ -320,6 +404,20 @@ volume_db = -4.0
 [node name="FrancescaVoice6" type="AudioStreamPlayer" parent="Voices/Francesca"]
 stream = ExtResource( 12 )
 volume_db = -4.0
+
+[node name="Narator" type="Node2D" parent="Voices"]
+
+[node name="NaratorVoice16" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 21 )
+
+[node name="NaratorVoice17" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 19 )
+
+[node name="NaratorVoice18" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 20 )
+[connection signal="pressed" from="Dog" to="." method="_on_Dog_pressed"]
 [connection signal="pressed" from="Giraffe" to="." method="_on_Giraffe_pressed"]
+[connection signal="pressed" from="Cat" to="." method="_on_Cat_pressed"]
 [connection signal="pressed" from="Question" to="Question" method="_on_Question_pressed"]
+[connection signal="animation_finished" from="AnimationPlayerAnimals" to="." method="_on_AnimationPlayerAnimals_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayerCharacterMoving" to="." method="_on_AnimationPlayerCharacterMoving_animation_finished"]

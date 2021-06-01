@@ -7,6 +7,7 @@ var island_top_score=0
 var boat_on_land_score=0
 var river_score=0
 var jungle_score=0
+var trash_score=0
 var cave_entrace_score=0
 var season_score=0
 
@@ -37,7 +38,7 @@ func write_to_file():
 	if new_file==false:
 		file.seek(file.get_len()-table_end.length()-html_end.length())
 		
-	total_score=boat_score+island_top_score+river_score+cave_entrace_score+season_score+jungle_score
+	total_score=boat_score+island_top_score+river_score+cave_entrace_score+season_score+trash_score+jungle_score
 #
 
 	text=add_tr(text)
@@ -47,6 +48,7 @@ func write_to_file():
 	text=add_td_item(text,boat_on_land_score)
 	text=add_td_item(text,river_score)
 	text=add_td_item(text,jungle_score)
+	text=add_td_item(text,trash_score)
 	text=add_td_item(text,season_score)
 	text=add_td_item(text,cave_entrace_score)
 	text=add_td_item(text,total_score)
@@ -141,6 +143,7 @@ func add_table_header(text):
 				<th>Corabia pe uscat</th>
 				<th>Pestii din rau</th>
 				<th>Animalele din padure</th>
+				<th>Luminisul</th>
 				<th>Ghicitoarea</th>
 				<th>Intrarea in pestera</th>
 				<th>Total</th>

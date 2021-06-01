@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/boat_begin.jpeg" type="Texture" id=1]
 [ext_resource path="res://Pirate.gd" type="Script" id=2]
@@ -16,6 +16,9 @@
 [ext_resource path="res://assets/sounds/luigi/1.Capitane-stii-bine-ca.wav" type="AudioStream" id=14]
 [ext_resource path="res://assets/sounds/francesca/Francesca1.wav" type="AudioStream" id=15]
 [ext_resource path="res://Voices.gd" type="Script" id=16]
+[ext_resource path="res://assets/mixkit-wooden-ship-on-the-sea-1187.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/sounds/simon/Simon-01-BunaPrieteni.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/sounds/narator/Narator-03-HaideSaCunoastem.wav" type="AudioStream" id=19]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fly"
@@ -32,6 +35,21 @@ tracks/0/keys = {
 "values": [ Vector2( 1052.48, 62.4195 ), Vector2( 453.081, 101.706 ) ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "GoToShapes"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Parrot:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 453.081, 101.706 ), Vector2( -145.191, 242.013 ) ]
+}
+
 [node name="BoatBegin" type="Node2D"]
 script = ExtResource( 7 )
 
@@ -45,12 +63,13 @@ __meta__ = {
 }
 
 [node name="Parrot" type="TextureButton" parent="."]
-margin_left = 1052.48
-margin_top = 62.4195
-margin_right = 1546.48
-margin_bottom = 460.419
+margin_left = -145.191
+margin_top = 242.013
+margin_right = 348.809
+margin_bottom = 640.014
 rect_scale = Vector2( 0.288558, 0.298968 )
 texture_normal = ExtResource( 6 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -90,6 +109,12 @@ script = ExtResource( 2 )
 
 [node name="AnimationPlayerParrot" type="AnimationPlayer" parent="."]
 anims/Fly = SubResource( 1 )
+anims/GoToShapes = SubResource( 2 )
+
+[node name="WaveSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -10.0
+autoplay = true
 
 [node name="Voices" type="Node2D" parent="."]
 script = ExtResource( 16 )
@@ -131,3 +156,14 @@ volume_db = -4.0
 [node name="FrancescaVoice2" type="AudioStreamPlayer" parent="Voices/Francesca"]
 stream = ExtResource( 12 )
 volume_db = -4.0
+
+[node name="Simon" type="Node2D" parent="Voices"]
+
+[node name="SimonVoice1" type="AudioStreamPlayer" parent="Voices/Simon"]
+stream = ExtResource( 18 )
+
+[node name="Narator" type="Node2D" parent="Voices"]
+
+[node name="NaratorVoice3" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 19 )
+[connection signal="animation_finished" from="AnimationPlayerParrot" to="." method="_on_AnimationPlayerParrot_animation_finished"]

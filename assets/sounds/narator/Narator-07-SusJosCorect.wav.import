@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Narator-07-SusJosCorect.wav-8f666e168f5503c617fca1be3e39b847.sample"
+
+[deps]
+
+source_file="res://assets/sounds/narator/Narator-07-SusJosCorect.wav"
+dest_files=[ "res://.import/Narator-07-SusJosCorect.wav-8f666e168f5503c617fca1be3e39b847.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

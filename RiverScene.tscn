@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://assets/river.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/pirate_girl.png" type="Texture" id=2]
@@ -26,6 +26,12 @@
 [ext_resource path="res://Question.gd" type="Script" id=24]
 [ext_resource path="res://assets/question.png" type="Texture" id=25]
 [ext_resource path="res://assets/sounds/richard/Richard-10.wav" type="AudioStream" id=26]
+[ext_resource path="res://assets/sounds/fish/PesteAuriu-01-Buna.wav" type="AudioStream" id=27]
+[ext_resource path="res://assets/sounds/fish/PesteAuriu-04-NumaraPestiCorect.wav" type="AudioStream" id=28]
+[ext_resource path="res://assets/sounds/fish/PesteAuriu-02-Desigur.wav" type="AudioStream" id=29]
+[ext_resource path="res://assets/sounds/fish/PesteAuriu-05-UauCeRapiziAtiFost.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/sounds/fish/PesteAuriu-03-NumaraPestiGresit.wav" type="AudioStream" id=31]
+[ext_resource path="res://assets/sounds/narator/Narator-15-NumaraPestii.wav" type="AudioStream" id=32]
 [ext_resource path="res://assets/sounds/francesca/Francesca4.wav" type="AudioStream" id=40]
 [ext_resource path="res://assets/sounds/luigi/5.mi-se-pare-mie-sau.wav" type="AudioStream" id=44]
 [ext_resource path="res://VoicesRiverScene.gd" type="Script" id=56]
@@ -48,7 +54,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "Move"
-length = 2.0
+length = 2.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 1
@@ -56,14 +62,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.5, 0.9, 1.3, 1.6, 2 ),
+"times": PoolRealArray( 0, 0.4, 0.9, 1.3, 1.7, 2.2, 2.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -313.593, -97.6952 ), Vector2( -249.787, -55.6928 ), Vector2( -135.83, -18.4884 ), Vector2( -2.38708, -20.4181 ), Vector2( 102.74, -36.506 ), Vector2( 192.911, -41.0208 ), Vector2( 286.711, -64.6596 ) ]
 }
 
 [sub_resource type="Animation" id=3]
-length = 2.0
+length = 2.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 1
@@ -71,7 +77,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 1.1, 2 ),
+"times": PoolRealArray( 0, 0.6, 1.1, 1.7, 2.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -189.401, -98.048 ), Vector2( -105.868, -102.248 ), Vector2( -29.4971, -97.4539 ), Vector2( 106.215, -138.185 ), Vector2( 310.853, -214.145 ) ]
@@ -79,7 +85,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "Move"
-length = 2.0
+length = 2.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 1
@@ -87,10 +93,62 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7, 1.1, 2 ),
+"times": PoolRealArray( 0, 0.9, 1.4, 2.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -321.137, -49.5286 ), Vector2( -113.202, -53.7288 ), Vector2( 13.3356, -58.6805 ), Vector2( 261.233, -128.814 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Appear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("PirateRed:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -541.862, -60.8448 ), Vector2( -313.593, -97.6952 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PirateGirl:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -641.475, -23.7901 ), Vector2( -321.137, -49.5286 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PirateBlue:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -568.473, -77.0717 ), Vector2( -189.401, -98.048 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Parrot:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -115.072, 100.231 ), Vector2( 113.514, 228.811 ) ]
 }
 
 [node name="RiverScene" type="Node2D"]
@@ -136,18 +194,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FishYellow" type="TextureRect" parent="."]
-margin_left = -220.513
-margin_top = -16.8369
-margin_right = 980.487
-margin_bottom = 963.163
-rect_rotation = 32.9076
-rect_scale = Vector2( -0.0489013, 0.0522934 )
+[node name="FishYellow" type="TextureButton" parent="."]
+margin_left = -201.645
+margin_top = -2.31677
+margin_right = 999.355
+margin_bottom = 977.683
+rect_rotation = -20.1829
+rect_scale = Vector2( 0.0529643, 0.0550548 )
 rect_pivot_offset = Vector2( 584.359, 429.96 )
-texture = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 6 )
+script = ExtResource( 20 )
 
 [node name="FishOrange" type="TextureRect" parent="."]
 margin_left = 143.992
@@ -182,6 +238,9 @@ rect_scale = Vector2( 0.18884, 0.168363 )
 rect_pivot_offset = Vector2( 373.811, 517.926 )
 texture_normal = ExtResource( 4 )
 script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayerPirateRed" type="AnimationPlayer" parent="PirateRed"]
 anims/Move = SubResource( 2 )
@@ -189,7 +248,7 @@ anims/Move = SubResource( 2 )
 [node name="PirateBlue" type="TextureButton" parent="."]
 margin_left = -189.401
 margin_top = -98.048
-margin_right = 767.601
+margin_right = 767.6
 margin_bottom = 961.952
 rect_scale = Vector2( 0.17864, 0.171665 )
 rect_pivot_offset = Vector2( 483.133, 617.374 )
@@ -289,6 +348,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimationPlayerPirates" type="AnimationPlayer" parent="."]
+anims/Appear = SubResource( 5 )
+
 [node name="Question" type="TextureButton" parent="."]
 margin_left = 923.786
 margin_top = 1.52588e-05
@@ -300,6 +362,8 @@ script = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SoundRef" type="AudioStreamPlayer" parent="Question"]
 
 [node name="DingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
@@ -335,6 +399,28 @@ volume_db = 5.0
 [node name="FrancescaVoice4" type="AudioStreamPlayer" parent="Voices/Francesca"]
 stream = ExtResource( 40 )
 volume_db = -4.0
+
+[node name="Fish" type="Node2D" parent="Voices"]
+
+[node name="FishVoice1" type="AudioStreamPlayer" parent="Voices/Fish"]
+stream = ExtResource( 27 )
+
+[node name="FishVoice2" type="AudioStreamPlayer" parent="Voices/Fish"]
+stream = ExtResource( 29 )
+
+[node name="FishVoice3" type="AudioStreamPlayer" parent="Voices/Fish"]
+stream = ExtResource( 31 )
+
+[node name="FishVoice4" type="AudioStreamPlayer" parent="Voices/Fish"]
+stream = ExtResource( 28 )
+
+[node name="FishVoice5" type="AudioStreamPlayer" parent="Voices/Fish"]
+stream = ExtResource( 30 )
+
+[node name="Narator" type="Node2D" parent="Voices"]
+
+[node name="NaratorVoice15" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 32 )
 [connection signal="animation_finished" from="Bridge/AnimationPlayerBridge" to="Bridge/AnimationPlayerBridge" method="_on_AnimationPlayerBridge_animation_finished"]
 [connection signal="animation_finished" from="PirateBlue/AnimationPlayerPirateBlue" to="PirateBlue/AnimationPlayerPirateBlue" method="_on_AnimationPlayerPirateBlue_animation_finished"]
 [connection signal="pressed" from="TextureButton1" to="TextureButton1" method="_on_Button_pressed"]

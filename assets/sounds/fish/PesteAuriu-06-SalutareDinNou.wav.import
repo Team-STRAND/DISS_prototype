@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PesteAuriu-06-SalutareDinNou.wav-784a2955bae4b971741f3b9ad4850f97.sample"
+
+[deps]
+
+source_file="res://assets/sounds/fish/PesteAuriu-06-SalutareDinNou.wav"
+dest_files=[ "res://.import/PesteAuriu-06-SalutareDinNou.wav-784a2955bae4b971741f3b9ad4850f97.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

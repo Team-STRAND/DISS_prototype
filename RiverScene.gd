@@ -8,6 +8,7 @@ func _ready():
 	get_node("TextureButton3").visible=false
 	
 	get_node("Voices").play()
+	get_node("AnimationPlayerPirates").play("Appear")
 
 func display_numbers():
 	get_node("TextureButton1").visible=true

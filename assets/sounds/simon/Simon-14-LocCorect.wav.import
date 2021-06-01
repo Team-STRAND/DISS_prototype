@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Simon-14-LocCorect.wav-39cfe18a01141d923e1837b0c883323e.sample"
+
+[deps]
+
+source_file="res://assets/sounds/simon/Simon-14-LocCorect.wav"
+dest_files=[ "res://.import/Simon-14-LocCorect.wav-39cfe18a01141d923e1837b0c883323e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

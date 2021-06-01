@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Narator-15-NumaraPestii.wav-a72b00d7d43be5716ce382299072808e.sample"
+
+[deps]
+
+source_file="res://assets/sounds/narator/Narator-15-NumaraPestii.wav"
+dest_files=[ "res://.import/Narator-15-NumaraPestii.wav-a72b00d7d43be5716ce382299072808e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

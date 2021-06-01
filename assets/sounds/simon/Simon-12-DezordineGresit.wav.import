@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Simon-12-DezordineGresit.wav-937de6535863f00bcdb17597d2bf5d18.sample"
+
+[deps]
+
+source_file="res://assets/sounds/simon/Simon-12-DezordineGresit.wav"
+dest_files=[ "res://.import/Simon-12-DezordineGresit.wav-937de6535863f00bcdb17597d2bf5d18.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

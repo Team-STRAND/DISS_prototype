@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Narator-03-HaideSaCunoastem.wav-914b2ccb539fd6c1c84da0ed2258eb74.sample"
+
+[deps]
+
+source_file="res://assets/sounds/narator/Narator-03-HaideSaCunoastem.wav"
+dest_files=[ "res://.import/Narator-03-HaideSaCunoastem.wav-914b2ccb539fd6c1c84da0ed2258eb74.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

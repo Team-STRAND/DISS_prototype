@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/island.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/parrot.png" type="Texture" id=2]
@@ -16,6 +16,12 @@
 [ext_resource path="res://Question.gd" type="Script" id=14]
 [ext_resource path="res://assets/question.png" type="Texture" id=15]
 [ext_resource path="res://assets/sounds/luigi/4.excelent-raspuns-se-vede-ca.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sounds/narator/Narator-09-StangaDreaptaGresit.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/sounds/narator/Narator-10-StangaDreaptaCorect.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/sounds/simon/Simon-07-CatMaBucur.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/sounds/narator/Narator-08-StangaDreaptaAlege.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/sounds/simon/Simon-06-DaDarVaZic.wav" type="AudioStream" id=21]
+[ext_resource path="res://Pirate.gd" type="Script" id=22]
 [ext_resource path="res://assets/sounds/luigi/3.Arrr-nu-sunt-de-aceeasi-parere.wav" type="AudioStream" id=23]
 [ext_resource path="res://assets/sounds/richard/Richard-6.wav" type="AudioStream" id=32]
 [ext_resource path="res://assets/sounds/richard/Richard-5.wav" type="AudioStream" id=47]
@@ -48,6 +54,21 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -652.955, -27.2964 ), Vector2( -356.89, -134.575 ), Vector2( -238.374, -157.574 ), Vector2( -166.305, -204.546 ), Vector2( -85.2965, -219.379 ), Vector2( -37.9999, -255.938 ), Vector2( 6.62471, -269.723 ), Vector2( 27.2764, -280.51 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Entrance"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -72.2674, 545.419 ), Vector2( -34.4698, 88.0676 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -89,6 +110,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Question" type="TextureButton" parent="."]
+margin_left = 923.786
+margin_top = 1.52588e-05
+margin_right = 1075.79
+margin_bottom = 145.0
+rect_scale = Vector2( 0.648164, 0.63789 )
+texture_normal = ExtResource( 15 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundRef" type="AudioStreamPlayer" parent="Question"]
+
 [node name="Ship" type="TextureRect" parent="."]
 margin_left = -652.955
 margin_top = -27.2964
@@ -105,19 +140,21 @@ __meta__ = {
 anims/ShipMoving = SubResource( 1 )
 script = ExtResource( 9 )
 
-[node name="Parrot" type="TextureRect" parent="."]
-margin_left = -34.4698
-margin_top = 88.0676
-margin_right = 396.531
-margin_bottom = 486.068
+[node name="Parrot" type="TextureButton" parent="."]
+margin_left = -72.2674
+margin_top = 545.419
+margin_right = 358.733
+margin_bottom = 943.419
 rect_scale = Vector2( -0.442189, 0.465328 )
 rect_pivot_offset = Vector2( 211.793, 193.485 )
-texture = ExtResource( 2 )
+texture_normal = ExtResource( 2 )
+script = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayerParrot" type="AnimationPlayer" parent="Parrot"]
+anims/Entrance = SubResource( 3 )
 anims/FlyingParrot = SubResource( 2 )
 script = ExtResource( 8 )
 
@@ -202,19 +239,26 @@ stream = ExtResource( 16 )
 [node name="LuigiVoice3" type="AudioStreamPlayer" parent="Voices/Luigi"]
 stream = ExtResource( 23 )
 
-[node name="Question" type="TextureButton" parent="."]
-margin_left = 923.786
-margin_top = 1.52588e-05
-margin_right = 1075.79
-margin_bottom = 145.0
-rect_scale = Vector2( 0.648164, 0.63789 )
-texture_normal = ExtResource( 15 )
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Simon" type="Node2D" parent="Voices"]
+
+[node name="SimonVoice6" type="AudioStreamPlayer" parent="Voices/Simon"]
+stream = ExtResource( 21 )
+
+[node name="SimonVoice7" type="AudioStreamPlayer" parent="Voices/Simon"]
+stream = ExtResource( 19 )
+
+[node name="Narator" type="Node2D" parent="Voices"]
+
+[node name="NaratorVoice8" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 20 )
+
+[node name="NaratorVoice9" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 17 )
+
+[node name="NaratorVoice10" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 18 )
+[connection signal="pressed" from="Question" to="Question" method="_on_Question_pressed"]
 [connection signal="animation_finished" from="Ship/AnimationPlayerShip" to="Ship/AnimationPlayerShip" method="_on_AnimationPlayerShip_animation_finished"]
 [connection signal="animation_finished" from="Parrot/AnimationPlayerParrot" to="Parrot/AnimationPlayerParrot" method="_on_AnimationPlayerParrot_animation_finished"]
 [connection signal="pressed" from="LeftButton" to="LeftButton" method="_on_LeftButton_pressed"]
 [connection signal="pressed" from="RightButton" to="RightButton" method="_on_RightButton_pressed"]
-[connection signal="pressed" from="Question" to="Question" method="_on_Question_pressed"]

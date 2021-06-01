@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Simon-07-CatMaBucur.wav-136be8608b73c4c819a68a4d6149e304.sample"
+
+[deps]
+
+source_file="res://assets/sounds/simon/Simon-07-CatMaBucur.wav"
+dest_files=[ "res://.import/Simon-07-CatMaBucur.wav-136be8608b73c4c819a68a4d6149e304.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

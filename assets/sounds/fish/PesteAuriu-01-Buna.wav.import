@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PesteAuriu-01-Buna.wav-607c711c0ef4652e68cec7e3fd000aaa.sample"
+
+[deps]
+
+source_file="res://assets/sounds/fish/PesteAuriu-01-Buna.wav"
+dest_files=[ "res://.import/PesteAuriu-01-Buna.wav-607c711c0ef4652e68cec7e3fd000aaa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

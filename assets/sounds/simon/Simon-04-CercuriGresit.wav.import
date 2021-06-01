@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Simon-04-CercuriGresit.wav-f815e39c0cf7461e998295af62303536.sample"
+
+[deps]
+
+source_file="res://assets/sounds/simon/Simon-04-CercuriGresit.wav"
+dest_files=[ "res://.import/Simon-04-CercuriGresit.wav-f815e39c0cf7461e998295af62303536.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

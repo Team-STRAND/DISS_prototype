@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/ship.png" type="Texture" id=1]
 [ext_resource path="res://assets/trees.jpeg" type="Texture" id=2]
@@ -20,10 +20,67 @@
 [ext_resource path="res://assets/sounds/richard/Richard-8.wav" type="AudioStream" id=18]
 [ext_resource path="res://Question.gd" type="Script" id=19]
 [ext_resource path="res://assets/question.png" type="Texture" id=20]
+[ext_resource path="res://assets/check.png" type="Texture" id=21]
+[ext_resource path="res://assets/sounds/narator/Narator-14-CorabieNu.wav" type="AudioStream" id=22]
 [ext_resource path="res://assets/sounds/luigi/3.Arrr-nu-sunt-de-aceeasi-parere.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/sounds/narator/Narator-12-CorabieAlege.wav" type="AudioStream" id=24]
+[ext_resource path="res://assets/sounds/narator/Narator-13-CorabieDa.wav" type="AudioStream" id=25]
+[ext_resource path="res://assets/sounds/narator/Narator-11-PiratiiAuAjuns.wav" type="AudioStream" id=26]
 [ext_resource path="res://assets/sounds/richard/Richard-7.wav" type="AudioStream" id=35]
 [ext_resource path="res://VoicesJungleScene.gd" type="Script" id=49]
 [ext_resource path="res://JungleScene.gd" type="Script" id=50]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Leave"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("PirateGirl:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 144, -74 ), Vector2( 628.356, -65.5911 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PirateRed:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 371.728, -98.2724 ), Vector2( 726.586, -103.318 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PirateBlue:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 426.964, -199.179 ), Vector2( 696.051, -219.361 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Parrot:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 423.897, 224.054 ), Vector2( 1138.66, 160.146 ) ]
+}
 
 [node name="JungleScene" type="Node2D"]
 script = ExtResource( 50 )
@@ -53,7 +110,7 @@ __meta__ = {
 margin_left = 423.897
 margin_top = 224.054
 margin_right = 917.897
-margin_bottom = 622.054
+margin_bottom = 622.055
 rect_scale = Vector2( -0.239492, 0.253915 )
 texture_normal = ExtResource( 15 )
 __meta__ = {
@@ -69,6 +126,9 @@ rect_scale = Vector2( 0.18884, 0.168363 )
 rect_pivot_offset = Vector2( 373.811, 517.926 )
 texture_normal = ExtResource( 3 )
 script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PirateBlue" type="TextureButton" parent="."]
 margin_left = 426.964
@@ -89,6 +149,9 @@ rect_scale = Vector2( 0.198835, 0.20453 )
 rect_pivot_offset = Vector2( 477.248, 561.536 )
 texture_normal = ExtResource( 4 )
 script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="YesButton" type="TextureButton" parent="."]
 margin_left = 448.877
@@ -124,6 +187,17 @@ rect_scale = Vector2( 0.382279, 0.385715 )
 rect_pivot_offset = Vector2( 161.134, 82.6809 )
 texture_normal = ExtResource( 7 )
 script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightSymbol" type="TextureRect" parent="NoButton"]
+margin_left = 140.112
+margin_top = -18.9863
+margin_right = 1052.11
+margin_bottom = 558.014
+rect_scale = Vector2( 0.291509, 0.293189 )
+texture = ExtResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -165,6 +239,20 @@ stream = ExtResource( 16 )
 [node name="LuigiVoice3" type="AudioStreamPlayer" parent="Voices/Luigi"]
 stream = ExtResource( 23 )
 
+[node name="Narator" type="Node2D" parent="Voices"]
+
+[node name="NaratorVoice11" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 26 )
+
+[node name="NaratorVoice12" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 24 )
+
+[node name="NaratorVoice13" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 25 )
+
+[node name="NaratorVoice14" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 22 )
+
 [node name="Question" type="TextureButton" parent="."]
 margin_left = 923.786
 margin_top = 1.52588e-05
@@ -176,6 +264,14 @@ script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SoundRef" type="AudioStreamPlayer" parent="Question"]
+
+[node name="AnimationPlayerPirates" type="AnimationPlayer" parent="."]
+anims/Leave = SubResource( 1 )
+[connection signal="mouse_entered" from="YesButton" to="YesButton" method="_on_YesButton_mouse_entered"]
 [connection signal="pressed" from="YesButton" to="YesButton" method="_on_YesButton_pressed"]
+[connection signal="mouse_entered" from="NoButton" to="NoButton" method="_on_NoButton_mouse_entered"]
 [connection signal="pressed" from="NoButton" to="NoButton" method="_on_NoButton_pressed"]
 [connection signal="pressed" from="Question" to="Question" method="_on_Question_pressed"]
+[connection signal="animation_finished" from="AnimationPlayerPirates" to="NoButton" method="_on_AnimationPlayerPirates_animation_finished"]

@@ -15,7 +15,7 @@ script = ExtResource( 2 )
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-rect_scale = Vector2( 0.406962, 0.420931 )
+rect_scale = Vector2( 0.411481, 0.420931 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

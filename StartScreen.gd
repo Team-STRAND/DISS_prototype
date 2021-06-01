@@ -51,6 +51,8 @@ func play_pressed():
 	get_node("Title/AnimationPlayer").play("TitleFade")
 	write_symbols_to_json()
 	start_ship()
+	get_node("Voices/Narator/NaratorVoice1").stop()
+	get_node("Voices/Narator/NaratorVoice2").play()
 	
 func symbol_pressed():
 	write_symbols_to_json()

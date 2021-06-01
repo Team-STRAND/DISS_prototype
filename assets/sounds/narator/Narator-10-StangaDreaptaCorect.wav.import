@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Narator-10-StangaDreaptaCorect.wav-82dc9eac8a9b7001f6bf01031e5bf34d.sample"
+
+[deps]
+
+source_file="res://assets/sounds/narator/Narator-10-StangaDreaptaCorect.wav"
+dest_files=[ "res://.import/Narator-10-StangaDreaptaCorect.wav-82dc9eac8a9b7001f6bf01031e5bf34d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

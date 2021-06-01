@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Simon-02-FormeGeometrice.wav-5717961779a625f9a6f36e0f8b700145.sample"
+
+[deps]
+
+source_file="res://assets/sounds/simon/Simon-02-FormeGeometrice.wav"
+dest_files=[ "res://.import/Simon-02-FormeGeometrice.wav-5717961779a625f9a6f36e0f8b700145.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

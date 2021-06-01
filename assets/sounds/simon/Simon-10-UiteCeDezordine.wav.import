@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Simon-10-UiteCeDezordine.wav-52a81664b9a3fe46402f3fade75ed33d.sample"
+
+[deps]
+
+source_file="res://assets/sounds/simon/Simon-10-UiteCeDezordine.wav"
+dest_files=[ "res://.import/Simon-10-UiteCeDezordine.wav-52a81664b9a3fe46402f3fade75ed33d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

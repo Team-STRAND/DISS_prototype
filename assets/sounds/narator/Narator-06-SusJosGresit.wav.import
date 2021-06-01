@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Narator-06-SusJosGresit.wav-5de9d6333d51fede3a4fb2ae1881cc22.sample"
+
+[deps]
+
+source_file="res://assets/sounds/narator/Narator-06-SusJosGresit.wav"
+dest_files=[ "res://.import/Narator-06-SusJosGresit.wav-5de9d6333d51fede3a4fb2ae1881cc22.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
