@@ -13,5 +13,5 @@ func _on_Button_pressed():
 	Score.river_score-=3
 	
 	get_parent().get_node("Voices/Fish/FishVoice3").play()
-
+	get_parent().get_node("FishYellow").start_move()
 

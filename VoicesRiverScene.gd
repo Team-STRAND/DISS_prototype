@@ -33,6 +33,9 @@ func _ready():
 	get_node("Narator/NaratorVoice15").connect("finished",get_parent().get_node("Question"),"set_sound_ref",[get_node("Narator/NaratorVoice15")])
 	get_node("Narator/NaratorVoice15").connect("finished",get_parent().get_node("Question"),"enable_button")
 	
+	get_node("Fish/FishVoice3").connect("finished",parent.get_node("FishYellow"),"stop_move")
+	get_node("Fish/FishVoice4").connect("finished",parent.get_node("FishYellow"),"stop_move")
+	
 func play():
 	get_node("Francesca/FrancescaVoice4").play()	
 	parent.get_node("PirateGirl").start_move()

@@ -24,6 +24,7 @@ func play():
 	parent.get_node("PirateBlue").start_move()
 
 func stop_sounds():
+	
 	get_node("Narator/NaratorVoice16").stop()
 	get_node("Narator/NaratorVoice17").stop()
 	get_node("Narator/NaratorVoice18").stop()

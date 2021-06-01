@@ -63,10 +63,10 @@ __meta__ = {
 }
 
 [node name="Parrot" type="TextureButton" parent="."]
-margin_left = -145.191
-margin_top = 242.013
-margin_right = 348.809
-margin_bottom = 640.014
+margin_left = 453.081
+margin_top = 101.706
+margin_right = 947.081
+margin_bottom = 499.706
 rect_scale = Vector2( 0.288558, 0.298968 )
 texture_normal = ExtResource( 6 )
 script = ExtResource( 2 )

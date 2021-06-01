@@ -68,52 +68,72 @@ func wrong_answer(symbol):
 	item.play()
 
 func _on_PirateBlue_pressed():
+	get_node("Voices").stop_sounds()
 	match current_question:
 		QUESTION.height:
 			right_answer(pirate_blue_right_symbol)
 			poztive_guard[0].play()
+			Score.cave_entrace_score+=10
 		QUESTION.animal:
 			wrong_answer(pirate_blue_wrong_symbol)
+			Score.cave_entrace_score-=3
 		QUESTION.hair:
 			wrong_answer(pirate_blue_wrong_symbol)
+			Score.cave_entrace_score-=3
 		QUESTION.clothes:
 			right_answer(pirate_blue_right_symbol)
 			poztive_guard[3].play()
+			Score.cave_entrace_score+=10
 
 func _on_PirateRed_pressed():
+	get_node("Voices").stop_sounds()
 	match current_question:
 		QUESTION.height:
 			wrong_answer(pirate_red_wrong_symbol)
+			Score.cave_entrace_score-=3
 		QUESTION.animal:
 			wrong_answer(pirate_red_wrong_symbol)
+			Score.cave_entrace_score-=3
 		QUESTION.hair:
 			wrong_answer(pirate_red_wrong_symbol)
+			Score.cave_entrace_score-=3
 		QUESTION.clothes:	
 			wrong_answer(pirate_red_wrong_symbol)
+			Score.cave_entrace_score-=3
 
 func _on_PirateGirl_pressed():
+	get_node("Voices").stop_sounds()
 	match current_question:
 		QUESTION.height:
 			wrong_answer(pirate_girl_wrong_symbol)
+			Score.cave_entrace_score-=3
 		QUESTION.animal:
 			wrong_answer(pirate_girl_wrong_symbol)
+			Score.cave_entrace_score-=3
 		QUESTION.hair:
 			right_answer(pirate_girl_right_symbol)			
 			poztive_guard[2].play()
+			Score.cave_entrace_score+=10
 		QUESTION.clothes:	
 			wrong_answer(pirate_girl_wrong_symbol)
+			Score.cave_entrace_score-=3
 
 func _on_Parrot_pressed():
+	get_node("Voices").stop_sounds()
 	match current_question:
 		QUESTION.height:
 			wrong_answer(parrot_wrong_symbol)
+			Score.cave_entrace_score-=3
 		QUESTION.animal:
 			right_answer(parrot_right_symbol)
 			poztive_guard[1].play()
+			Score.cave_entrace_score+=10
 		QUESTION.hair:
 			wrong_answer(parrot_wrong_symbol)
+			Score.cave_entrace_score-=3
 		QUESTION.clothes:	
 			wrong_answer(parrot_wrong_symbol)
+			Score.cave_entrace_score-=3
 
 func _on_AnimationPlayerGroot_animation_finished(anim_name):
 	get_node("AnimationPlayerPirates").play("GoInsideCave")

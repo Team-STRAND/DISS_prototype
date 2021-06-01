@@ -13,3 +13,4 @@ func _on_TextureButton3_pressed():
 	Score.river_score+=10
 	
 	get_parent().get_node("Voices/Fish/FishVoice4").play()
+	get_parent().get_node("FishYellow").start_move()

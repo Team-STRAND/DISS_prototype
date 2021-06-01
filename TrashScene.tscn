@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/pirate_hat.png" type="Texture" id=1]
 [ext_resource path="res://assets/animals_misplaced.jpeg" type="Texture" id=2]
@@ -11,6 +11,15 @@
 [ext_resource path="res://assets/sounds/wrong.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/sounds/ding.wav" type="AudioStream" id=10]
 [ext_resource path="res://VoicesTrashScene.gd" type="Script" id=11]
+[ext_resource path="res://assets/sounds/simon/Simon-12-DezordineGresit.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/simon/Simon-09-UauCeFrumosSeVede.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/simon/Simon-11-DezordineCorect.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/simon/Simon-10-UiteCeDezordine.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/simon/Simon-13-AiFacutCurat.wav" type="AudioStream" id=16]
+[ext_resource path="res://Pirate.gd" type="Script" id=17]
+[ext_resource path="res://assets/sounds/narator/Narator-19-CinevaATrecutPeAici.wav" type="AudioStream" id=18]
+[ext_resource path="res://Question.gd" type="Script" id=19]
+[ext_resource path="res://assets/question.png" type="Texture" id=20]
 
 [node name="TrashScene" type="Node2D"]
 script = ExtResource( 4 )
@@ -24,16 +33,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Parrot" type="TextureRect" parent="."]
+[node name="Parrot" type="TextureButton" parent="."]
 margin_left = 291.328
 margin_top = 67.8823
 margin_right = 722.328
 margin_bottom = 465.882
 rect_scale = Vector2( -0.540534, 0.505391 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 3 )
+script = ExtResource( 17 )
 
 [node name="PirateHat" type="TextureButton" parent="."]
 margin_left = 420.607
@@ -102,11 +109,48 @@ __meta__ = {
 [node name="Voices" type="Node2D" parent="."]
 script = ExtResource( 11 )
 
+[node name="Simon" type="Node2D" parent="Voices"]
+
+[node name="VoiceSimon9" type="AudioStreamPlayer" parent="Voices/Simon"]
+stream = ExtResource( 13 )
+
+[node name="VoiceSimon10" type="AudioStreamPlayer" parent="Voices/Simon"]
+stream = ExtResource( 15 )
+
+[node name="VoiceSimon11" type="AudioStreamPlayer" parent="Voices/Simon"]
+stream = ExtResource( 14 )
+
+[node name="VoiceSimon12" type="AudioStreamPlayer" parent="Voices/Simon"]
+stream = ExtResource( 12 )
+
+[node name="VoiceSimon13" type="AudioStreamPlayer" parent="Voices/Simon"]
+stream = ExtResource( 16 )
+
+[node name="Narator" type="Node2D" parent="Voices"]
+
+[node name="NaratorVoice19" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 18 )
+
 [node name="WrongSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 
 [node name="DingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+
+[node name="Question" type="TextureButton" parent="."]
+margin_left = 923.786
+margin_top = 1.52588e-05
+margin_right = 1075.79
+margin_bottom = 145.0
+rect_scale = Vector2( 0.648164, 0.63789 )
+texture_normal = ExtResource( 20 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundRef" type="AudioStreamPlayer" parent="Question"]
 [connection signal="pressed" from="PirateHat" to="." method="_on_PirateHat_pressed"]
 [connection signal="pressed" from="Branch" to="." method="_on_Branch_pressed"]
 [connection signal="pressed" from="Bottle" to="." method="_on_Bottle_pressed"]
+[connection signal="pressed" from="Question" to="Question" method="_on_Question_pressed"]
