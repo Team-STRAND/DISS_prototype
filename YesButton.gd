@@ -10,6 +10,7 @@ func _on_YesButton_pressed():
 	get_node("WrongAnswer").visible=true;
 	disabled=true
 	get_parent().get_node("PirateBlue").start_move()
+	Score.boat_on_land_score-=5
 
 
 func _on_YesButton_mouse_entered():

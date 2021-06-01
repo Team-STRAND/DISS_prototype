@@ -17,6 +17,11 @@ func _ready():
 	
 	get_node("Narator/NaratorVoice8").connect("finished",get_parent().get_node("Question"),"set_sound_ref",[get_node("Narator/NaratorVoice8")])
 	get_node("Narator/NaratorVoice8").connect("finished",get_parent().get_node("Question"),"enable_button")
+	get_node("Narator/NaratorVoice8").connect("finished",get_parent(),"enable_arrow_buttons")
 	
 func play():
 	get_node("Richard/RichardVoice5").play()
+
+func stop_sounds():
+	get_node("Narator/NaratorVoice9").stop()
+	get_node("Narator/NaratorVoice10").stop()

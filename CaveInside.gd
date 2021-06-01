@@ -5,12 +5,19 @@ func _ready():
 	get_node("Voices").play()
 
 	get_node("Voices/Francesca/FrancescaVoice8").connect("finished",self,"fishes_apear")
-	
-	get_node("Voices/Luigi/LuigiVoice9").connect("finished",self,"ship_moves")
 	get_node("Voices/Luigi/LuigiVoice9").connect("finished",get_node("PirateBlue"),"stop_move")
 	
-	get_node("Voices/Richard/RichardVoice16").connect("finished",self,"go_next_scene")
+	get_node("Voices/Luigi/LuigiVoice9").connect("finished",get_node("Voices/Fish/FishVoice6"),"play")
+	get_node("Voices/Luigi/LuigiVoice9").connect("finished",get_node("FishYellow"),"start_move")
+	
+	get_node("Voices/Fish/FishVoice6").connect("finished",get_node("Voices/Fish/FishVoice7"),"play")
+	get_node("Voices/Fish/FishVoice7").connect("finished",get_node("FishYellow"),"stop_move")
+	
+	get_node("Voices/Fish/FishVoice7").connect("finished",self,"ship_moves")
+	
 	get_node("Voices/Richard/RichardVoice16").connect("finished",get_node("PirateRed"),"stop_move")
+	get_node("Voices/Richard/RichardVoice16").connect("finished",get_node("Voices/Narator/NaratorVoice26"),"play")
+	get_node("Voices/Narator/NaratorVoice26").connect("finished",self,"go_next_scene")
 
 func fishes_apear():
 	get_node("AnimationPlayerFish").play("Move")

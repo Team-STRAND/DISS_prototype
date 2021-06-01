@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://assets/cave.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/pirate_girl.png" type="Texture" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://assets/parrot.png" type="Texture" id=25]
 [ext_resource path="res://Question.gd" type="Script" id=26]
 [ext_resource path="res://assets/question.png" type="Texture" id=27]
+[ext_resource path="res://assets/sounds/narator/Narator-23-EchipajulAjunge.wav" type="AudioStream" id=28]
 [ext_resource path="res://assets/sounds/richard/Richard-15.wav" type="AudioStream" id=30]
 [ext_resource path="res://assets/sounds/richard/Richard-14.wav" type="AudioStream" id=32]
 [ext_resource path="res://VoicesCave.gd" type="Script" id=43]
@@ -384,6 +385,11 @@ volume_db = 5.0
 [node name="GuardNeg3" type="AudioStreamPlayer" parent="Voices/CaveGuard"]
 stream = ExtResource( 8 )
 volume_db = 5.0
+
+[node name="Narator" type="Node2D" parent="Voices"]
+
+[node name="NaratorVoice23" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 28 )
 
 [node name="WrongSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )

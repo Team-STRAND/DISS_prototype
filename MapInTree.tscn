@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/map_in_tree.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/pirate_girl.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://assets/parrot.png" type="Texture" id=6]
 [ext_resource path="res://VoicesMapInTree.gd" type="Script" id=7]
 [ext_resource path="res://assets/sounds/richard/Richard-12.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/simon/Simon-08-CeSeVedeInVarf.wav" type="AudioStream" id=9]
+[ext_resource path="res://Pirate.gd" type="Script" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Move"
@@ -206,6 +208,10 @@ margin_bottom = 961.952
 rect_scale = Vector2( 0.17864, 0.171665 )
 rect_pivot_offset = Vector2( 483.133, 617.374 )
 texture_normal = ExtResource( 4 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PirateGirl" type="TextureButton" parent="."]
 margin_left = -297.353
@@ -223,6 +229,7 @@ margin_right = 769.808
 margin_bottom = 657.204
 rect_scale = Vector2( -0.239492, 0.253915 )
 texture_normal = ExtResource( 6 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -242,5 +249,10 @@ script = ExtResource( 7 )
 [node name="RichardVoice12" type="AudioStreamPlayer" parent="Voices/Richard"]
 stream = ExtResource( 8 )
 volume_db = 8.0
+
+[node name="Simon" type="Node2D" parent="Voices"]
+
+[node name="SimonVoice8" type="AudioStreamPlayer" parent="Voices/Simon"]
+stream = ExtResource( 9 )
 [connection signal="animation_finished" from="AnimationPlayerCharacterMoving" to="." method="_on_AnimationPlayerCharacterMoving_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayerParrot" to="." method="_on_AnimationPlayerParrot_animation_finished"]

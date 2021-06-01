@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/pirate_girl.png" type="Texture" id=1]
 [ext_resource path="res://assets/fish_orange.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://CaveInside.gd" type="Script" id=9]
 [ext_resource path="res://assets/parrot.png" type="Texture" id=10]
 [ext_resource path="res://Pirate.gd" type="Script" id=11]
+[ext_resource path="res://assets/sounds/narator/Narator-26-PestiiAducCorabia.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/fish/PesteAuriu-07-SuntetiPiratiNeinfricati.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/narator/Narator-25-InPesteraPiratiiMerg.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/fish/PesteAuriu-06-SalutareDinNou.wav" type="AudioStream" id=15]
 [ext_resource path="res://assets/sounds/francesca/Francesca8.wav" type="AudioStream" id=19]
 [ext_resource path="res://assets/sounds/richard/Richard-16.wav" type="AudioStream" id=23]
 [ext_resource path="res://assets/sounds/luigi/9.acela-este-cumva.wav" type="AudioStream" id=41]
@@ -161,7 +165,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FishYellow" type="TextureRect" parent="."]
+[node name="FishYellow" type="TextureButton" parent="."]
 margin_left = 490.764
 margin_top = 261.462
 margin_right = 1691.76
@@ -169,10 +173,8 @@ margin_bottom = 1241.46
 rect_rotation = -24.3546
 rect_scale = Vector2( 0.0513475, 0.0520508 )
 rect_pivot_offset = Vector2( 584.359, 429.96 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 3 )
+script = ExtResource( 11 )
 
 [node name="FishOrange" type="TextureRect" parent="."]
 margin_left = 826.009
@@ -252,6 +254,22 @@ anims/Move = SubResource( 3 )
 
 [node name="Voices" type="Node2D" parent="."]
 script = ExtResource( 46 )
+
+[node name="Narator" type="Node2D" parent="Voices"]
+
+[node name="NaratorVoice25" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 14 )
+
+[node name="NaratorVoice26" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 12 )
+
+[node name="Fish" type="Node2D" parent="Voices"]
+
+[node name="FishVoice6" type="AudioStreamPlayer" parent="Voices/Fish"]
+stream = ExtResource( 15 )
+
+[node name="FishVoice7" type="AudioStreamPlayer" parent="Voices/Fish"]
+stream = ExtResource( 13 )
 
 [node name="Francesca" type="Node2D" parent="Voices"]
 
