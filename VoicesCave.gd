@@ -14,6 +14,9 @@ func _ready():
 	for voice in pozitive_guard:
 		voice.connect("finished",parent,"reset_symbols")
 	
+	get_node("Narator/NaratorVoice23").connect("finished",get_node("Richard/RichardVoice14"),"play")
+	get_node("Narator/NaratorVoice23").connect("finished",get_parent().get_node("PirateRed"),"start_move")
+	
 	get_node("Richard/RichardVoice14").connect("finished",get_node("CaveGuard/GuardVoice1"),"play")
 	get_node("Richard/RichardVoice14").connect("finished",parent.get_node("PirateRed"),"stop_move")
 	get_node("Richard/RichardVoice14").connect("finished",parent.get_node("Groot"),"start_move")
@@ -58,6 +61,8 @@ func _ready():
 	get_node("CaveGuard/GuardVoice7").connect("finished",parent,"next_scene")
 
 func play():
-	get_node("Richard/RichardVoice14").play()
-		
-	get_parent().get_node("PirateRed").start_move()
+	get_node("Narator/NaratorVoice23").play()
+	
+func stop_sounds():
+	for node in get_node("CaveGuard").get_children():
+		node.stop()		

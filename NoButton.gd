@@ -15,6 +15,7 @@ func _on_NoButton_pressed():
 	get_node("RightSymbol").visible=true
 	disabled=true
 	get_parent().get_node("PirateBlue").start_move()
+	Score.boat_on_land_score+=10
 
 func _on_AnimationPlayerPirates_animation_finished(anim_name):
 	go_next()

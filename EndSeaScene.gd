@@ -6,13 +6,12 @@ func _ready():
 	get_node("AnimationPlayer").play("ShipSailing")
 	get_node("WaveSound").play()
 	get_node("Voices").play()
-	
+	get_node("Diploma/TextEdit").text=Score.child_name
 	get_node("Voices/Luigi/LuigiVoice10").connect("finished",self,"display_diploma")
 	Score.write_to_file()
 
 func display_diploma():
 	get_node("Diploma/AnimationPlayer").play("DiplomaAppear")
-	get_node("Diploma/TextEdit").text=Score.child_name
 
 
 func save_diploma():
