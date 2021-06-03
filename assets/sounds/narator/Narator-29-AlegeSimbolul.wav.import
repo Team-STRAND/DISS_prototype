@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Narator-29-AlegeSimbolul.wav-4e54feda3361e7e2324e7ec0c46e7008.sample"
+
+[deps]
+
+source_file="res://assets/sounds/narator/Narator-29-AlegeSimbolul.wav"
+dest_files=[ "res://.import/Narator-29-AlegeSimbolul.wav-4e54feda3361e7e2324e7ec0c46e7008.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

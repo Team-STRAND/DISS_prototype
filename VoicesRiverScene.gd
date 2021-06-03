@@ -35,6 +35,7 @@ func _ready():
 	
 	get_node("Fish/FishVoice3").connect("finished",parent.get_node("FishYellow"),"stop_move")
 	get_node("Fish/FishVoice4").connect("finished",parent.get_node("FishYellow"),"stop_move")
+	get_node("Fish/FishVoice5").connect("finished",parent.get_node("FishYellow"),"stop_move")
 	
 func play():
 	get_node("Francesca/FrancescaVoice4").play()	

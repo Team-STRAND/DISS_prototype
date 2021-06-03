@@ -12,3 +12,4 @@ func move_pirates():
 
 func _on_AnimationPlayerBridge_animation_finished(anim_name):
 	get_parent().get_parent().get_node("Voices/Fish/FishVoice5").play()
+	get_parent().get_parent().get_node("FishYellow").start_move()

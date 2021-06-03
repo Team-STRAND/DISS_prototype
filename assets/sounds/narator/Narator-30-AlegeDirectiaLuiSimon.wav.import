@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Narator-30-AlegeDirectiaLuiSimon.wav-4530e3781bf1afdaaa9cf5216588ee45.sample"
+
+[deps]
+
+source_file="res://assets/sounds/narator/Narator-30-AlegeDirectiaLuiSimon.wav"
+dest_files=[ "res://.import/Narator-30-AlegeDirectiaLuiSimon.wav-4530e3781bf1afdaaa9cf5216588ee45.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
