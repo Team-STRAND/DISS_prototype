@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/seasons.jpeg" type="Texture" id=1]
 [ext_resource path="res://Seasons.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://VoicesSeasons.gd" type="Script" id=9]
 [ext_resource path="res://assets/sounds/narator/Narator-21-AscultaGhicitoarea.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/sounds/narator/Narator-22-FrunzaIngalbeneste.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/narator/Narator-33-AnotimpGresit.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/narator/Narator-34-AnotimpCorect.wav" type="AudioStream" id=13]
 
 [sub_resource type="ImageTexture" id=1]
 
@@ -142,6 +144,12 @@ stream = ExtResource( 10 )
 
 [node name="NaratorVoice22" type="AudioStreamPlayer" parent="Voices/Narator"]
 stream = ExtResource( 11 )
+
+[node name="NaratorVoicePoz" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 13 )
+
+[node name="NaratorVoiceNeg" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 12 )
 [connection signal="pressed" from="ButtonAutumn" to="." method="_on_ButtonAutumn_pressed"]
 [connection signal="pressed" from="ButtonSpring" to="." method="_on_ButtonSpring_pressed"]
 [connection signal="pressed" from="ButtonSummer" to="." method="_on_ButtonSummer_pressed"]

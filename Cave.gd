@@ -36,6 +36,10 @@ onready var negative_guard=[
 
 func _ready():
 	get_node("AnimationPlayerPirates").play("Move")	
+	
+	for sound in poztive_guard:
+		sound.connect("finished",self,"disable_buttons")
+	
 	reset_symbols()
 
 func next_scene():
@@ -67,73 +71,89 @@ func wrong_answer(symbol):
 	var item = negative_guard[randi() % negative_guard.size()]
 	item.play()
 
+func enable_buttons():
+	get_node("PirateBlue").disabled=false
+	get_node("PirateRed").disabled=false
+	get_node("PirateGirl").disabled=false
+	get_node("Parrot").disabled=false
+
+func disable_buttons():
+	get_node("PirateBlue").disabled=true
+	get_node("PirateRed").disabled=true
+	get_node("PirateGirl").disabled=true
+	get_node("Parrot").disabled=true
+
 func _on_PirateBlue_pressed():
 	get_node("Voices").stop_sounds()
+	get_node("PirateBlue").disabled=true
 	match current_question:
 		QUESTION.height:
 			right_answer(pirate_blue_right_symbol)
 			poztive_guard[0].play()
-			Score.cave_entrace_score+=10
+			Score.cave_entrace_score+=5
 		QUESTION.animal:
 			wrong_answer(pirate_blue_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 		QUESTION.hair:
 			wrong_answer(pirate_blue_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 		QUESTION.clothes:
 			right_answer(pirate_blue_right_symbol)
 			poztive_guard[3].play()
-			Score.cave_entrace_score+=10
+			Score.cave_entrace_score+=5
 
 func _on_PirateRed_pressed():
 	get_node("Voices").stop_sounds()
+	get_node("PirateRed").disabled=true
 	match current_question:
 		QUESTION.height:
 			wrong_answer(pirate_red_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 		QUESTION.animal:
 			wrong_answer(pirate_red_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 		QUESTION.hair:
 			wrong_answer(pirate_red_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 		QUESTION.clothes:	
 			wrong_answer(pirate_red_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 
 func _on_PirateGirl_pressed():
 	get_node("Voices").stop_sounds()
+	get_node("PirateGirl").disabled=true
 	match current_question:
 		QUESTION.height:
 			wrong_answer(pirate_girl_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 		QUESTION.animal:
 			wrong_answer(pirate_girl_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 		QUESTION.hair:
 			right_answer(pirate_girl_right_symbol)			
 			poztive_guard[2].play()
-			Score.cave_entrace_score+=10
+			Score.cave_entrace_score+=5
 		QUESTION.clothes:	
 			wrong_answer(pirate_girl_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 
 func _on_Parrot_pressed():
 	get_node("Voices").stop_sounds()
+	get_node("Parrot").disabled=true
 	match current_question:
 		QUESTION.height:
 			wrong_answer(parrot_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 		QUESTION.animal:
 			right_answer(parrot_right_symbol)
 			poztive_guard[1].play()
-			Score.cave_entrace_score+=10
+			Score.cave_entrace_score+=5
 		QUESTION.hair:
 			wrong_answer(parrot_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 		QUESTION.clothes:	
 			wrong_answer(parrot_wrong_symbol)
-			Score.cave_entrace_score-=3
+			Score.cave_entrace_score-=1
 
 func _on_AnimationPlayerGroot_animation_finished(anim_name):
 	get_node("AnimationPlayerPirates").play("GoInsideCave")

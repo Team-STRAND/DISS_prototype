@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	pass # Replace with function body.
+	get_node("Richard/RichardVoice13").connect("finished",get_parent(),"next_scene")
 	
 func play():
 	get_node("Richard/RichardVoice13").play()

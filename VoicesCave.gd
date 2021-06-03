@@ -34,6 +34,7 @@ func _ready():
 	get_node("CaveGuard/GuardVoice3").connect("finished",parent.get_node("Groot"),"stop_move")
 	get_node("CaveGuard/GuardVoice3").connect("finished",question_button,"set_sound_ref",[get_node("CaveGuard/GuardVoice3")])
 	get_node("CaveGuard/GuardVoice3").connect("finished",question_button,"enable_button")
+	get_node("CaveGuard/GuardVoice3").connect("finished",parent,"enable_buttons")
 	
 	
 	pozitive_guard[0].connect("finished",get_node("CaveGuard/GuardVoice4"),"play")
@@ -41,18 +42,21 @@ func _ready():
 	get_node("CaveGuard/GuardVoice4").connect("finished",parent.get_node("Groot"),"stop_move")
 	get_node("CaveGuard/GuardVoice4").connect("finished",parent,"set_current_question",[2])
 	get_node("CaveGuard/GuardVoice4").connect("finished",question_button,"set_sound_ref",[get_node("CaveGuard/GuardVoice4")])
+	get_node("CaveGuard/GuardVoice4").connect("finished",parent,"enable_buttons")
 	
 	pozitive_guard[1].connect("finished",get_node("CaveGuard/GuardVoice5"),"play")
 	pozitive_guard[1].connect("finished",parent.get_node("Groot"),"start_move")
 	get_node("CaveGuard/GuardVoice5").connect("finished",parent.get_node("Groot"),"stop_move")
 	get_node("CaveGuard/GuardVoice5").connect("finished",parent,"set_current_question",[3])
 	get_node("CaveGuard/GuardVoice5").connect("finished",question_button,"set_sound_ref",[get_node("CaveGuard/GuardVoice5")])
+	get_node("CaveGuard/GuardVoice5").connect("finished",parent,"enable_buttons")	
 	
 	pozitive_guard[2].connect("finished",get_node("CaveGuard/GuardVoice6"),"play")
 	pozitive_guard[2].connect("finished",parent.get_node("Groot"),"start_move")
 	get_node("CaveGuard/GuardVoice6").connect("finished",parent.get_node("Groot"),"stop_move")
 	get_node("CaveGuard/GuardVoice6").connect("finished",parent,"set_current_question",[4])
 	get_node("CaveGuard/GuardVoice6").connect("finished",question_button,"set_sound_ref",[get_node("CaveGuard/GuardVoice6")])
+	get_node("CaveGuard/GuardVoice6").connect("finished",parent,"enable_buttons")		
 		
 	pozitive_guard[3].connect("finished",get_node("CaveGuard/GuardVoice7"),"play")
 	pozitive_guard[3].connect("finished",parent.get_node("Groot"),"start_move")
@@ -66,3 +70,5 @@ func play():
 func stop_sounds():
 	for node in get_node("CaveGuard").get_children():
 		node.stop()		
+		
+	get_parent().get_node("Question/SoundRef").stop()

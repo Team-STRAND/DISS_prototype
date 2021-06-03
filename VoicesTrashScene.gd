@@ -6,16 +6,16 @@ func _ready():
 	get_node("Simon/VoiceSimon9").connect("finished",get_node("Simon/VoiceSimon10"),"play")
 	get_node("Simon/VoiceSimon10").connect("finished",parrot,"stop_move")
 	
-	get_node("Simon/VoiceSimon10").connect("finished",get_node("Narator/NaratorVoice19"),"play")
-	get_node("Narator/NaratorVoice19").connect("finished",get_parent().get_node("Question"),"set_sound_ref",[get_node("Narator/NaratorVoice19")])
-	get_node("Narator/NaratorVoice19").connect("finished",get_parent().get_node("Question"),"enable_button")
+	get_node("Simon/VoiceSimon10").connect("finished",get_node("Narator/NaratorVoice31"),"play")
+	get_node("Narator/NaratorVoice31").connect("finished",get_parent().get_node("Question"),"set_sound_ref",[get_node("Narator/NaratorVoice31")])
+	get_node("Narator/NaratorVoice31").connect("finished",get_parent().get_node("Question"),"enable_button")
 	
 func play():
 	get_node("Simon/VoiceSimon9").play()
 	parrot.start_move()
 	
 func stop_sounds():
-	get_node("Narator/NaratorVoice19").stop()
+	get_node("Narator/NaratorVoice31").stop()
 	get_node("Simon/VoiceSimon11").stop()
 	get_node("Simon/VoiceSimon12").stop()
 	get_node("Simon/VoiceSimon12").stop()

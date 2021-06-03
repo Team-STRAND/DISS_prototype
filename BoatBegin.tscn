@@ -63,10 +63,10 @@ __meta__ = {
 }
 
 [node name="Parrot" type="TextureButton" parent="."]
-margin_left = 453.081
-margin_top = 101.706
-margin_right = 947.081
-margin_bottom = 499.706
+margin_left = 1052.48
+margin_top = 62.4195
+margin_right = 1546.48
+margin_bottom = 460.419
 rect_scale = Vector2( 0.288558, 0.298968 )
 texture_normal = ExtResource( 6 )
 script = ExtResource( 2 )
@@ -113,7 +113,7 @@ anims/GoToShapes = SubResource( 2 )
 
 [node name="WaveSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
-volume_db = -10.0
+volume_db = -20.487
 autoplay = true
 
 [node name="Voices" type="Node2D" parent="."]

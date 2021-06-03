@@ -3,6 +3,7 @@ extends TextureButton
 
 func _ready():
 	get_node("RightSymbol").visible=false
+	disabled=true
 	#get_parent().get_node("Voices/Luigi/LuigiVoice4").connect("finished",self,"go_next")
 
 func go_next():

@@ -27,6 +27,7 @@ func _ready():
 	get_node("Richard/RichardVoice9").connect("finished",question_button,"enable_button")
 	get_node("Richard/RichardVoice9").connect("finished",get_node("Narator/NaratorVoice12"),"play")
 	get_node("Richard/RichardVoice9").connect("finished",question_button,"set_sound_ref",[get_node("Narator/NaratorVoice12")])
+	get_node("Narator/NaratorVoice12").connect("finished",get_parent(),"enable_buttons")
 	
 	get_node("Luigi/LuigiVoice3").connect("finished",pirate_blue,"stop_move")
 	get_node("Luigi/LuigiVoice4").connect("finished",pirate_blue,"stop_move")
@@ -42,3 +43,4 @@ func stop_sounds():
 	get_node("Narator/NaratorVoice14").stop()
 	get_node("Luigi/LuigiVoice3").stop()
 	get_node("Luigi/LuigiVoice4").stop()
+	get_parent().get_node("Question/SoundRef").stop()

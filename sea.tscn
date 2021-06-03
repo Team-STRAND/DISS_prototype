@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://assets/Drawing-6.sketchpad.jpeg" type="Texture" id=1]
 [ext_resource path="res://assets/play.png" type="Texture" id=2]
@@ -44,13 +44,16 @@
 [ext_resource path="res://VoicesStartScreen.gd" type="Script" id=42]
 [ext_resource path="res://assets/sounds/narator/Narator-01-BineAiVenit.wav" type="AudioStream" id=43]
 [ext_resource path="res://assets/sounds/narator/Narator-02-DatoriaNoastra.wav" type="AudioStream" id=44]
+[ext_resource path="res://assets/arrow.png" type="Texture" id=45]
+[ext_resource path="res://assets/reset.png" type="Texture" id=46]
+[ext_resource path="res://Question.gd" type="Script" id=47]
+[ext_resource path="res://assets/question.png" type="Texture" id=48]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 57
 font_data = ExtResource( 5 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "TitleFade"
+[sub_resource type="Animation" id=2]
 length = 0.5
 step = 0.5
 tracks/0/type = "value"
@@ -90,7 +93,7 @@ tracks/2/keys = {
 "values": [ Vector2( 277, 222 ), Vector2( 274.172, -173.98 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "FadeButton"
 length = 0.5
 tracks/0/type = "value"
@@ -106,7 +109,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0.5, 0.5 ), Vector2( 1e-05, 1e-05 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=4]
 resource_name = "FadeButton"
 length = 0.5
 tracks/0/type = "value"
@@ -122,7 +125,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0.5, 0.5 ), Vector2( 1e-05, 1e-05 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=5]
 length = 0.5
 step = 0.5
 tracks/0/type = "value"
@@ -138,13 +141,12 @@ tracks/0/keys = {
 "values": [ Vector2( 0.5, 0.5 ), Vector2( 1e-05, 1e-05 ) ]
 }
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=6]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -154.322, 446.917, 0, 0, 0, 0, 19.2077, 486.962, 0, 0, 0, 0, 136.674, 486.962, 0, 0, 0, 0, 214.094, 446.917, 0, 0, 0, 0, 299.873, 437.309, 0, 0, 0, 0, 361.304, 434.312, 0, 0, 0, 0, 423.664, 454.926, 0, 0, 0, 0, 507.759, 523.003, 0, 0, 0, 0, 617.514, 536.197, 0, 0, 0, 0, 719.399, 512.224, 0, 0, 0, 0, 809.433, 486.962, 0, 0, 0, 0, 905.541, 432.234, 0, 0, 0, 0, 988.301, 408.207, 0, 0, 0, 0, 1049.7, 410.876, 0, 0, 0, 0, 1097.76, 417.55, 0, 0, 0, 0, 1168.5, 433.568, 0, 0, 0, 0, 1236.58, 458.93, 0, 0, 0, 0, 1296.65, 477.618 )
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "SymbolScrollRemove"
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 1
@@ -157,9 +159,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 118.839, 21.2434 ), Vector2( 125.975, 694.335 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Back:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 37.7549, 487.963 ), Vector2( 48.3496, 1195.68 ) ]
+}
 
-[sub_resource type="Animation" id=6]
-resource_name = "SymbolScrollRemove"
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 1
@@ -171,6 +184,34 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 118.839, 21.2434 ), Vector2( 125.975, 694.335 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Back:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 27.1603, 483.725 ), Vector2( 48.3496, 1195.68 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "FadeButton"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.350584, 0.354867 ), Vector2( 1e-05, 1e-05 ) ]
 }
 
 [node name="Node2D" type="Node2D"]
@@ -204,7 +245,7 @@ margin_left = 277.0
 margin_top = 222.0
 margin_right = 814.0
 margin_bottom = 307.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.580392, 0.584314, 0.227451, 1 )
 custom_colors/background_color = Color( 0.980392, 0.921569, 0.72549, 1 )
 custom_colors/completion_existing_color = Color( 0, 0, 0, 1 )
@@ -226,13 +267,13 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
-anims/TitleFade = SubResource( 1 )
+anims/TitleFade = SubResource( 2 )
 
 [node name="LogInButton" type="TextureButton" parent="."]
 margin_left = 397.261
-margin_top = 329.576
+margin_top = 329.0
 margin_right = 650.261
-margin_bottom = 582.576
+margin_bottom = 582.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 124.87, 128.174 )
 texture_normal = ExtResource( 39 )
@@ -242,13 +283,13 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LogInButton"]
-anims/FadeButton = SubResource( 7 )
+anims/FadeButton = SubResource( 3 )
 
 [node name="CreateAccountButton" type="TextureButton" parent="."]
 margin_left = 212.868
-margin_top = 332.978
+margin_top = 329.0
 margin_right = 465.868
-margin_bottom = 585.978
+margin_bottom = 582.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 128.434, 121.299 )
 texture_normal = ExtResource( 38 )
@@ -258,13 +299,13 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CreateAccountButton"]
-anims/FadeButton = SubResource( 8 )
+anims/FadeButton = SubResource( 4 )
 
 [node name="PlayButton" type="TextureButton" parent="."]
 margin_left = 578.069
-margin_top = 342.245
+margin_top = 329.0
 margin_right = 831.069
-margin_bottom = 595.245
+margin_bottom = 582.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 132.908, 125.12 )
 texture_normal = ExtResource( 2 )
@@ -274,15 +315,15 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayButton"]
-anims/FadeButton = SubResource( 2 )
+anims/FadeButton = SubResource( 5 )
 
 [node name="WaveSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -10.0
+volume_db = -19.613
 autoplay = true
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 3 )
+curve = SubResource( 6 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( -154.322, 446.917 )
@@ -311,7 +352,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollSymbols"]
-anims/SymbolScrollRemove = SubResource( 5 )
+anims/SymbolScrollRemove = SubResource( 7 )
 
 [node name="Symbol1" type="TextureButton" parent="ScrollSymbols"]
 margin_left = 89.1436
@@ -556,7 +597,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollSymbolsAuth"]
-anims/SymbolScrollRemove = SubResource( 6 )
+anims/SymbolScrollRemove = SubResource( 8 )
 
 [node name="Symbol1" type="TextureButton" parent="ScrollSymbolsAuth"]
 margin_left = 89.1436
@@ -788,6 +829,32 @@ rect_scale = Vector2( 0.621337, 0.999911 )
 texture_normal = ExtResource( 35 )
 script = ExtResource( 37 )
 
+[node name="Back" type="TextureButton" parent="."]
+margin_left = 48.3496
+margin_top = 1195.68
+margin_right = 544.35
+margin_bottom = 1848.68
+rect_rotation = -89.645
+rect_scale = Vector2( 0.204087, 0.161856 )
+texture_normal = ExtResource( 45 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reset" type="TextureButton" parent="."]
+margin_left = 0.0755005
+margin_top = 529.299
+margin_right = 397.076
+margin_bottom = 732.299
+rect_scale = Vector2( 0.350584, 0.354867 )
+texture_normal = ExtResource( 46 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Reset"]
+anims/FadeButton = SubResource( 9 )
+
 [node name="Voices" type="Node2D" parent="."]
 script = ExtResource( 42 )
 
@@ -798,9 +865,26 @@ stream = ExtResource( 43 )
 
 [node name="NaratorVoice2" type="AudioStreamPlayer" parent="Voices/Narator"]
 stream = ExtResource( 44 )
+
+[node name="Question" type="TextureButton" parent="."]
+margin_left = 923.786
+margin_top = 1.52588e-05
+margin_right = 1075.79
+margin_bottom = 145.0
+rect_scale = Vector2( 0.648164, 0.63789 )
+texture_normal = ExtResource( 48 )
+script = ExtResource( 47 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundRef" type="AudioStreamPlayer" parent="Question"]
 [connection signal="focus_entered" from="TextEdit" to="." method="_on_TextEdit_focus_entered"]
 [connection signal="focus_exited" from="TextEdit" to="." method="_on_TextEdit_focus_exited"]
 [connection signal="pressed" from="LogInButton" to="LogInButton" method="_on_LogInButton_pressed"]
 [connection signal="pressed" from="CreateAccountButton" to="CreateAccountButton" method="_on_CreateAccountButton_pressed"]
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
 [connection signal="animation_finished" from="PlayButton/AnimationPlayer" to="PlayButton" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_Reset_pressed"]
+[connection signal="pressed" from="Question" to="Question" method="_on_Question_pressed"]

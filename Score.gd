@@ -21,7 +21,7 @@ func write_to_file():
 	var year=str(OS.get_date()["year"])
 	var month=str(OS.get_date()["month"])
 	var day=str(OS.get_date()["day"])
-	var file_name="res://Rezultat-"+day+"-"+month+"-"+year+".html"
+	var file_name="res://Rezultat.csv"
 	
 	var text=""
 	
@@ -32,33 +32,60 @@ func write_to_file():
 		new_file=true
 		file.open(file_name, file.WRITE)
 		
-		text=add_html_header(text)
-		text=add_table_header(text)
+		#text=add_html_header(text)
+		#text=add_table_header(text)
+		text=add_cvs_header(text)
 
 	if new_file==false:
-		file.seek(file.get_len()-table_end.length()-html_end.length())
+		#file.seek(file.get_len()-table_end.length()-html_end.length())
+		file.seek_end()		
 		
 	total_score=boat_score+island_top_score+river_score+cave_entrace_score+season_score+trash_score+jungle_score
 #
 
-	text=add_tr(text)
-	text=add_td_item(text,child_name)
-	text=add_td_item(text,boat_score)
-	text=add_td_item(text,island_top_score)
-	text=add_td_item(text,boat_on_land_score)
-	text=add_td_item(text,river_score)
-	text=add_td_item(text,jungle_score)
-	text=add_td_item(text,trash_score)
-	text=add_td_item(text,season_score)
-	text=add_td_item(text,cave_entrace_score)
-	text=add_td_item(text,total_score)
-	text=add_tr_end(text)
-
-	text=add_table_end(text)
-	text=add_html_end(text)
+#	text=add_tr(text)
+#	text=add_td_item(text,child_name)
+#	text=add_td_item(text,boat_score)
+#	text=add_td_item(text,island_top_score)
+#	text=add_td_item(text,boat_on_land_score)
+#	text=add_td_item(text,river_score)
+#	text=add_td_item(text,jungle_score)
+#	text=add_td_item(text,trash_score)
+#	text=add_td_item(text,season_score)
+#	text=add_td_item(text,cave_entrace_score)
+#	text=add_td_item(text,total_score)
+#	text=add_tr_end(text)
+#
+#	text=add_table_end(text)
+#	text=add_html_end(text)
+	
+	text+=str(child_name)+","
+	text+=str(boat_score)+","
+	text+=str(island_top_score)+","
+	text+=str(boat_on_land_score)+","
+	text+=str(river_score)+","
+	text+=str(jungle_score)+","
+	text+=str(trash_score)+","
+	text+=str(season_score)+","
+	text+=str(cave_entrace_score)+","
+	text+=str(total_score)+"\n"
 	
 	file.store_string(text)
 	file.close()
+
+func add_cvs_header(text):
+	text+="Nume si prenume,"
+	text+="Alegerea formelor,"
+	text+="Directiile papagalului,"
+	text+="Corabia pe uscat,"
+	text+="Pestii din rau,"
+	text+="Animalele din padure,"
+	text+="Luminisul,"
+	text+="Ghicitoarea,"
+	text+="Intrarea in pestera,"
+	text+="Total"
+	text+="\n"
+	return text
 
 func add_tr(text):
 	text+="<tr>"

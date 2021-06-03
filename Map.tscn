@@ -4,7 +4,7 @@
 [ext_resource path="res://Map.gd" type="Script" id=2]
 [ext_resource path="res://Question.gd" type="Script" id=3]
 [ext_resource path="res://assets/question.png" type="Texture" id=4]
-[ext_resource path="res://assets/sounds/francesca/Francesca8.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/luigi/8.sa-mergem-drumul-este.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sounds/francesca/Francesca7.wav" type="AudioStream" id=36]
 [ext_resource path="res://VoicesMap.gd" type="Script" id=39]
 
@@ -38,9 +38,11 @@ script = ExtResource( 39 )
 stream = ExtResource( 36 )
 volume_db = -4.0
 
-[node name="FrancescaVoice8" type="AudioStreamPlayer" parent="Voices/Francesca"]
-stream = ExtResource( 12 )
-volume_db = -4.0
+[node name="Luigi" type="Node2D" parent="Voices"]
+
+[node name="LuigiVoice8" type="AudioStreamPlayer" parent="Voices/Luigi"]
+stream = ExtResource( 5 )
+volume_db = 5.0
 
 [node name="Question" type="TextureButton" parent="."]
 margin_left = 923.786

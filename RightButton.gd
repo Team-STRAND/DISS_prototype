@@ -10,6 +10,6 @@ func _on_RightButton_pressed():
 	get_node("RightSymbol").visible=true
 	disabled=true
 	get_parent().get_node("LeftButton").disabled=true
-	Score.island_top_score+=10
+	Score.island_top_score+=5
 	get_parent().get_node("Voices").stop_sounds()
 	get_parent().get_node("Voices/Narator/NaratorVoice10").play()

@@ -154,11 +154,11 @@ __meta__ = {
 }
 
 [node name="YesButton" type="TextureButton" parent="."]
-margin_left = 448.877
-margin_top = 88.2758
-margin_right = 762.877
-margin_bottom = 263.276
-rect_scale = Vector2( 0.440476, 0.428572 )
+margin_left = 480.025
+margin_top = 86.3881
+margin_right = 733.025
+margin_bottom = 339.388
+rect_scale = Vector2( 0.4, 0.4 )
 rect_pivot_offset = Vector2( 162.961, 90.4633 )
 texture_normal = ExtResource( 6 )
 script = ExtResource( 9 )
@@ -181,9 +181,9 @@ __meta__ = {
 [node name="NoButton" type="TextureButton" parent="."]
 margin_left = 666.402
 margin_top = 92.1733
-margin_right = 996.402
-margin_bottom = 267.173
-rect_scale = Vector2( 0.382279, 0.385715 )
+margin_right = 919.402
+margin_bottom = 345.173
+rect_scale = Vector2( 0.4, 0.4 )
 rect_pivot_offset = Vector2( 161.134, 82.6809 )
 texture_normal = ExtResource( 7 )
 script = ExtResource( 10 )

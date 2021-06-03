@@ -56,7 +56,7 @@ tracks/1/keys = {
 "values": [ Vector2( -652.955, -27.2964 ), Vector2( -356.89, -134.575 ), Vector2( -238.374, -157.574 ), Vector2( -166.305, -204.546 ), Vector2( -85.2965, -219.379 ), Vector2( -37.9999, -255.938 ), Vector2( 6.62471, -269.723 ), Vector2( 27.2764, -280.51 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Entrance"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -71,7 +71,7 @@ tracks/0/keys = {
 "values": [ Vector2( -72.2674, 545.419 ), Vector2( -34.4698, 88.0676 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -154,8 +154,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayerParrot" type="AnimationPlayer" parent="Parrot"]
-anims/Entrance = SubResource( 3 )
-anims/FlyingParrot = SubResource( 2 )
+anims/Entrance = SubResource( 2 )
+anims/FlyingParrot = SubResource( 3 )
 script = ExtResource( 8 )
 
 [node name="LeftButton" type="TextureButton" parent="."]

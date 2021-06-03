@@ -10,7 +10,7 @@ func _on_Button_pressed():
 	get_parent().get_node("Voices").stop_sounds()
 	get_parent().get_node("WrongSound").play()
 	disabled=true
-	Score.river_score-=3
+	Score.river_score-=5
 	
 	get_parent().get_node("Voices").stop_sounds()
 	get_parent().get_node("Voices/Fish/FishVoice3").play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/pirate_hat.png" type="Texture" id=1]
 [ext_resource path="res://assets/animals_misplaced.jpeg" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/sounds/narator/Narator-19-CinevaATrecutPeAici.wav" type="AudioStream" id=18]
 [ext_resource path="res://Question.gd" type="Script" id=19]
 [ext_resource path="res://assets/question.png" type="Texture" id=20]
+[ext_resource path="res://assets/sounds/narator/Narator-31-CinevaATrecutPrinLuminis.wav" type="AudioStream" id=21]
 
 [node name="TrashScene" type="Node2D"]
 script = ExtResource( 4 )
@@ -130,6 +131,9 @@ stream = ExtResource( 16 )
 
 [node name="NaratorVoice19" type="AudioStreamPlayer" parent="Voices/Narator"]
 stream = ExtResource( 18 )
+
+[node name="NaratorVoice31" type="AudioStreamPlayer" parent="Voices/Narator"]
+stream = ExtResource( 21 )
 
 [node name="WrongSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )

@@ -8,7 +8,7 @@ func _ready():
 func _on_Button_pressed():
 	get_child(0).visible=true
 	get_parent().get_parent().get_parent().get_node("WrongSound").play()
-	Score.boat_score-=5
+	Score.boat_score-=3
 	get_parent().get_parent().get_parent().get_node("Voices").stop_sounds()
 	get_parent().get_parent().get_parent().get_node("Voices/Simon/SimonVoice4").stop()
 	get_parent().get_parent().get_parent().get_node("Voices/Simon/SimonVoice4").play()

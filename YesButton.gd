@@ -2,6 +2,7 @@ extends TextureButton
 
 func _ready():
 	get_node("WrongAnswer").visible=false;
+	disabled=true
 
 func _on_YesButton_pressed():
 	get_parent().get_node("Voices").stop_sounds()

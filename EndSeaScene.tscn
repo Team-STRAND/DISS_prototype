@@ -28,15 +28,15 @@ tracks/0/keys = {
 "values": [ Vector2( -630.032, -78.4962 ), Vector2( 778.559, -62.1172 ), Vector2( 412.08, 21.1951 ), Vector2( 153.156, -42.8475 ), Vector2( -168.54, 11.959 ), Vector2( -487.552, -91.9756 ), Vector2( -626.253, -55.8176 ) ]
 }
 
-[sub_resource type="StyleBoxEmpty" id=5]
+[sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="StyleBoxEmpty" id=6]
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="DynamicFont" id=4]
 size = 57
 font_data = ExtResource( 6 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "DiplomaAppear"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -128,8 +128,8 @@ margin_top = 769.315
 margin_right = 1101.27
 margin_bottom = 854.315
 rect_scale = Vector2( 2.14771, 2.99354 )
-custom_styles/read_only = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/read_only = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.0588235, 0.0588235, 0.0392157, 1 )
 custom_colors/completion_font_color = Color( 0, 0, 0, 1 )
@@ -141,5 +141,5 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Diploma"]
-anims/DiplomaAppear = SubResource( 7 )
+anims/DiplomaAppear = SubResource( 5 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
