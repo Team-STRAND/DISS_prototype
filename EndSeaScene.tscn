@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/Drawing-6.sketchpad.jpeg" type="Texture" id=1]
 [ext_resource path="res://EndSeaScene.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/pirate_diploma.png" type="Texture" id=5]
 [ext_resource path="res://assets/font/BlackRose-2Onld.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/sounds/simon/Simon-17-LaRevedereMatelot.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/richard/Replica_finala_Richard.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/sounds/francesca/Francesca9.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/sounds/luigi/10.ura-multumim-pentru.wav" type="AudioStream" id=16]
 [ext_resource path="res://assets/sounds/richard/Richard-17.wav" type="AudioStream" id=17]
@@ -93,6 +94,10 @@ script = ExtResource( 41 )
 [node name="RichardVoice17" type="AudioStreamPlayer" parent="Voices/Richard"]
 stream = ExtResource( 17 )
 volume_db = 8.0
+
+[node name="RichardVoice18" type="AudioStreamPlayer" parent="Voices/Richard"]
+stream = ExtResource( 8 )
+volume_db = 24.0
 
 [node name="Luigi" type="Node2D" parent="Voices"]
 

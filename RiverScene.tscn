@@ -67,6 +67,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -313.593, -97.6952 ), Vector2( -249.787, -55.6928 ), Vector2( -135.83, -18.4884 ), Vector2( -2.38708, -20.4181 ), Vector2( 102.74, -36.506 ), Vector2( 192.911, -41.0208 ), Vector2( 286.711, -64.6596 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Parrot:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 113.514, 228.811 ), Vector2( 729.746, 255.75 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 length = 2.5
@@ -219,10 +231,10 @@ __meta__ = {
 }
 
 [node name="Parrot" type="TextureButton" parent="."]
-margin_left = 113.514
-margin_top = 228.811
-margin_right = 607.514
-margin_bottom = 626.811
+margin_left = -115.072
+margin_top = 100.231
+margin_right = 378.928
+margin_bottom = 498.231
 rect_scale = Vector2( -0.239492, 0.253915 )
 texture_normal = ExtResource( 22 )
 __meta__ = {
@@ -230,10 +242,10 @@ __meta__ = {
 }
 
 [node name="PirateRed" type="TextureButton" parent="."]
-margin_left = -313.593
-margin_top = -97.6952
-margin_right = 472.409
-margin_bottom = 932.305
+margin_left = -541.862
+margin_top = -60.8448
+margin_right = 244.14
+margin_bottom = 969.155
 rect_scale = Vector2( 0.18884, 0.168363 )
 rect_pivot_offset = Vector2( 373.811, 517.926 )
 texture_normal = ExtResource( 4 )
@@ -246,10 +258,10 @@ __meta__ = {
 anims/Move = SubResource( 2 )
 
 [node name="PirateBlue" type="TextureButton" parent="."]
-margin_left = -189.401
-margin_top = -98.048
-margin_right = 767.6
-margin_bottom = 961.952
+margin_left = -568.473
+margin_top = -77.0717
+margin_right = 388.528
+margin_bottom = 982.928
 rect_scale = Vector2( 0.17864, 0.171665 )
 rect_pivot_offset = Vector2( 483.133, 617.374 )
 texture_normal = ExtResource( 3 )
@@ -260,10 +272,10 @@ anims/Move = SubResource( 3 )
 script = ExtResource( 19 )
 
 [node name="PirateGirl" type="TextureButton" parent="."]
-margin_left = -321.137
-margin_top = -49.5286
-margin_right = 635.863
-margin_bottom = 1010.47
+margin_left = -641.475
+margin_top = -23.7901
+margin_right = 315.525
+margin_bottom = 1036.21
 rect_scale = Vector2( 0.146446, 0.149545 )
 rect_pivot_offset = Vector2( 477.248, 561.536 )
 texture_normal = ExtResource( 2 )

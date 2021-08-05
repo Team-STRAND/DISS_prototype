@@ -13,6 +13,8 @@ func _ready():
 func display_diploma():
 	get_node("Diploma/AnimationPlayer").play("DiplomaAppear")
 
+func next_scene():
+	get_tree().change_scene("res://sea.tscn")
 
 func save_diploma():
 	#var img=get_node("Diploma").get_texture().get_data()
@@ -24,3 +26,4 @@ func save_diploma():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	save_diploma();
 	get_tree().change_scene("res://sea.tscn")
+

@@ -15,9 +15,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="diss"
+config/name="Aventura piratilor"
 run/main_scene="res://sea.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/bottle.png"
 
 [autoload]
 
